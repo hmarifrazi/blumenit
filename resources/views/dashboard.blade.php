@@ -1,4 +1,4 @@
-@extends('app')
+@extends('layout.app')
 
 
 
@@ -416,5 +416,10 @@ New Castle, UK
 
 
 @endsection
+
+
+@push('scripts')
+
+@endpush
 
 

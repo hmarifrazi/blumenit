@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Role;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('app');
-})->name('app');
+    return view('dashboard');
+})->name('dashboard');
+
+Route::resource('category',CategoryController::class);

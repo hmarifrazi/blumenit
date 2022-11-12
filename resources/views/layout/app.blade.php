@@ -24,7 +24,7 @@
 
 
     <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
-    @stack('styles')
+    
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -53,10 +53,10 @@
                     </li>
                     <h3 class="menu-title">UI elements</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Components</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Category</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">Buttons</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Badges</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">New category</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('category.index')}}">List</a></li>
                             <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Tabs</a></li>
                             <li><i class="fa fa-share-square-o"></i><a href="ui-social-buttons.html">Social Buttons</a></li>
                             <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">Cards</a></li>
@@ -260,25 +260,27 @@
 
        
 
-
+        @yield('content')
            
     
 
 
 
 
-                        @yield('content')            
+                                 
 
     <!-- Right Panel -->
     <script src="{{ asset('public/assets/vendors/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/assets/assets/js/main.js') }}"></script>
+    <script src="{{ asset('public/assets/js/main.js') }}"></script>
 
+    <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
 
+    
     <script src="{{ asset('public/assets/vendors/chart.js/dist/Chart.bundle.min.js') }}"></script>
-    <script src="{{ asset('public/assets/assets/js/dashboard.js') }}"></script>
-    <script src="{{ asset('public/assets/assets/js/widgets.js') }}"></script>
+    
+    <script src="{{ asset('public/assets/js/widgets.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/jqvmap/dist/jquery.vmap.min.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
     <script src="{{ asset('public/assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
@@ -300,7 +302,7 @@
             });
         })(jQuery);
     </script>
-    @stack('scripts')
+
 
 </body>
 
