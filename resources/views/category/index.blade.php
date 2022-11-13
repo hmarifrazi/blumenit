@@ -11,7 +11,7 @@
                 <th scope="col">Category Name</th>
                 <th scope="col">For Games?</th>
                 <th scope="col">Featured?</th>
-                <th scope="col">Show Category Page?</th>
+                <th scope="col">Show Category Page?</th>//mifta
                 <th scope="col">Category Page Order</th>
                 <th scope="col">Action</th>
                 
