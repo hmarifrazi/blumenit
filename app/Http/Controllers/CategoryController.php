@@ -34,9 +34,13 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $r)
     {
-        //
+        $cat=new Category;
+        $cat->name=$r->FullName;
+        $cat->is_game=$r->is_game;
+        $cat->name=$r->FullName;
+        $cat->name=$r->FullName;
     }
 
     /**
