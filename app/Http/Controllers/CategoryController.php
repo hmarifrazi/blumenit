@@ -39,8 +39,50 @@ class CategoryController extends Controller
         $cat=new Category;
         $cat->name=$r->FullName;
         $cat->is_game=$r->is_game;
-        $cat->name=$r->FullName;
-        $cat->name=$r->FullName;
+        $cat->feature_cat=$r->featured;
+        $cat->show_catpage=$r->catpage;
+        $cat->cat_page_order=$r->order;
+        $cat->cat_icon=$r->cat_icon;
+
+
+        if($r->file('cat_icon')){
+            $image = $r->file('cat_icon');
+            $cat_icon_image = '/public/images/category/'.time().'.'.Str::random(8).time().'.'.$image->extension();
+            $image->move(public_path('images/category'),$cat_icon_image);
+            $cat->cat_icon=$cat_icon_image;
+         }
+
+         if($r->file('feature_image')){
+            $image = $r->file('feature_image');
+            $feature_image = '/public/images/category/'.time().'.'.$image->extension();
+            $image->move(public_path('images/category'),$feature_image);
+            $cat->feature_image=$feature_image;
+         }
+
+        $cat->feature_image=$r->f_image;
+
+        if($r->file('cat_image')){
+            $image = $r->file('cat_image');
+            $cat_image = '/public/images/category/'.time().'.'.$image->extension();
+            $image->move(public_path('images/category'),$cat_image);
+            $cat->cat_image=$cat_image;
+         }
+
+
+         if($r->file('lsb_image')){
+            $image = $r->file('lsb_image');
+            $lsb_image = Str::random(8).time().'.'.$image->extension();
+            $destinationPath = public_path('/images/category');
+            if($image->extension() != 'svg'){
+                $img = Image::make($image->path());
+                $img->resize(270, 440)->save($destinationPath.'/'.$lsb_image);
+            }else{
+                $image->move(public_path('images/category'),$lsb_image);
+            }
+            $cat->lsb_image='/public/images/category/'.$lsb_image;
+         }
+        $cat->Isb_image=$r->ban_image;
+        $cat->cat_page_order=$r->image1;
     }
 
     /**

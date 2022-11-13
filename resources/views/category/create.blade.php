@@ -110,16 +110,16 @@
                         </div><!-- end col -->
 
                         <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image2"/>
+                            <input type="file" class="dropify" data-height="200" name="image1"/>
                        </div><!-- end col -->
                     </div>
             <div class="form-group row">
                     <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image3"/>
+                        <input type="file" class="dropify" data-height="200" name="image1"/>
                     </div><!-- end col -->
 
                     <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image4"/>
+                        <input type="file" class="dropify" data-height="200" name="image1"/>
                     </div><!-- end col -->
              </div>
 
