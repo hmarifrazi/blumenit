@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
 
-<form action={{route('category.store')}} class="col-lg-8 offset-3" method='post'>
+<form action={{route('category.store')}} class="col-lg-8 offset-3" method='post' enctype="multipart/form-data">
     @csrf
     <div class="card">
         <div class="card-header"><strong>Add New Category</strong>
@@ -110,16 +110,16 @@
                         </div><!-- end col -->
 
                         <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image2"/>
+                            <input type="file" class="dropify" data-height="200" name="image1"/>
                        </div><!-- end col -->
                     </div>
             <div class="form-group row">
                     <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image3"/>
+                        <input type="file" class="dropify" data-height="200" name="image1"/>
                     </div><!-- end col -->
 
                     <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image4"/>
+                        <input type="file" class="dropify" data-height="200" name="image1"/>
                     </div><!-- end col -->
              </div>
 

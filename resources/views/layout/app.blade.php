@@ -57,15 +57,19 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{route('category.create')}}">New category</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="{{route('category.index')}}">List</a></li>
+                         
                         </ul>
                     </li>
+
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Products</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Manufacturer</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="">Poduct List</a></li>
-                            <li><i class="fa fa-table"></i><a href="">Add Products</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">New category</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('manufacturer.index')}}">List</a></li>
+                           
                         </ul>
                     </li>
+                    
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
                         <ul class="sub-menu children dropdown-menu">
