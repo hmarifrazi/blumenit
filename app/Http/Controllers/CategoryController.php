@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\category;
 use Illuminate\Http\Request;
+use App\Models\Categoryimage;
+use Exception;
+use Session;
+use Illuminate\Support\Str;
+use Image;
 
 class CategoryController extends Controller
 {
@@ -36,49 +41,73 @@ class CategoryController extends Controller
      */
     public function store(Request $r)
     {
+        try{
         $cat=new Category;
         $cat->name=$r->FullName;
         $cat->is_game=$r->is_game;
         $cat->feature_cat=$r->featured;
         $cat->show_catpage=$r->catpage;
         $cat->cat_page_order=$r->order;
-        $cat->cat_icon=$r->cat_icon;
-
-
         
 
-         if($r->file('feature_image')){
+
+        if($r->file('cat_icon')){
+            $image = $r->file('cat_icon');
+            $cat_icon = '/public/images/category/'.time().'.'.$image->extension();
+            $image->move(public_path('images/category'),$cat_icon);
+            $cat->cat_icon=$cat_icon;
+        }
+
+
+        if($r->file('feature_image')){
             $image = $r->file('feature_image');
             $feature_image = '/public/images/category/'.time().'.'.$image->extension();
             $image->move(public_path('images/category'),$feature_image);
             $cat->feature_image=$feature_image;
-         }
+        }
 
-        $cat->feature_image=$r->f_image;
-
-        if($r->file('cat_image')){
-            $image = $r->file('cat_image');
-            $cat_image = '/public/images/category/'.time().'.'.$image->extension();
-            $image->move(public_path('images/category'),$cat_image);
-            $cat->cat_image=$cat_image;
-         }
-
-
-         if($r->file('lsb_image')){
-            $image = $r->file('lsb_image');
-            $lsb_image = Str::random(8).time().'.'.$image->extension();
+        if($r->file('ban_image')){
+            $image = $r->file('ban_image');
+            $ban_image = Str::random(8).time().'.'.$image->extension();
             $destinationPath = public_path('/images/category');
             if($image->extension() != 'svg'){
                 $img = Image::make($image->path());
-                $img->resize(270, 440)->save($destinationPath.'/'.$lsb_image);
+                $img->resize(270, 440)->save($destinationPath.'/'.$ban_image);
             }else{
-                $image->move(public_path('images/category'),$lsb_image);
+                $image->move(public_path('images/category'),$ban_image);
             }
-            $cat->lsb_image='/public/images/category/'.$lsb_image;
+            $cat->ban_image='/public/images/category/'.$ban_image;
+            
          }
-        $cat->Isb_image=$r->ban_image;
-        $cat->cat_page_order=$r->image1;
+
+         if($cat->save()){
+            foreach($r->image as $key=>$value){
+
+                $categoryimage=new Categoryimage;
+
+                $image = $r->file('image')[$key];
+                $imageName = Str::random(8).time().'.'.$image->extension();
+   
+ 
+                $destinationPath = public_path('/public/images/category');
+                $img = Image::make($image->path());
+                $img->resize(1920, 420)->save($destinationPath.'/'.$imageName);
+
+
+       $categoryimage->category_id=$cat->id;
+                     $categoryimage->image='/public/images/category/'.$imageName;
+                    
+                     $categoryimage->save();
+                }
+                return redirect(route('category.index'));
+             }
+        }catch(Exception $e){
+            return redirect(route('category.create'));
+        }
     }
+    
+        
+    
 
     /**
      * Display the specified resource.

@@ -1,16 +1,43 @@
 @extends('layout.app')
 @section('content')
 
-<form action={{route('category.store')}} class="col-lg-8 offset-3" method='post' enctype="multipart/form-data">
+<form action={{route('create.store')}} class="col-lg-8 offset-3" method='post'>
     @csrf
     <div class="card">
-        <div class="card-header"><strong>Add New Category</strong>
+        <div class="card-header"><strong>Add New Products</strong>
             
             
         <div class="card-body card-block">
             <div class="form-group">
-                <label for="FullName" class=" form-control-label">Name</label>
-                <input type="text" id="FullName" name="FullName" placeholder="category name" class="form-control">
+                <label for="productname" class=" form-control-label">Name</label>
+                <input type="text" id="FullName" name="product_name" placeholder="Product name" class="form-control">
+                @if($errors->has('product_name'))
+                    <small class="d-block text-danger">
+                        {{$errors->first('product_name')}}
+                    </small>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="sku" class=" form-control-label">SKU</label>
+                <input type="text" id="sku" name="sku" placeholder="category name" class="form-control">
+                @if($errors->has('sku'))
+                    <small class="d-block text-danger">
+                        {{$errors->first('sku')}}
+                    </small>
+                @endif
+            </div>
+            <div class="row form-group">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label for="Product_image" class=" form-control-label">Product Image</label>
+                        <input type="file" id="Product_image" name="Product_image"  class="form-control">
+                        @if($errors->has('sku'))
+                            <small class="d-block text-danger">
+                                {{$errors->first('')}}
+                            </small>
+                        @endif
+                    </div>
+                </div>
             </div>
 
            
@@ -77,15 +104,7 @@
                         </div>
                     </div>
 
-                        <div class="row form-group">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="f_image" class=" form-control-label">Feature Image</label>
-                                    <input type="file" id="f_image" name="f_image"  class="form-control">
-                                </div>
-
-                            </div>
-                    </div>
+                        
 
 
                     <div class="row form-group">
@@ -110,16 +129,16 @@
                         </div><!-- end col -->
 
                         <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image1"/>
+                            <input type="file" class="dropify" data-height="200" name="image2"/>
                        </div><!-- end col -->
                     </div>
             <div class="form-group row">
                     <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image1"/>
+                        <input type="file" class="dropify" data-height="200" name="image3"/>
                     </div><!-- end col -->
 
                     <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image1"/>
+                        <input type="file" class="dropify" data-height="200" name="image4"/>
                     </div><!-- end col -->
              </div>
 
