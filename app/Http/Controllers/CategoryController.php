@@ -45,12 +45,7 @@ class CategoryController extends Controller
         $cat->cat_icon=$r->cat_icon;
 
 
-        if($r->file('cat_icon')){
-            $image = $r->file('cat_icon');
-            $cat_icon_image = '/public/images/category/'.time().'.'.Str::random(8).time().'.'.$image->extension();
-            $image->move(public_path('images/category'),$cat_icon_image);
-            $cat->cat_icon=$cat_icon_image;
-         }
+        
 
          if($r->file('feature_image')){
             $image = $r->file('feature_image');
