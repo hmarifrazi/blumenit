@@ -3,7 +3,7 @@
 use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,3 +20,4 @@ Route::get('/', function () {
 })->name('dashboard');
 
 Route::resource('category',CategoryController::class);
+Route::resource('products',ProductController::class);
