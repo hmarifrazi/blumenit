@@ -42,7 +42,7 @@ class CategoryController extends Controller
         $cat->feature_cat=$r->featured;
         $cat->show_catpage=$r->catpage;
         $cat->cat_page_order=$r->order;
-        $cat->cat_icon=$r->cat_icon;
+        // $cat->cat_icon=$r->cat_icon;
 
 
         if($r->file('cat_icon')){

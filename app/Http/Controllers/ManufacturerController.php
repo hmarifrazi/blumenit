@@ -2,8 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Manufacturer;
+
 use Illuminate\Http\Request;
+use App\Http\Traits\ResponseTrait;
+use App\Http\Requests\Manufacturer\CreateRequest;
+use App\Http\Requests\Manufacturer\UpdateRequest;
+
+
+use App\Models\Manufacturer;
+use Exception;
 
 class ManufacturerController extends Controller
 {
@@ -14,7 +21,8 @@ class ManufacturerController extends Controller
      */
     public function index()
     {
-        //
+        $manufacturers = Manufacturer::paginate(10);
+        return view('manufacturer.index', compact('manufacturers'));
     }
 
     /**
@@ -24,7 +32,7 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-        //
+        return view('manufacturer.create');
     }
 
     /**
@@ -35,7 +43,25 @@ class ManufacturerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $image = $request->file('image');
+            $imageName = '/public/images/' . time() . '.' . $image->extension();
+            $manufacturer = new Manufacturer;
+            $manufacturer->name = $request->name;
+            $manufacturer->email = $request->email;
+            $manufacturer->contact = $request->contact;
+            $manufacturer->address = $request->address;
+            $manufacturer->image = $imageName;
+            $manufacturer->created_by = ('user');
+            $manufacturer->updated_by = ('user');
+            if ($manufacturer->save()) {
+                $image->move(public_path('images'), $imageName);
+                return redirect(route('manufacturer.index'));
+            }
+        } catch (Exception $e) {
+            dd($e);
+            return redirect(route('manufacturer.create'));
+        }
     }
 
     /**
@@ -57,7 +83,7 @@ class ManufacturerController extends Controller
      */
     public function edit(Manufacturer $manufacturer)
     {
-        //
+      return view('manufacturer.edit', compact('manufacturer'));
     }
 
     /**
@@ -69,7 +95,30 @@ class ManufacturerController extends Controller
      */
     public function update(Request $request, Manufacturer $manufacturer)
     {
-        //
+       try{
+            $manufacturer->name=$request->name;
+            $manufacturer->contact=$request->contact;
+            $manufacturer->address=$request->address;
+            $manufacturer->email=$request->email;
+            $image=$request->file('image');
+            if($image){
+                $imageName = '/public/images/'.time().'.'.$image->extension();
+                if(file_exists(public_path("$manufacturer->image"))){
+                     unlink(public_path("$manufacturer->image"));
+               }
+               $manufacturer->image=$imageName;
+           }
+           if($manufacturer->save()){
+            if($image){
+                $image->move(public_path('images'),$imageName);
+            }
+            return redirect(route('manufacturer.index'));
+           }
+
+        }catch(Exception $e){
+            dd($e);
+            return redirect(route('manufacturer.edit'));
+        }
     }
 
     /**
