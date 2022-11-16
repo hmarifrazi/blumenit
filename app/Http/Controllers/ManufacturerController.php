@@ -45,7 +45,7 @@ class ManufacturerController extends Controller
     {
         try {
             $image = $request->file('image');
-            $imageName = '/source/public/images/' . time() . '.' . $image->extension();
+            $imageName = '/public/images/' . time() . '.' . $image->extension();
             $manufacturer = new Manufacturer;
             $manufacturer->name = $request->name;
             $manufacturer->email = $request->email;
@@ -56,11 +56,11 @@ class ManufacturerController extends Controller
             $manufacturer->updated_by = ('user');
             if ($manufacturer->save()) {
                 $image->move(public_path('images'), $imageName);
-                return redirect(route(('identity') . '.manufacturer.index'))->with($this->responseMessage(true, null, "You have successfully added a category."));
+                return redirect(route('manufacturer.index'));
             }
         } catch (Exception $e) {
             dd($e);
-            return redirect(route(('identity') . '.manufacturer.create'))->with($this->responseMessage(false, "error", "Please try again!"));
+            return redirect(route('manufacturer.create'));
         }
     }
 
@@ -83,7 +83,7 @@ class ManufacturerController extends Controller
      */
     public function edit(Manufacturer $manufacturer)
     {
-        //
+      return view('manufacturer.edit', compact('manufacturer'));
     }
 
     /**
@@ -95,7 +95,30 @@ class ManufacturerController extends Controller
      */
     public function update(Request $request, Manufacturer $manufacturer)
     {
-        //
+       try{
+            $manufacturer->name=$request->name;
+            $manufacturer->contact=$request->contact;
+            $manufacturer->address=$request->address;
+            $manufacturer->email=$request->email;
+            $image=$request->file('image');
+            if($image){
+                $imageName = '/public/images/'.time().'.'.$image->extension();
+                if(file_exists(public_path("$manufacturer->image"))){
+                     unlink(public_path("$manufacturer->image"));
+               }
+               $manufacturer->image=$imageName;
+           }
+           if($manufacturer->save()){
+            if($image){
+                $image->move(public_path('images'),$imageName);
+            }
+            return redirect(route('manufacturer.index'));
+           }
+
+        }catch(Exception $e){
+            dd($e);
+            return redirect(route('manufacturer.edit'));
+        }
     }
 
     /**

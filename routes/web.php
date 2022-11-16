@@ -22,3 +22,4 @@ Route::get('/', function () {
 
 Route::resource('category',CategoryController::class);
 Route::resource('manufacturer',ManufacturerController::class);
+

@@ -1,7 +1,9 @@
 @extends('layout.app')
 @section('content')
 
-<form class="col-lg-8 offset-3">
+<form action="{{route('manufacturer.store')}}"class="col-lg-8 offset-3" method='post'enctype="multipart/form-data">
+
+@csrf
     <div class="card">
         <div class="card-header"><strong>Add New Manufacturer</strong>
             

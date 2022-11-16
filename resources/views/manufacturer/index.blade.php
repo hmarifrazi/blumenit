@@ -21,17 +21,17 @@
 
         <tbody>
       
-            @forelse($manufacturers as $man)
+            @forelse($manufacturers as $manufacturer)
             <tr>
                 <th scope="row">{{++$loop->index }}</th>
-                <td>{{$man->name}}</td>
-                <td>{{$man->email}}</td>
-                <td>{{$man->contact}}</td>
-                <td>{{$man->address}}</td>
-                <td><img src="{{asset('public/uploads/manufacturer/'.$man->image)}}" width="60" height="60" alt=""></td>
+                <td>{{$manufacturer->name}}</td>
+                <td>{{$manufacturer->email}}</td>
+                <td>{{$manufacturer->contact}}</td>
+                <td>{{$manufacturer->address}}</td>
+                <td><img src="{{asset($manufacturer->image)}}" width="60" height="60" alt=""></td>
                  <td>
                                                
-                    <a href="{{route('manufacturer.edit',$man->id)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Edit</a>
+                    <a href="{{route('manufacturer.edit',$manufacturer)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Edit</a>
                     <!--<button type="button" class="btn btn-danger btn-rounded width-sm waves-effect waves-light">Delete</button>-->
                 </td>
                   @empty
