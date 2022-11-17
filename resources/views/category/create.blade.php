@@ -1,10 +1,21 @@
 @extends('layout.app')
 @section('content')
 
+
+
 <form action={{route('category.store')}} class="col-lg-8 offset-3" method='post'>
     @csrf
     <div class="card">
         <div class="card-header"><strong>Add New Category</strong>
+            
+
+            {{-- <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">{{Session::get('identity')}}</a></li>
+                    <li class="breadcrumb-item"><a href="{{route(Session::get('identity').'.category.index')}}">Category</a></li>
+                    <li class="breadcrumb-item active">Add New</li>
+                </ol>
+            </div> --}}
             
             
         <div class="card-body card-block">
@@ -80,8 +91,8 @@
                         <div class="row form-group">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="f_image" class=" form-control-label">Feature Image</label>
-                                    <input type="file" id="f_image" name="f_image"  class="form-control">
+                                    <label for="feature_image" class=" form-control-label">Feature Image</label>
+                                    <input type="file" id="feature_image" name="feature_image"  class="form-control">
                                 </div>
 
                             </div>
@@ -91,8 +102,8 @@
                     <div class="row form-group">
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="ban_image" class=" form-control-label">Left Side Banner</label>
-                                <input type="file" id="ban_image" name="ban_image"  class="form-control">
+                                <label for="lsb_image" class=" form-control-label">Left Side Banner</label>
+                                <input type="file" id="lsb_image" name="lsb_image"  class="form-control">
                             </div>
                         </div>
                     </div>
@@ -106,20 +117,20 @@
 
             <div class="form-group row">
                         <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image1"/>
+                            <input type="file" class="dropify" data-height="200" name="image[]"/>
                         </div><!-- end col -->
 
                         <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image1"/>
+                            <input type="file" class="dropify" data-height="200" name="image[]"/>
                        </div><!-- end col -->
                     </div>
             <div class="form-group row">
                     <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image1"/>
+                        <input type="file" class="dropify" data-height="200" name="image[]"/>
                     </div><!-- end col -->
 
                     <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image1"/>
+                        <input type="file" class="dropify" data-height="200" name="image[]"/>
                     </div><!-- end col -->
              </div>
 
