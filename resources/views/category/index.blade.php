@@ -29,13 +29,13 @@
                 <td>{{$cat->feature_cat}}</td>
                 <td>{{$cat->show_catpage}}</td>
                 <td>{{$cat->cat_page_order}}</td>
-                <td>{{$cat->cat_page_order}}</td>
+                
                 <td class="white-space-nowrap">
                     <a href="{{route('category.edit',$cat->id)}}">
-                        <i class="fas fa-edit"></i>
+                        <i class="btn btn-primary">Edit</i>
                     </a>
                     <a href="javascript:void()" onclick="$('#form{{$cat->id}}').submit()">
-                        <i class="fas fa-trash"></i>
+                        <i class="btn btn-danger">Delete</i>
                     </a>
                     <form id="form{{$cat->id}}" action="{{route('category.destroy',$cat->id)}}" method="post">
                         @csrf

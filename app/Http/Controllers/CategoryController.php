@@ -1,22 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Traits\ResponseTrait;
+
 use App\Models\category;
 use Illuminate\Http\Request;
-use Exception;
 use Session;
-use Image;
-use Illuminate\Support\Str;
-use App\Models\Categoryimage;
+
 
 class CategoryController extends Controller
 {
 
-    use ResponseTrait;
-    /**
     
     /**
+    
+
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -44,20 +41,46 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $r)
-    {
-        try{
+     {
+
+       
         $cat=new Category;
         $cat->name=$r->FullName;
         $cat->is_game=$r->is_game;
         $cat->feature_cat=$r->featured;
         $cat->show_catpage=$r->catpage;
         $cat->cat_page_order=$r->order;
+      
        
+        if($r->image){
+            $imageName = rand(111,999).time().'.'.$r->image->extension();
+            $r->image->move(public_path('uploads/category'), $imageName);
+            $cat->cat_icon=$imageName;
+        }
 
+        if($r->image){
+            $imageName = rand(111,999).time().'.'.$r->image->extension();
+            $r->image->move(public_path('uploads/category'), $imageName);
+            $cat->feature_image=$imageName;
+        }
+
+        if($r->image){
+            $imageName = rand(111,999).time().'.'.$r->image->extension();
+            $r->image->move(public_path('uploads/category'), $imageName);
+            $cat->lsb_image=$imageName;
+        }
+
+        if($r->image){
+            $imageName = rand(111,999).time().'.'.$r->image->extension();
+            $r->image->move(public_path('uploads/category'), $imageName);
+            $cat->image[]=$imageName;
+        }
+        $cat->save();
+        return redirect(route('category.index'));
 
 
 }
-    }
+    
 
     /**
      * Display the specified resource.
@@ -78,7 +101,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        //
+        return view('category.edit',compact('category'));
     }
 
     /**
@@ -88,9 +111,42 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, category $category)
+    public function update(Request $r, category $cat)
     {
-        //
+        
+        $cat=new Category;
+        $cat->name=$r->FullName;
+        $cat->is_game=$r->is_game;
+        $cat->feature_cat=$r->featured;
+        $cat->show_catpage=$r->catpage;
+        $cat->cat_page_order=$r->order;
+      
+       
+        if($r->image){
+            $imageName = rand(111,999).time().'.'.$r->image->extension();
+            $r->image->move(public_path('uploads/category'), $imageName);
+            $cat->cat_icon=$imageName;
+        }
+
+        if($r->image){
+            $imageName = rand(111,999).time().'.'.$r->image->extension();
+            $r->image->move(public_path('uploads/category'), $imageName);
+            $cat->feature_image=$imageName;
+        }
+
+        if($r->image){
+            $imageName = rand(111,999).time().'.'.$r->image->extension();
+            $r->image->move(public_path('uploads/category'), $imageName);
+            $cat->lsb_image=$imageName;
+        }
+
+        if($r->image){
+            $imageName = rand(111,999).time().'.'.$r->image->extension();
+            $r->image->move(public_path('uploads/category'), $imageName);
+            $cat->image[]=$imageName;
+        }
+        $cat->save();
+        return redirect(route('category.index'));
     }
 
     /**

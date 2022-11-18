@@ -25,7 +25,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h4 class="header-title mb-3">Add Product Step by Step</h4>
-                        <form action=method="post" enctype="multipart/form-data" action="{{route('Product.store')}}" method="post" enctype="multipart/form-data">
+                        <form method="post" enctype="multipart/form-data" action="{{route('Product.store')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div id="progressbarwizard">
                                 <ul class="nav nav-pills bg-light nav-justified form-wizard-header mb-1">

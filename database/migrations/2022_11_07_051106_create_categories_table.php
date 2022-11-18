@@ -24,8 +24,8 @@ return new class extends Migration
             $table->integer('feature_cat')->nullable()->default(0);
             $table->integer('show_catpage')->default(0);
             $table->integer('cat_page_order')->nullable()->default(0);
-            $table->integer('created_by');
-            $table->integer('updated_by');
+            // $table->integer('created_by');
+            // $table->integer('updated_by');
             $table->softDeletes();
 
             $table->timestamps();

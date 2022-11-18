@@ -3,7 +3,7 @@
 
 
 
-<form action={{route('category.store')}} class="col-lg-8 offset-3" method='post'>
+<form action="{{route('category.store')}}" class="col-lg-8 offset-3" method='post'>
     @csrf
     <div class="card">
         <div class="card-header"><strong>Add New Category</strong>
@@ -86,7 +86,7 @@
                             <input type="file" class="dropify" data-height="100" name="cat_icon"/>
                             <span>SVG Format only</span>
                         </div>
-                    </div>
+                    </div> 
 
                         <div class="row form-group">
                             <div class="col-12">
@@ -114,24 +114,29 @@
                             <h4 class="header-title mt-0 mb-3">Upload Category Slider Image</h4>
                         </div>
                     </div>
-
+<!-- 
             <div class="form-group row">
                         <div class="col-sm-6">
                             <input type="file" class="dropify" data-height="200" name="image[]"/>
-                        </div><!-- end col -->
+                        </div> -->
+                        <!-- end col -->
 
-                        <div class="col-sm-6">
+                        <!-- <div class="col-sm-6">
                             <input type="file" class="dropify" data-height="200" name="image[]"/>
-                       </div><!-- end col -->
-                    </div>
-            <div class="form-group row">
+                       </div> -->
+                       <!-- end col -->
+                     <!-- </div> -->
+            <!-- <div class="form-group row">
                     <div class="col-sm-6">
                         <input type="file" class="dropify" data-height="200" name="image[]"/>
-                    </div><!-- end col -->
+                    </div> -->
+                    
+                    <!-- end col -->
 
-                    <div class="col-sm-6">
+                     <!-- <div class="col-sm-6">
                         <input type="file" class="dropify" data-height="200" name="image[]"/>
-                    </div><!-- end col -->
+                    </div> -->
+                    <!-- end col -->
              </div>
 
 
