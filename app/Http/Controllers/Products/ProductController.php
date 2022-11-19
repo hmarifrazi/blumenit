@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Models\Product;
-use Exception;
+namespace App\Http\Controllers\Products;
+use App\Http\Controllers\Controller;
+use App\Models\Product\product;
 use Illuminate\Http\Request;
+use image;
 
 class ProductController extends Controller
 {
@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product=Product::pginate(10);
+        $product=Product::all(10);
         return view('products.index',compact('product'));
     }
 

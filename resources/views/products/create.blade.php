@@ -1,153 +1,93 @@
 @extends('layout.app')
+
 @section('content')
-
-<form action={{route('create.store')}} class="col-lg-8 offset-3" method='post'>
-    @csrf
-    <div class="card">
-        <div class="card-header"><strong>Add New Products</strong>
-            
-            
-        <div class="card-body card-block">
-            <div class="form-group">
-                <label for="productname" class=" form-control-label">Name</label>
-                <input type="text" id="FullName" name="product_name" placeholder="Product name" class="form-control">
-                @if($errors->has('product_name'))
-                    <small class="d-block text-danger">
-                        {{$errors->first('product_name')}}
-                    </small>
-                @endif
-            </div>
-            <div class="form-group">
-                <label for="sku" class=" form-control-label">SKU</label>
-                <input type="text" id="sku" name="sku" placeholder="category name" class="form-control">
-                @if($errors->has('sku'))
-                    <small class="d-block text-danger">
-                        {{$errors->first('sku')}}
-                    </small>
-                @endif
-            </div>
-            <div class="row form-group">
-                <div class="col-12">
-                    <div class="form-group">
-                        <label for="Product_image" class=" form-control-label">Product Image</label>
-                        <input type="file" id="Product_image" name="Product_image"  class="form-control">
-                        @if($errors->has('sku'))
-                            <small class="d-block text-danger">
-                                {{$errors->first('')}}
-                            </small>
-                        @endif
-                    </div>
-                </div>
-            </div>
-
-           
-
-
-            <div class="form-group row mb-3">
-                <label class="col-md-4 col-form-label" for="is_game">For Games? </label>
-                <div class="col-md-6">
-                    <div class="radio radio-info radio-info form-check-inline ">
-                        <input type="radio" id="is_game" value="1" name="is_game">
-                        <label for="is_game">YES</label>
-                    </div>
-                    <div class="radio radio-info form-check-inline">
-                        <input type="radio" id="is_game1" value="0" name="is_game" checked>
-                        <label for="is_game1">NO</label>
-                    </div>
-                </div>
-            </div>
-
-
-           
-
-
-            <div class="form-group row mb-3">
-                <label class="col-md-4 col-form-label" for="featured">Featured? </label>
-                <div class="col-md-6">
-                    <div class="radio radio-info radio-info form-check-inline ">
-                        <input type="radio" id="featured" value="1" name="featured">
-                        <label for="featured">YES</label>
-                    </div>
-                    <div class="radio radio-info form-check-inline">
-                        <input type="radio" id="featured" value="0" name="featured" checked>
-                        <label for="featured">NO</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group row mb-3">
-                <label class="col-md-4 col-form-label" for="catpage">Show Category Page? </label>
-                <div class="col-md-6">
-                    <div class="radio radio-info radio-info form-check-inline ">
-                        <input type="radio" id="catpage" value="1" name="catpage">
-                        <label for="catpage">YES</label>
-                    </div>
-                    <div class="radio radio-info form-check-inline">
-                        <input type="radio" id="catpage" value="0" name="catpage" checked>
-                        <label for="catpage">NO</label>
-                    </div>
-                </div>
-            </div>
-
-                
-
-                    <div class="form-group">
-                        <label for="order" class=" form-control-label">Showing Order In Category Page</label>
-                        <input type="text" name="order" id="order" placeholder="000" class="form-control">
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Category Icon</label>
-                        <div class="col-sm-9">
-                            <input type="file" class="dropify" data-height="100" name="cat_icon"/>
-                            <span>SVG Format only</span>
-                        </div>
-                    </div>
-
-                        
-
-
-                    <div class="row form-group">
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="ban_image" class=" form-control-label">Left Side Banner</label>
-                                <input type="file" id="ban_image" name="ban_image"  class="form-control">
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="form-group row">
-                        <div class="col-12">
-                            <h4 class="header-title mt-0 mb-3">Upload Category Slider Image</h4>
-                        </div>
-                    </div>
-
-            <div class="form-group row">
-                        <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image1"/>
-                        </div><!-- end col -->
-
-                        <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image2"/>
-                       </div><!-- end col -->
-                    </div>
-            <div class="form-group row">
-                    <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image3"/>
-                    </div><!-- end col -->
-
-                    <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image4"/>
-                    </div><!-- end col -->
-             </div>
-
-
-
-              <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+ 
+<div class="container">
+    <form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="userName1">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="sku">Sku</label>
+            <input type="text" class="form-control" id="sku" name="sku" placeholder="Sku">
         </div>
     </div>
-</form>
- @endsection
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="userName1">Model No</label>
+            <input type="text" class="form-control" id="model_no" name="model_no" placeholder="Model No">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="confirm1">Order Note</label>
+            <input type="text" class="form-control" name="product_title"  name="sku" placeholder="Sku">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            <label for="userName1" >Manufacturer</label>
+            <select name="manufacturer" class="form-control">
+                @foreach ($manufacturer as $item)
+                <option value="{{$item-id}}">{{$item->name}}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Category</label>
+                <select name="category" id="cat" class="form-control">
+                <option value="">--Select Category--</option>
+                    @foreach ($category as $item)
+                        <option value="{{$item->id}}">{{$item->name}}</option>
+                    @endforeach
+                </select>
+        </div>
+        <div class="form-group col-md-4">
+            <label for=""confirm1""> Sub Category</label>
+                <select name="subcategory" id="subcat" class="form-control">
+                <option value="" >--Select Category--</option>
+                        <option value="">--Select Category--</option>
+                </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sku">Sku</label>
+        <input type="text" class="form-control" id="sku" name="sku" placeholder="Sku">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-4">
+        <label for="inputState">State</label>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>...</option>
+        </select>
+        </div>
+        <div class="form-group col-md-2">
+        <label for="inputZip">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+            Check me out
+        </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+</div>
+
+
+@endsection
+        
+

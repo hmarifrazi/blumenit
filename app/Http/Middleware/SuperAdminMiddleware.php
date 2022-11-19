@@ -26,7 +26,7 @@ class SuperAdminMiddleware
             $user=User::find(Session::get('userId'));
             if(!$user){
                 return redirect()->route('logOut');
-            }else if(Session::get('identity') != 'admin'){
+            }else if(Session::get('identity') != 'superadmin'){
                 return redirect(route(Session::get('identity').'.dashboard'))->with($this->resMessageHtml(false,'error','Access Denied'));
             }else{
                 return $next($request);
