@@ -42,7 +42,7 @@ class ProductController extends Controller
         $product->sku=$r->sku;
         if($r->Product_image){
             $imageName = rand(111,999).time().'.'.$r->image->extension();  
-            $r->image->move(public_path('uploads/Products'), $imageName);
+            $r->image->move(public_path('uploads'), $imageName);
             $product->Product_image=$imageName;
         }
         $product->price=$r->price;

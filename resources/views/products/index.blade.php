@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-body">
-    <!-- <a class="btn btn-sm btn-primary float-right m-3" href="{{ route('products.create') }}">Add New</a> -->
+    <a class="btn btn-sm btn-primary float-right m-3" href="{{ route('products.create') }}">Add New</a>
     <table class="table">
         <thead>
             <tr>
@@ -50,4 +50,9 @@
     </table>
 </div>
 
+
+
+
+
 @endsection
+
