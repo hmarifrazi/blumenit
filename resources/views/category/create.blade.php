@@ -3,7 +3,7 @@
 
 
 
-<form action="{{route('category.store')}}" class="col-lg-8 offset-3" method='post'>
+<form action="{{route('category.store')}}" class="col-lg-8 offset-3" method='post' enctype="multipart/form-data">
     @csrf
     <div class="card">
         <div class="card-header"><strong>Add New Category</strong>

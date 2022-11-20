@@ -111,41 +111,39 @@ class CategoryController extends Controller
      * @param  \App\Models\category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $r, category $cat)
+    public function update(Request $r, category $category)
     {
-        
-        $cat=new Category;
-        $cat->name=$r->FullName;
-        $cat->is_game=$r->is_game;
-        $cat->feature_cat=$r->featured;
-        $cat->show_catpage=$r->catpage;
-        $cat->cat_page_order=$r->order;
+        $category->name=$r->FullName;
+        $category->is_game=$r->is_game;
+        $category->feature_cat=$r->featured;
+        $category->show_catpage=$r->catpage;
+        $category->cat_page_order=$r->order;
       
        
         if($r->image){
             $imageName = rand(111,999).time().'.'.$r->image->extension();
             $r->image->move(public_path('uploads/category'), $imageName);
-            $cat->cat_icon=$imageName;
+            $category->cat_icon=$imageName;
         }
 
         if($r->image){
             $imageName = rand(111,999).time().'.'.$r->image->extension();
             $r->image->move(public_path('uploads/category'), $imageName);
-            $cat->feature_image=$imageName;
+            $category->feature_image=$imageName;
         }
 
         if($r->image){
             $imageName = rand(111,999).time().'.'.$r->image->extension();
             $r->image->move(public_path('uploads/category'), $imageName);
-            $cat->lsb_image=$imageName;
+            $category->lsb_image=$imageName;
         }
 
         if($r->image){
             $imageName = rand(111,999).time().'.'.$r->image->extension();
             $r->image->move(public_path('uploads/category'), $imageName);
-            $cat->image[]=$imageName;
+            $category->image[]=$imageName;
         }
-        $cat->save();
+        $category->save();
         return redirect(route('category.index'));
     }
 
