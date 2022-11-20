@@ -55,8 +55,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Category</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('category.create')}}">New category</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('category.index')}}">List</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('category.index')}}">Category</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('subcategory.index')}}">Sub Category</a></li>
                          
                         </ul>
                     </li>
@@ -64,19 +64,40 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Manufacturer</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="ui-buttons.html">New category</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('manufacturer.index')}}">List</a></li>
-                           
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('manufacturer.create')}}">New manufacturer</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('manufacturer.index')}}">List</a></li> 
                         </ul>
                     </li>
                     
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>products</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Product</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="{{route('products.index')}}">Product List</a></li>
                             <li><i class="fa fa-table"></i><a href="{{route('products.create')}}">Add products</a></li>
                         </ul>
                     </li>
+
+
+                <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Order</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="">Order List</a></li>
+                            <li><i class="fa fa-table"></i><a href="">Show Order</a></li>
+                        </ul>
+            </li>
+
+            <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Customer</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-table"></i><a href="">Add New</a></li>
+                            <li><i class="fa fa-table"></i><a href="">Add customer</a></li>
+                        </ul>
+            </li>
+
+
+
+
+
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Forms</a>
                         <ul class="sub-menu children dropdown-menu">
