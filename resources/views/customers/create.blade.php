@@ -107,7 +107,36 @@
                                     <select name="country_id" id="country_id" class="form-control" onchange="set_state(this.value)">
                                 <option value="">Select Country</option>
                                     @forelse($country as $c)
-                                         <option value="{{$c->id}}">{{$c->country}}</option>                       
+                                         <option value="{{$c->id}}">{{$c->country}}</option>    
+                                         @endforelse                   
+                                </select>
+                                </div>
+
+                            </div>
+                    </div>
+                 <div class="row form-group">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="f_image" class="form-control-label">State</label>
+                                    <select name="state_id" id="state_id" class="form-control" onchange="set_city(this.value)">
+                                <option value="">Select State</option>
+                                    @forelse($state as $c)
+                                         <option class="state st{{$c->country_id}}" value="{{$c->id}}">{{$c->state}}</option>  
+                                         @endforelse                     
+                                </select>
+                                </div>
+
+                            </div>
+                    </div>
+                 <div class="row form-group">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="f_image" class="form-control-label">City</label>
+                                    <select name="city_id" id="city_id" class="form-control">
+                                <option value="">Select City</option>
+                                    @forelse($city as $c)
+                                         <option class="city ct{{$c->state_id}}" value="{{$c->id}}">{{$c->city}}</option>  
+                                         @endforelse                     
                                 </select>
                                 </div>
 
