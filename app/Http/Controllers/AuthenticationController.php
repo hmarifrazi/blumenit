@@ -64,4 +64,9 @@ class AuthenticationController extends Controller
                 ]
             );
     }
+
+    public function singOut(){
+        request()->session()->flush();
+        return redirect('login')->with($this->resMessageHtml(false,'error','Successfully Logout!'));
+    }
 }
