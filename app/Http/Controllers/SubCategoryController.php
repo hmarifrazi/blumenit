@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use Exception;
 
 class SubCategoryController extends Controller
 {
@@ -14,7 +15,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+       $subcategory=SubCategory::paginate(10);
+       return view('subcategory.index',compact('subcategory'));
+
     }
 
     /**
@@ -24,7 +27,8 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $subcategory=SubCategory::paginate(10);
+        return view('subcategory.create',compact('subcategory'));
     }
 
     /**
@@ -35,7 +39,25 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try{
+       $subcat=new Subcategory;
+       $subcat->FullName=$request->name;
+       $subcat->category_id=$request->category;
+       
+       if($request->hasFile('cat_icon')){
+            $imageName = rand(111,999).time().'.'.$request->image->extension();
+            $request->image->move(public_path('uploads/subcategory'),$imageName);
+            $request->cat_icon=$imageName;
+       }
+
+       $subcat->status=1;
+       if($subcat->save()){
+        return redirect('subcategory')->with('success','Data saved');
+       }
+    }
+        catch(Exception $e){
+            return back()->withInput();
+        }
     }
 
     /**

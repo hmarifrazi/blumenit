@@ -55,8 +55,8 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Category</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('category.create')}}">New category</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('category.index')}}">List</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('category.index')}}">Category</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('subcategory.index')}}">Sub Category</a></li>
                          
                         </ul>
                     </li>

@@ -1,9 +1,9 @@
 @extends('layout.app')
 
-@section('content')
+@section('content') 
  
 <div class="container">
-    <form class="form" method="post" enctype="multipart/form-data" action="{{route('product.store')}}">
+    <form class="form" method="post" enctype="multipart/form-data" action="{{route('products.store')}}">
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="userName1">Name</label>
@@ -21,25 +21,21 @@
         </div>
         <div class="form-group col-md-6">
             <label for="confirm1">Order Note</label>
-            <input type="text" class="form-control" name="product_title"  name="sku" placeholder="Sku">
+            <input type="text" class="form-control" name="product_title"  name="sku" placeholder="Order note">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="userName1" >Manufacturer</label>
             <select name="manufacturer" class="form-control">
-                @foreach ($manufacturer as $item)
-                <option value="{{$item-id}}">{{$item->name}}</option>
-                @endforeach
+               
             </select>
         </div>
         <div class="form-group col-md-4">
             <label>Category</label>
                 <select name="category" id="cat" class="form-control">
                 <option value="">--Select Category--</option>
-                    @foreach ($category as $item)
-                        <option value="{{$item->id}}">{{$item->name}}</option>
-                    @endforeach
+                  
                 </select>
         </div>
         <div class="form-group col-md-4">
@@ -57,7 +53,7 @@
             </div>
         <div class="form-group col-md-3">
             <label for="name1">Short Description</label>
-            <textarea class="summernote" name="short_description" rows="13" id="example-textarea">Write your address</textarea>
+            <textarea class="summernote" name="short_description" rows="13" id="example-textarea"></textarea>
         </div>
         <div class="form-group col-md-3">
             <label for="name1">Long Description</label>
