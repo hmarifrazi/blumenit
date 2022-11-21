@@ -51,35 +51,69 @@
             <div class="form-group">
                 <label for="FullName" class=" form-control-label">Mobile Number</label>
 
-                    <select name="contact_ext" id="" class="form-control @if($errors->has('contact_ext')) parsley-error @endif"></select>
+                    <select name="contact_ext" id="" class="form-control @if($errors->has('contact_ext')) parsley-error @endif">
 
+                    @forelse($context as $cext)
+                    <option value="{{$cext->ext}}">{{$cext->ext}}</option>
+                    @endforelse
+                    </select>
+                    @if($errors->has('contact_ext'))
+                    <ul class="parsley-errors-list filled">
+                        <li>{{$errors->first('contact_ext')}}</li>
+                    </ul>
+                    @endif
 
-
-                <input type="text" id="contact" name="contact" placeholder="Manufacturer Email" class="form-control class="form-control @if($errors->has('contact')) parsley-error @endif">
+               
 
                 @if ($errors->has('contact'))
                     <ul class="parsley-errors-list filled">
                           <li>{{$errors->first('contact')}}</li>
                     </ul>
 
-                @endif  
+                @endif
+                
+                 <input type="text" id="contact" name="contact" placeholder="XXXXXXXXX" class="form-control @if($errors->has('contact')) parsley-error @endif">
+                 @if($errors->has('contact'))
+                 <ul>
+                     <li>{{$errors->first('contact')}}</li>
+                 </ul>
+                 @endif
             </div>
 
 
             <div class="form-group">
                 <label for="Address" class=" form-control-label">Address</label>
-                    <textarea class="form-control @if($errors->has('address')) parsley-error @endif" name="address" rows="5" id="example-textarea">Write your address</textarea>
+                    <textarea class="form-control @if($errors->has('address')) parsley-error @endif" name="address" rows="5" id="example-textarea"></textarea>
+                    @if($errors->has('address'))
+                    <ul class="parsley-errors-list filled">
+                        <li>{{$errors->first('address')}}</li>
+                    </ul>
+                    @endif
             </div>
 
                  <div class="row form-group">
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label for="f_image" class=" form-control-label">Upload Image</label>
-                                    <input type="file" id="image" name="image"  class="form-control" data-height="300" class="dropify">
+                                    <label for="f_image" class=" form-control-label">Postal Code/ZIP</label>
+                                    <input type="text" id="image" name="zip"  class="form-control" placeholder="Zip" >
                                 </div>
 
                             </div>
                     </div>
+                 <div class="row form-group">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="f_image" class="form-control-label">Country</label>
+                                    <select name="country_id" id="country_id" class="form-control" onchange="set_state(this.value)">
+                                <option value="">Select Country</option>
+                                    @forelse($country as $c)
+                                         <option value="{{$c->id}}">{{$c->country}}</option>                       
+                                </select>
+                                </div>
+
+                            </div>
+                    </div>
+
                 <div class="form-group mb-0">
                             <div class="col-2 mr-3">
                                 <button type="submit" class="btn btn-info waves-effect waves-light">Save</button>

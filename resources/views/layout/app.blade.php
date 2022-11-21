@@ -90,7 +90,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Customer</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="">Add New</a></li>
-                            <li><i class="fa fa-table"></i><a href="">Add customer</a></li>
+                            <li><i class="fa fa-table"></i><a href="">Customer list</a></li>
                         </ul>
             </li>
 
