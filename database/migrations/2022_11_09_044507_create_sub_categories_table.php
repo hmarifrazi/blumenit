@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('cat_icon')->nullable();
             $table->string('name');
             $table->UnsignedBigInteger('category_id');
-            $table->integer('created_by');
-            $table->integer('updated_by');
+            // $table->integer('created_by');
+            // $table->integer('updated_by');
             $table->softDeletes();
             $table->timestamps();
         });

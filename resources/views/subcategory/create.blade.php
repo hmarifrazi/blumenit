@@ -22,20 +22,22 @@
 
 
             <div class="form-group row mb-3">
-                <label class="col-md-4 col-form-label" for="category" id="category">Category Name </label>
+                <label class="col-md-4 col-form-label" for="category" >Category Name </label>
                 <div class="col-md-6">
                    <select class="form-control" name="category" id="category">
                         <option value="">Select Category</option>
-                        @forelse($subcategory as $subcat)
-                        <option value="{{$subcat->id}}" {{ old('category')==$subcat->id?"selected":""}}>{{
-                        $subcat->category}}</option>
+                        @forelse($subcategory as $cat)
+
+                        print_r($cat);
+                        <option value="{{$cat->id}}" {{ old('category')==$cat->id?"selected":""}}>{{
+                        $cat->category}}</option>
                     @empty
                             <option value="">No Category found</option>
                     @endforelse
 
                    </select>
 
-                   @if(@errors->has('Category'))
+                   @if($errors->has('Category'))
                         <span class="text-danger"> {{ $errors->first('category')}}</span>
                     @endif
                    
@@ -49,8 +51,8 @@
                         <div class="col-sm-9">
                             <input type="file" class="dropify" id="cat_icon" data-height="100" name="cat_icon"/>
 
-                            @if($errors->has(cat_icon))
-                                <span class="text-danger">{{$errors->first('image') }} </span>
+                            @if($errors->has('cat_icon'))
+                                <span class="text-danger">{{$errors->first('cat_icon') }} </span>
                             @endif
                         </div>
                     </div> 
