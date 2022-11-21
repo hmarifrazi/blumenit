@@ -50,6 +50,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        dd();
     try{
             $product = new Product;
             $product->name=$request->name;
@@ -58,7 +59,7 @@ class ProductController extends Controller
             $product->category_id =$request->category;
             $product->subcategory_id=$request->subcategory;            
             $product->product_title=$request->product_title;
-            $product->feature_image=$imageName;
+            $product->feature_image=$request->imageName;
             $product->short_description=$request->short_description;
             $product->long_description=$request->long_description;
             $product->model_no =$request->model_no;
@@ -81,8 +82,14 @@ class ProductController extends Controller
             if($request->hasFile('image')){
                 $imageName = rand(111,999).time().'.'.$request->image->extension();  
                 $request->image->move(public_path('uploads/product'), $imageName);
-                $p->image=$imageName;
+                $product->feature_image=$imageName;
             }
+            $product->status=1;
+            if($product->save()){ 
+
+                return redirect('products')->with('success','Data saved');
+            }
+
     }
     catch(Exception $e){
         //dd($e);

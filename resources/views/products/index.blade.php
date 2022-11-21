@@ -28,7 +28,7 @@
                 <td><img width="50px" src="{{asset('uploads/'.$p->image)}}" alt="">{{$p->image}}</td>
                 <td class="white-space-nowrap">
                     <a href="{{route('products.edit',$p->id)}}">
-                        <i class="bi bi-pencil-square"></i>
+                        <i class="btn btn-primary">Edit</i>
                     </a>
                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                         <i class="bi bi-trash"></i>

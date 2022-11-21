@@ -4,6 +4,7 @@
  
 <div class="container">
     <form class="form" method="post" enctype="multipart/form-data" action="{{route('products.store')}}">
+        @csrf
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="userName1">Name</label>
@@ -49,7 +50,7 @@
     <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="name1">Feature Image</label>
-                <input type="file" class="form-control" data-height="300" name="feature_image" >
+                <input type="file" class="form-control" data-height="300" name="imageName" >
             </div>
         <div class="form-group col-md-3">
             <label for="name1">Short Description</label>
