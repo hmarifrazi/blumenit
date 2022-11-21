@@ -82,7 +82,15 @@ class ProductController extends Controller
             if($request->hasFile('image')){
                 $imageName = rand(111,999).time().'.'.$request->image->extension();  
                 $request->image->move(public_path('uploads/product'), $imageName);
+<<<<<<< HEAD
                 $product->feature_image=$imageName;
+=======
+                $Product->feature_image=$imageName;
+            }
+            dd('product');
+            if($product->save()){
+                return redirect('products')->with('success','Data saved');
+>>>>>>> e44aa16c0f4117176fba17ba2f76cd4a63bf69b6
             }
             $product->status=1;
             if($product->save()){ 
