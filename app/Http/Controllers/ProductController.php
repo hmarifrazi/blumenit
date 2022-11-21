@@ -37,8 +37,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $data=array('manufacturer'=>Manufacturer::all(),'category'=>Category::all(),'subcategory'=>Subcategory::all());
-        return view('products.create');
+        $products =product::all();
+        return view('products.create',compact('products'));
+        
     }
 
     /**
@@ -49,9 +50,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-            $image = $request->file('feature_image');
-            $imageName = '/public/images/'.time().'.'.$image->extension();
+    try{
             $product = new Product;
             $product->name=$request->name;
             $product->sku=$request->sku;
@@ -79,39 +78,17 @@ class ProductController extends Controller
             $product->best_seller=$request->best_seller;
             $product->offer=$request->offer;
             $product->popular=$request->popular;
-            $product->created_by = Session::get('user');
-            $product->updated_by = Session::get('user');
-            if($product->save()){
-                $image->move(public_path('images'),$imageName);
-                if($request->image){
-                    foreach($request->image as $key=>$value){
-                        $productimage=new Productimage;
-    
-                        $image = $request->file('image')[$key];
-                        $imageName = Str::random(8).time().'.'.$image->extension();
-           
-                        $destinationPath = public_path('/images/thumbnails');
-                        $img = Image::make($image->path());
-                        $img->resize(100, 100)->save($destinationPath.'/'.$imageName);
-                        //$img->resize(643, 640, function ($constraint) {$constraint->aspectRatio();})->save($destinationPath.'/'.$imageName);
-                
-                        $destinationPath = public_path('/images/product');
-                        $img->resize(643, 640)->save($destinationPath.'/'.$imageName);
-                        $image->move($destinationPath, $imageName);
-                        
-                        $productimage->product_id=$product->id;
-                        $productimage->image=$imageName;
-                        
-                        $productimage->save();
-                    }
-                }
-                
-                return redirect('products')->with($this->responseMessage(true, null, "You have successfully added a product."));
+            if($request->hasFile('image')){
+                $imageName = rand(111,999).time().'.'.$request->image->extension();  
+                $request->image->move(public_path('uploads/product'), $imageName);
+                $p->image=$imageName;
             }
-         }catch(Exception $e){
-            return redirect('products')->with($this->responseMessage(false, "error", "Please try again!"));
-        }
     }
+    catch(Exception $e){
+        //dd($e);
+        return back();
+    }
+}
 
     /**
      * Display the specified resource.
