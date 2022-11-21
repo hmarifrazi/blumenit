@@ -4,6 +4,7 @@
  
 <div class="container">
     <form class="form" method="post" enctype="multipart/form-data" action="{{route('products.store')}}">
+        @csrf
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="userName1">Name</label>
