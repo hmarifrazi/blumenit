@@ -50,6 +50,7 @@ class CategoryController extends Controller
         $cat->feature_cat=$r->featured;
         $cat->show_catpage=$r->catpage;
         $cat->cat_page_order=$r->order;
+        
       
        
         if($r->image){

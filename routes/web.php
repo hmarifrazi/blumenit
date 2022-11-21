@@ -4,14 +4,11 @@ use App\Models\Role;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController as auth;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ManufacturerController;
 
-
-use App\Http\Controllers\Frontend;
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,4 +73,5 @@ Route::resource('category',CategoryController::class);
 Route::resource('subcategory',SubCategoryController::class);
 Route::resource('products',ProductController::class);
 Route::resource('manufacturer',ManufacturerController::class);
+Route::resource('admincustomer',CustomerController::class);
 
