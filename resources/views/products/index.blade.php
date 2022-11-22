@@ -33,7 +33,7 @@
                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                         <i class="bi bi-trash"></i>
                     </a>
-                    <form id="form{{$p->id}}" action="{{route('products.destroy',$p->id)}}" method="post">
+                    <form class="btn btn-primary" id="form{{$p->id}}" action="{{route('products.destroy',$p->id)}}" method="post"> delete
                         @csrf
                         @method('delete')
                         
