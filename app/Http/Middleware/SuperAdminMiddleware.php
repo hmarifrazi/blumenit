@@ -11,6 +11,7 @@ use App\Http\Traits\ResponseTrait; // custome
 class SuperAdminMiddleware
 {
     use ResponseTrait;
+
     /**
      * Handle an incoming request.
      *

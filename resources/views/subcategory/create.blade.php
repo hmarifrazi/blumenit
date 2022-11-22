@@ -26,11 +26,10 @@
                 <div class="col-md-6">
                    <select class="form-control" name="category" id="category">
                         <option value="">Select Category</option>
-                        @forelse($subcategory as $cat)
+                        @forelse($category as $cat)
 
-                        print_r($cat);
                         <option value="{{$cat->id}}" {{ old('category')==$cat->id?"selected":""}}>{{
-                        $cat->category}}</option>
+                        $cat->name}}</option>
                     @empty
                             <option value="">No Category found</option>
                     @endforelse

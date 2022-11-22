@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('cat_icon')->nullable();
             $table->string('name');
-            $table->UnsignedBigInteger('category_id');
+            $table->UnsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             // $table->integer('created_by');
             // $table->integer('updated_by');
             $table->softDeletes();

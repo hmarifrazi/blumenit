@@ -53,22 +53,22 @@ class CategoryController extends Controller
         
       
        
-        if($r->image){
-            $imageName = rand(111,999).time().'.'.$r->image->extension();
-            $r->image->move(public_path('uploads/category'), $imageName);
+        if($r->cat_icon){
+            $imageName = rand(111,999).time().'.'.$r->cat_icon->extension();
+            $r->cat_icon->move(public_path('uploads/category'), $imageName);
             $cat->cat_icon=$imageName;
         }
 
-        if($r->image){
-            $imageName = rand(111,999).time().'.'.$r->image->extension();
-            $r->image->move(public_path('uploads/category'), $imageName);
+        if($r->feature_image){
+            $imageName = rand(111,999).time().'.'.$r->feature_image->extension();
+            $r->feature_image->move(public_path('uploads/category'), $imageName);
             $cat->feature_image=$imageName;
         }
 
-        if($r->image){
-            $imageName = rand(111,999).time().'.'.$r->image->extension();
-            $r->image->move(public_path('uploads/category'), $imageName);
-            $cat->lsb_image=$imageName;
+        if($r->lsb_image){
+            $imageName = rand(111,999).time().'.'.$r->lsb_image->extension();
+            $r->lsb_image->move(public_path('uploads/category'), $imageName);
+            $cat->Isb_image=$imageName;
         }
 
         if($r->image){
