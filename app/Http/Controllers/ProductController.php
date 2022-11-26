@@ -37,11 +37,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products =product::all();
-        return view('products.create',compact('products'));
-        
+        $categoy = Category::get();
+        $subcategoy = Subcategory::get();
+        $manufacturer = Manufacturer::get();
+        return view('products.create',compact('manufacturer','categoy','subcategoy'));
+       
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -55,7 +57,10 @@ class ProductController extends Controller
         $data['sku'] = $request->sku;
         $data['model_no'] = $request->model_no;
         $data['product_title'] = $request->product_title;
-       
+        $data['manufacturer_id'] = $request->manufacturer_id;
+        $data['category_id'] = $request->category_id;
+        $data['subcategory_id'] = $request->subcategory_id;
+        $data['feature_image'] = $request->imageName;
         $data['short_description'] = $request->short_description;
         $data['long_description'] = $request->long_description;
         $data['price'] = $request->price;
@@ -63,7 +68,13 @@ class ProductController extends Controller
         $data['vat_status'] = $request->vat_status;
         $data['warranty'] = $request->warranty;
         $data['product_condition'] = $request->product_condition;
+        $data['qty'] = $request->qty;
         $data['max_qty'] = $request->max_qty;
+        if($request->hasFile('image')){
+            $imageName = rand(111,999).time().'.'.$request->image->extension();  
+            $request->image->move(public_path('uploads/product'), $imageName);
+            $data['feature_image']=$imageName;
+        }
         Product::create($data);
         return redirect('products');
     // try{

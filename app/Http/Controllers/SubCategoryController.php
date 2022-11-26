@@ -28,8 +28,10 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        $subcategory=SubCategory::paginate(10);
-        return view('subcategory.create',compact('subcategory'));
+        $category=Category::get(['id','name']);
+        // dd($subcategory);
+    
+        return view('subcategory.create',compact('category'));
     }
 
     /**
@@ -41,33 +43,26 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         try{
-            $image= $request->file('image');
-            $imageName = '/public/images/'.time().'.'.$request->cat_icon->extension();
+           
        $subcat=new Subcategory;
        $subcat->name=$request->FullName;
        $subcat->category_id=$request->category;
-    //    $subcat->cat_icon=$request->cat_icon;
-       $subcat->cat_icon = $imageName;
-
-            if($subcat->save()) {
-                $image->move(public_path('subcategory/images'),$imageName);
-                return redirect(route('subcategory.index'));
-            }
+      
        
-    //    if($request->hasFile('image')){
-    //         $imageName = rand(111,999).time().'.'.$request->image->extension();
-    //         $request->image->move(public_path('uploads/subcategory'),$imageName);
-    //         $request->cat_icon=$imageName;
-    //    }
+       if($request->hasFile('cat_icon')){
+            $imageName = rand(111,999).time().'.'.$request->cat_icon->extension();
+            $request->cat_icon->move(public_path('uploads/subcategory'),$imageName);
+            $subcat->cat_icon=$imageName;
+       }
 
-    //    $subcat->status=1;
-    //    if($subcat->save()){
-    //     return redirect('subcategory')->with('success','Data saved');
-    //    }
+       
+       if($subcat->save()){
+        return redirect('subcategory')->with('success','Data saved');
+       }
      }
         catch(Exception $e){
-            dd($e);
-            return redirect(route('subcategory.create'));
+           
+            return back()->withInput();
         }
     }
 
@@ -90,7 +85,8 @@ class SubCategoryController extends Controller
      */
     public function edit(SubCategory $subCategory)
     {
-        //
+       $cat=SubCategory::all();
+       return view('subcategory.edit',compact('cat'));
     }
 
     /**
@@ -102,8 +98,26 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, SubCategory $subCategory)
     {
-        //
+        try{
+
+            $s=new Subcategory;
+        $s->name=$request->name;
+        $s->category_id=$request->name;
+        $s->FullName=$request->name;
+
+        
+       if($request->hasFile('cat_icon')){
+        $imageName = rand(111,999).time().'.'.$request->cat_icon->extension();
+        $request->cat_icon->move(public_path('uploads/subcategory'),$imageName);
+        $s->cat_icon=$imageName;
+   }
+        
+    }catch(Exception $e){
+           
+        return back()->withInput();
     }
+}
+
 
     /**
      * Remove the specified resource from storage.
