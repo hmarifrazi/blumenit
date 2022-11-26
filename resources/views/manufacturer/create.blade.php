@@ -37,7 +37,7 @@
 
             <div class="form-group">
                 <label for="FullName" class=" form-control-label">Contact</label>
-                <input type="text" id="contact" name="contact" placeholder="Manufacturer Email" class="form-control class="form-control @if($errors->has('contact')) parsley-error @endif">
+                <input type="text" id="contact" name="contact" placeholder="Manufacturer Contact" class="form-control class="form-control @if($errors->has('contact')) parsley-error @endif">
 
                 @if ($errors->has('contact'))
                     <ul class="parsley-errors-list filled">

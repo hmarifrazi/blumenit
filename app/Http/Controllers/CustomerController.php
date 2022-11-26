@@ -134,6 +134,57 @@ class CustomerController extends Controller
         }
     }
 
+    public function cprofile(){
+        if(!session()->get('user'))
+            return redirect(route('front.signin'))->with($this->responseMessage(true, null, "If you have ayn account, sign in first or register now."));
+        
+        $country=Country::get();
+        $state=State::get();
+        $city=City::get();
+        $context=PhoneExt::get();
+        $user=Customer::find(session()->get('user'));
+        return view('frontend.customer.customerprofile',compact('context','country','state','city','user'));
+    }
+function profileup(UpdateCustomerRequest $request){
+        try{
+            if(!session()->get('user'))
+                return redirect(route('front.signin'))->with($this->responseMessage(true, null, "If you have ayn account, sign in first or register now."));
+        
+            $cust = Customer::find(session()->get('user'));
+            $cust->first_name = $request->first_name;
+            $cust->last_name = $request->last_name;
+            $cust->email = $request->email;
+            $cust->contact_ext = $request->contact_ext;
+            $cust->contact = $request->contact;
+            $cust->address = $request->address;
+            $cust->zip = $request->zip;
+            $cust->country_id = $request->country_id;
+            $cust->state_id = $request->state_id;
+            $cust->city_id = $request->city_id;
+            if($cust->save()){
+                $this->setSession($cust);
+                return redirect()->back()->with($this->responseMessage(true, null, "Your profile has been updated."));
+            }
+         }catch(Exception $e){
+            //dd($e);
+            return redirect()->back()->with($this->responseMessage(false, "error", "Please try again!"));
+        }
+    }
+     public function order_list(){
+        if(!session()->get('user'))
+            return redirect(route('front.signin'))->with($this->responseMessage(true, null, "If you have ayn account, sign in first or register now."));
+        $order=Order::where('customer_id',session()->get('user'))->latest()->get();
+        return view('frontend.customer.orderlist',compact('order'));
+    }
+
+    public function invoice($id){
+        if(!session()->get('user'))
+            return redirect(route('front.checkout'))->with($this->responseMessage(true, null, "you have to login or order as a guest."));
+        
+        $order=Order::find($id);
+          
+        return view('frontend.customer.invoice',compact('order'));
+    }
 
     /**
      * Display a listing of the resource.
@@ -142,7 +193,8 @@ class CustomerController extends Controller
      */
     public function index()
     {
-        //
+         $customers = Customer::paginate(10);
+        return view('customers.index', compact('customers'));
     }
 
     /**
@@ -152,7 +204,11 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        //
+        $context = Customer::get(['id','contact']);
+        $country = Country::get(['id','country']);
+        $state = State::get(['id','state']);
+        $city = City::get(['id','city']);
+        return view('customers.create',compact(['context','country','state','city']));
     }
 
     /**

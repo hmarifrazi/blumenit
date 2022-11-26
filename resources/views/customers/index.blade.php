@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-body">
-    <a class="btn btn-sm btn-primary float-right m-3" href="{{ route('admincustomer.create') }}">Add New</a>
+    <a class="btn btn-sm btn-primary float-right m-3" href="{{ route('customer.create') }}">Add New</a>
     <h4 class="mt-0 header-title mb-3">Customer List</h4>
     <table class="table">
         <thead>
@@ -33,7 +33,7 @@
                
                  <td>
                                                
-                    <a href="{{route('admincustomer.edit',$customer)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Edit</a>
+                    <a href="{{route('customer.edit',$customer)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Edit</a>
                     <!--<button type="button" class="btn btn-danger btn-rounded width-sm waves-effect waves-light">Delete</button>-->
                 </td>
                   @empty
@@ -46,11 +46,11 @@
 
         </tbody>
     </table>
-    <div class="card-box">
+    <!-- <div class="card-box">
         <div class="clearfix">
-            {{$customers->appends($_GET)->links('pagination::boostrap-4')}}
+            {{-- {{$customers->appends($_GET)->links('pagination::boostrap-4')}} --}}
         </div>
-    </div>
+    </div> -->
 </div>
 
 @endsection

@@ -1,7 +1,7 @@
 @extends('layout.app')
 @section('content')
 
-<form action="{{route('admincustomer.store')}}"class="col-lg-8 offset-3" method='post' enctype="multipart/form-data">
+<form action="{{route('customer.store')}}"class="col-lg-8 offset-3" method='post' enctype="multipart/form-data">
 
 @csrf
     <div class="card">
@@ -55,6 +55,8 @@
 
                     @forelse($context as $cext)
                     <option value="{{$cext->ext}}">{{$cext->ext}}</option>
+                    @empty
+                    <option value="">No Data</option>
                     @endforelse
                     </select>
                     @if($errors->has('contact_ext'))
@@ -107,7 +109,9 @@
                                     <select name="country_id" id="country_id" class="form-control" onchange="set_state(this.value)">
                                 <option value="">Select Country</option>
                                     @forelse($country as $c)
-                                         <option value="{{$c->id}}">{{$c->country}}</option>    
+                                         <option value="{{$c->id}}">{{$c->country}}</option>
+                                         @empty
+                                         <option value="">No Data</option>    
                                          @endforelse                   
                                 </select>
                                 </div>
@@ -121,7 +125,9 @@
                                     <select name="state_id" id="state_id" class="form-control" onchange="set_city(this.value)">
                                 <option value="">Select State</option>
                                     @forelse($state as $c)
-                                         <option class="state st{{$c->country_id}}" value="{{$c->id}}">{{$c->state}}</option>  
+                                         <option class="state st{{$c->country_id}}" value="{{$c->id}}">{{$c->state}}</option>
+                                         @empty
+                                         <option value="">No data</option>  
                                          @endforelse                     
                                 </select>
                                 </div>
@@ -136,6 +142,8 @@
                                 <option value="">Select City</option>
                                     @forelse($city as $c)
                                          <option class="city ct{{$c->state_id}}" value="{{$c->id}}">{{$c->city}}</option>  
+                                         @empty
+                                         <option value="">No data</option>
                                          @endforelse                     
                                 </select>
                                 </div>
