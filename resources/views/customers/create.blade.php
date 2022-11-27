@@ -11,7 +11,7 @@
         <div class="card-body card-block">
             <div class="form-group">
                 <label for="FullName" class=" form-control-label">First Name</label>
-                <input type="text" id="first_name" name="first_name" placeholder="Manufacturer Name" class="form-control class="form-control @if($errors->has('first_name')) parsley-error @endif" placeholder="First Name">
+                <input type="text" id="first_name" name="first_name"  class="form-control class="form-control @if($errors->has('first_name')) parsley-error @endif" placeholder="First Name">
 
                 @if ($errors->has('first_name'))
                     <ul class="parsley-errors-list filled">
@@ -23,7 +23,7 @@
 
             <div class="form-group">
                 <label for="FullName" class=" form-control-label">Last Name</label>
-                <input type="text" id="last_name" name="last_name" placeholder="Manufacturer Name" class="form-control class="form-control @if($errors->has('last_name')) parsley-error @endif" placeholder="Last Name">
+                <input type="text" id="last_name" name="last_name"  class="form-control class="form-control @if($errors->has('last_name')) parsley-error @endif" placeholder="Last Name">
 
                 @if ($errors->has('last_name'))
                     <ul class="parsley-errors-list filled">
@@ -36,7 +36,7 @@
 
             <div class="form-group">
                 <label for="FullName" class=" form-control-label">Email</label>
-                <input type="text" id="email" name="email" placeholder="Manufacturer Email" class="form-control class="form-control @if($errors->has('email')) parsley-error @endif">
+                <input type="text" id="email" name="email" placeholder="Customer Email" class="form-control class="form-control @if($errors->has('email')) parsley-error @endif">
 
                 @if ($errors->has('email'))
                     <ul class="parsley-errors-list filled">
@@ -47,17 +47,18 @@
             </div>
 
 
-
             <div class="form-group">
-                <label for="FullName" class=" form-control-label">Mobile Number</label>
-
+                <label for="FullName" class="form-control-label float-left">Mobile Number</label>
+                
+                    <div class="col-sm-2">
+       
                     <select name="contact_ext" id="" class="form-control @if($errors->has('contact_ext')) parsley-error @endif">
 
-                    @forelse($context as $cext)
-                    <option value="{{$cext->ext}}">{{$cext->ext}}</option>
-                    @empty
-                    <option value="">No Data</option>
-                    @endforelse
+                        @forelse($context as $cext)
+                        <option value="{{$cext->ext}}">{{$cext->ext}}</option>
+                        @empty
+                        <option value="">No Data</option>
+                        @endforelse
                     </select>
                     @if($errors->has('contact_ext'))
                     <ul class="parsley-errors-list filled">
@@ -65,26 +66,23 @@
                     </ul>
                     @endif
 
+                    </div>
                
 
-                @if ($errors->has('contact'))
-                    <ul class="parsley-errors-list filled">
-                          <li>{{$errors->first('contact')}}</li>
-                    </ul>
-
-                @endif
-                
-                 <input type="text" id="contact" name="contact" placeholder="XXXXXXXXX" class="form-control @if($errors->has('contact')) parsley-error @endif">
-                 @if($errors->has('contact'))
-                 <ul>
-                     <li>{{$errors->first('contact')}}</li>
-                 </ul>
-                 @endif
+                    <div class="col-sm-7">
+                       
+                        <input type="text" id="contact" name="contact" placeholder="XXXXXXXXXX" class="form-control @if($errors->has('contact')) parsley-error @endif">
+                        @if($errors->has('contact'))
+                        <ul class="parsley-errors-list filled">
+                            <li>{{$errors->first('contact')}}</li>
+                        </ul>
+                        @endif
+                    </div>
             </div>
 
 
             <div class="form-group">
-                <label for="Address" class=" form-control-label">Address</label>
+                <label for="Address" class="form-control-label">Address</label>
                     <textarea class="form-control @if($errors->has('address')) parsley-error @endif" name="address" rows="5" id="example-textarea"></textarea>
                     @if($errors->has('address'))
                     <ul class="parsley-errors-list filled">
