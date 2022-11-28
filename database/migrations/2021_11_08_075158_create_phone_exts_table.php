@@ -3,6 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 return new class extends Migration
 {
@@ -18,6 +20,20 @@ return new class extends Migration
             $table->string('ext');
             $table->timestamps();
         });
+         DB::table('phone_exts')->insert([
+            [
+                'ext'=>'+880',
+                'created_at'=>Carbon::now(),
+            ],
+            [
+                'ext'=>'+971',
+                'created_at'=>Carbon::now(),
+            ],
+            [
+                'ext'=>'+966',
+                'created_at'=>Carbon::now(),
+            ],
+        ]);
     }
 
     /**

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('email');
-            $table->string('contact_ext');
+            $table->unsignedBigInteger('contact_ext');
+            $table->foreign('contact_ext')->references('id')->on('phone_exts')->onDelete('cascade');
             $table->string('contact');
             $table->text('address')->nullable();
             $table->string('zip')->nullable();

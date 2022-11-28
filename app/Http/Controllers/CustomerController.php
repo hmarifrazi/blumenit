@@ -204,7 +204,7 @@ function profileup(UpdateCustomerRequest $request){
      */
     public function create()
     {
-        $context = Customer::get(['id','contact']);
+        $context = PhoneExt::get(['id','ext']);
         $country = Country::get(['id','country']);
         $state = State::get(['id','state']);
         $city = City::get(['id','city']);

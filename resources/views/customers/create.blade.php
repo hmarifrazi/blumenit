@@ -55,7 +55,7 @@
                     <select name="contact_ext" id="" class="form-control @if($errors->has('contact_ext')) parsley-error @endif">
 
                         @forelse($context as $cext)
-                        <option value="{{$cext->ext}}">{{$cext->ext}}</option>
+                        <option value="{{$cext->id}}">{{$cext->ext}}</option>
                         @empty
                         <option value="">No Data</option>
                         @endforelse
@@ -122,7 +122,7 @@
                                     <label for="f_image" class="form-control-label">State</label>
                                     <select name="state_id" id="state_id" class="form-control" onchange="set_city(this.value)">
                                 <option value="">Select State</option>
-                                    @forelse($state as $c)
+                                    @forelse($state as $c )
                                          <option class="state st{{$c->country_id}}" value="{{$c->id}}">{{$c->state}}</option>
                                          @empty
                                          <option value="">No data</option>  
