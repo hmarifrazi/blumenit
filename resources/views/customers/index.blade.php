@@ -13,6 +13,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Contact No</th>
                 <th scope="col">Address</th>
+                <th scope="col">Country</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
                 
@@ -28,7 +29,9 @@
                 <td>{{$customer->first_name}} {{$customer->last_name}}</td>
                 <td>{{$customer->email}}</td>
                 <td>{{$customer->contact_ext}} - {{$customer->contact}}</td>
-                <td>{{$customer->address}},{{$customer->zip}},{{$customer->city_id}},<br>{{$customer->city->city}},{{$customer->state_id}}{{$customer->state->state}},{{$customer->country_id}}<br>{{$customer->country->country}}</td>
+                <td>{{$customer->address}}</td>
+                <td>{{$customer->countries->country}}</td>
+                {{-- <td>{{$customer->zip}},{{$customer->city_id}},<br>{{$customer->cities->city}},{{$customer->state_id}}{{$customer->states->state}},{{$customer->country_id}}<br>{{$customer->country->country}}</td> --}}
                 <td>{{$customer->status==1?"Active":"Inactive"}}</td>
                
                  <td>

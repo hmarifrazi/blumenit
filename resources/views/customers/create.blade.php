@@ -1,9 +1,10 @@
 @extends('layout.app')
 @section('content')
 
-<form action="{{route('customer.store')}}"class="col-lg-8 offset-3" method='post' enctype="multipart/form-data">
+<form action="{{route('customer.store')}}"class="col-lg-8 offset-3" method='post'>
 
 @csrf
+@method('post')
     <div class="card">
         <div class="card-header"><strong>Add New Customer</strong>
             
@@ -106,7 +107,9 @@
                                     <label for="f_image" class="form-control-label">Country</label>
                                     <select name="country_id" id="country_id" class="form-control" onchange="set_state(this.value)">
                                 <option value="">Select Country</option>
+                               
                                     @forelse($country as $c)
+                                    
                                          <option value="{{$c->id}}">{{$c->country}}</option>
                                          @empty
                                          <option value="">No Data</option>    
