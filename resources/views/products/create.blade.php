@@ -74,7 +74,7 @@
 
 
     <div class="form-group row mb-3">
-        <label class="col-md-4 col-form-label" for="subcategory" >Manufacturer Name </label>
+        <label class="col-md-4 col-form-label" for="subcategory" >Subcategory Name </label>
         <div class="col-md-6">
            <select class="form-control" name="subcategory" id="subcategory">
                 <option value="">Select Subcategory</option>
