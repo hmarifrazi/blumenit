@@ -42,7 +42,7 @@ class Product extends Model
         'qty',
         'max_qty',
     ];
-    
+
 
 }
  // 'manufacturer',
