@@ -37,14 +37,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        // $products =product::all();
-        $products=Category::get(['id','name']);
-        $manufacturer=Manufacturer::get(['id','name']);
-        $subcategory=SubCategory::get(['id','name']);
-        return view('products.create',compact('products','manufacturer','subcategory'));
+        $products =product::all();
+        return view('products.create',compact('products'));
         
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -58,7 +55,10 @@ class ProductController extends Controller
         $data['sku'] = $request->sku;
         $data['model_no'] = $request->model_no;
         $data['product_title'] = $request->product_title;
-       
+        $data['manufacturer_id'] = $request->manufacturer_id;
+        $data['category_id'] = $request->category_id;
+        $data['subcategory_id'] = $request->subcategory_id;
+        $data['feature_image'] = $request->imageName;
         $data['short_description'] = $request->short_description;
         $data['long_description'] = $request->long_description;
         $data['price'] = $request->price;
@@ -66,11 +66,8 @@ class ProductController extends Controller
         $data['vat_status'] = $request->vat_status;
         $data['warranty'] = $request->warranty;
         $data['product_condition'] = $request->product_condition;
+        $data['qty'] = $request->qty;
         $data['max_qty'] = $request->max_qty;
-        $data['name'] = $request->category;
-        $data['name'] = $request->Manufacturer;
-        $data['name'] = $request->subcategory;
-
         Product::create($data);
         return redirect('products');
     // try{

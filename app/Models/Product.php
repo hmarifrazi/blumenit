@@ -28,16 +28,29 @@ class Product extends Model
         'sku',
         'model_no',
         'product_title',
-       
+        'manufacturer_id',
+        'category_id',
+        'subcategory_id',
         'short_description',
         'long_description',
+        'specification',
         'price',
         'discount',
         'vat_status',
         'warranty',
         'product_condition',
+        'qty',
         'max_qty',
     ];
+    public function category(){
+        return $this->belongsTo(Category::class,'category_id','id');
+    }
+    public function subcategory(){
+        return $this->belongsTo(SubCategory::class,'subcategory_id','id');
+    }
+    public function manufacturer(){
+        return $this->belongsTo(manufacturer::class,'manufacturer_id','id');
+    }
 
 }
  // 'manufacturer',
