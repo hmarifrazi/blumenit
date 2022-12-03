@@ -37,8 +37,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products =product::all();
-        return view('products.create',compact('products'));
+        // $products =product::all();
+        $products=Category::get(['id','name']);
+        $manufacturer=Manufacturer::get(['id','name']);
+        $subcategory=SubCategory::get(['id','name']);
+        return view('products.create',compact('products','manufacturer','subcategory'));
         
     }
 
@@ -64,6 +67,10 @@ class ProductController extends Controller
         $data['warranty'] = $request->warranty;
         $data['product_condition'] = $request->product_condition;
         $data['max_qty'] = $request->max_qty;
+        $data['name'] = $request->category;
+        $data['name'] = $request->Manufacturer;
+        $data['name'] = $request->subcategory;
+
         Product::create($data);
         return redirect('products');
     // try{

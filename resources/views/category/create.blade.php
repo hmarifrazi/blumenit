@@ -77,7 +77,7 @@
 
                     <div class="form-group">
                         <label for="order" class=" form-control-label">Showing Order In Category Page</label>
-                        <input type="text" name="order" id="order" placeholder="000" class="form-control">
+                        <input type="text"  name="order" id="order" placeholder="000" class="form-control">
                     </div>
 
                     <div class="form-group row">
@@ -88,11 +88,23 @@
                         </div>
                     </div> 
 
+
+
+                    <div class="row form-group">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="cat_img" class=" form-control-label">Category Image</label>
+                                <input type="file" class="dropify" id="cat_img" name="cat_img"  class="form-control">
+                            </div>
+
+                        </div>
+                </div>
+
                         <div class="row form-group">
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="feature_image" class=" form-control-label">Feature Image</label>
-                                    <input type="file" id="feature_image" name="feature_image"  class="form-control">
+                                    <input type="file" class="dropify" id="feature_image" name="feature_image"  class="form-control">
                                 </div>
 
                             </div>
@@ -103,7 +115,7 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="lsb_image" class=" form-control-label">Left Side Banner</label>
-                                <input type="file" id="lsb_image" name="lsb_image"  class="form-control">
+                                <input type="file" class="dropify" id="lsb_image" name="lsb_image"  class="form-control">
                             </div>
                         </div>
                     </div>
@@ -114,30 +126,30 @@
                             <h4 class="header-title mt-0 mb-3">Upload Category Slider Image</h4>
                         </div>
                     </div>
-<!-- 
-            <div class="form-group row">
+
+            {{-- <div class="form-group row">
                         <div class="col-sm-6">
                             <input type="file" class="dropify" data-height="200" name="image[]"/>
-                        </div> -->
+                        </div> 
                         <!-- end col -->
 
-                        <!-- <div class="col-sm-6">
+                         <div class="col-sm-6">
                             <input type="file" class="dropify" data-height="200" name="image[]"/>
-                       </div> -->
+                       </div> 
                        <!-- end col -->
-                     <!-- </div> -->
-            <!-- <div class="form-group row">
+                     </div> 
+            <div class="form-group row">
                     <div class="col-sm-6">
                         <input type="file" class="dropify" data-height="200" name="image[]"/>
-                    </div> -->
+                    </div> 
                     
                     <!-- end col -->
 
-                     <!-- <div class="col-sm-6">
+                      <div class="col-sm-6">
                         <input type="file" class="dropify" data-height="200" name="image[]"/>
-                    </div> -->
+                    </div> 
                     <!-- end col -->
-             </div>
+             </div> --}}
 
 
 
@@ -148,3 +160,18 @@
     </div>
 </form>
  @endsection
+
+ @push('style')
+ <!-- dropify -->
+ <link href="{{asset('asset/libs/dropify/dropify.min.css')}}" rel="stylesheet" type="text/css" />
+@endpush
+@push('script')
+
+
+ <!-- dropify js -->
+ <script src="{{asset('asset/libs/dropify/dropify.min.js')}}"></script>
+
+ <!-- form-upload init -->
+ <script src="{{asset('asset/js/pages/form-fileupload.init.js')}}"></script>
+
+@endpush

@@ -25,6 +25,76 @@
             <input type="text" class="form-control" name="product_title"  name="sku" placeholder="Order note">
         </div>
     </div>
+
+
+    <div class="form-group row mb-3">
+        <label class="col-md-4 col-form-label" for="manufacturer" >Manufacturer Name </label>
+        <div class="col-md-6">
+           <select class="form-control" name="manufacturer" id="manufacturer">
+                <option value="">Select Manufacturer</option>
+                @forelse($manufacturer as $manu)
+
+                <option value="{{$manu->id}}" {{ old('manufacturer')==$manu->id?"selected":""}}>{{
+                $manu->name}}</option>
+            @empty
+                    <option value="">No manufacturer found</option>
+            @endforelse
+
+           </select>
+
+           @if($errors->has('manufacturer'))
+                <span class="text-danger"> {{ $errors->first('manufacturer')}}</span>
+            @endif
+           
+        </div>
+    </div>
+
+
+    <div class="form-group row mb-3">
+        <label class="col-md-4 col-form-label" for="category" >Category Name </label>
+        <div class="col-md-6">
+           <select class="form-control" name="category" id="category">
+                <option value="">Select Category</option>
+                @forelse($products as $cat)
+
+                <option value="{{$cat->id}}" {{ old('category')==$cat->id?"selected":""}}>{{
+                $cat->name}}</option>
+            @empty
+                    <option value="">No Category found</option>
+            @endforelse
+
+           </select>
+
+           @if($errors->has('Category'))
+                <span class="text-danger"> {{ $errors->first('category')}}</span>
+            @endif
+           
+        </div>
+    </div>
+
+
+    <div class="form-group row mb-3">
+        <label class="col-md-4 col-form-label" for="subcategory" >Manufacturer Name </label>
+        <div class="col-md-6">
+           <select class="form-control" name="subcategory" id="subcategory">
+                <option value="">Select Subcategory</option>
+                @forelse($subcategory as $subcat)
+
+                <option value="{{$subcat->id}}" {{ old('subcategory')==$subcat->id?"selected":""}}>{{
+                $subcat->name}}</option>
+            @empty
+                    <option value="">No manufacturer found</option>
+            @endforelse
+
+           </select>
+
+           @if($errors->has('subcategory'))
+                <span class="text-danger"> {{ $errors->first('subcategory')}}</span>
+            @endif
+           
+        </div>
+    </div>
+
     
     <div class="form-row">
             {{-- <div class="form-group col-md-3">

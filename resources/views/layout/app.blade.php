@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/selectFX/css/cs-skin-elastic.css') }}">
     <link rel="stylesheet" href="{{ asset('public/assets/vendors/jqvmap/dist/jqvmap.min.css') }}">
+    @stack('style')
 
 
     <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
@@ -325,6 +326,7 @@
             });
         })(jQuery);
     </script>
+    @stack('script')
 
 
 </body>

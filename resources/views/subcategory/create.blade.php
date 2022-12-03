@@ -18,6 +18,10 @@
                 <input type="text" id="FullName" name="FullName" placeholder="category name" class="form-control">
             </div>
 
+
+
+           
+
            
 
 
@@ -45,6 +49,10 @@
 
 
 
+            
+
+
+
                     <div class="form-group row">
                         <label for="cat_icon" class="col-sm-3 col-form-label">Icon</label>
                         <div class="col-sm-9">
@@ -64,48 +72,30 @@
                     </div>
                     
                     <div class="form-group row">
-                        <div class="col-sm-3">
+                        <div class="col-sm-6">
                                 <input type="file" class="dropify" data-height="300" name="image[]"/>
                         </div><!-- end col -->
-                        <div class="col-sm-3">
+
+                        <div class="col-sm-6">
                             <input type="file" class="dropify" data-height="300" name="image[]"/>
-                    </div><!-- end col -->
-                    <div class="col-sm-3">
-                        <input type="file" class="dropify" data-height="300" name="image[]"/>
-                </div><!-- end col -->
-                <div class="col-sm-3">
-                    <input type="file" class="dropify" data-height="300" name="image[]"/>
-            </div><!-- end col -->
+                         </div>
                     </div>
+                    <!-- end col -->
+
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <input type="file" class="dropify" data-height="300" name="image[]"/>
+                    </div><!-- end col -->
+                <div class="col-sm-6">
+                    <input type="file" class="dropify" data-height="300" name="image[]"/>
+              </div><!-- end col -->
+            </div>
 
                    
 
 
                     
-<!-- 
-            <div class="form-group row">
-                        <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image[]"/>
-                        </div> -->
-                        <!-- end col -->
 
-                        <!-- <div class="col-sm-6">
-                            <input type="file" class="dropify" data-height="200" name="image[]"/>
-                       </div> -->
-                       <!-- end col -->
-                     <!-- </div> -->
-            <!-- <div class="form-group row">
-                    <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image[]"/>
-                    </div> -->
-                    
-                    <!-- end col -->
-
-                     <!-- <div class="col-sm-6">
-                        <input type="file" class="dropify" data-height="200" name="image[]"/>
-                    </div> -->
-                    <!-- end col -->
-             </div>
 
 
 

@@ -83,6 +83,16 @@
                         </div>
                     </div> 
 
+                    <div class="row form-group">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="cat_img" class=" form-control-label">Category Image</label>
+                                <input type="file" id="cat_img" name="cat_img"  class="form-control">
+                            </div>
+
+                        </div>
+                </div>
+
                         <div class="row form-group">
                             <div class="col-12">
                                 <div class="form-group">

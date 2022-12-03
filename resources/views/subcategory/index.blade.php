@@ -33,7 +33,7 @@
                         <i class="btn btn-primary btn-sm">Edit</i>
                     </a>
                     <a href="javascript:void()" onclick="$('#form{{$subcat->id}}').submit()">
-                        <i class="btn btn-danger">Delete</i>
+                        <i class="btn btn-danger btn-sm">Delete</i>
                     </a>
                     <form id="form{{$subcat->id}}" action="{{route('category.destroy',$subcat->id)}}" method="post">
                         @csrf

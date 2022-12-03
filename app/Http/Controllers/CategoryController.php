@@ -59,6 +59,12 @@ class CategoryController extends Controller
             $cat->cat_icon=$imageName;
         }
 
+        if($r->cat_img){
+            $imageName = rand(111,999).time().'.'.$r->cat_img->extension();
+            $r->cat_img->move(public_path('uploads/category'), $imageName);
+            $cat->cat_image=$imageName;
+        }
+
         if($r->feature_image){
             $imageName = rand(111,999).time().'.'.$r->feature_image->extension();
             $r->feature_image->move(public_path('uploads/category'), $imageName);
@@ -71,11 +77,11 @@ class CategoryController extends Controller
             $cat->Isb_image=$imageName;
         }
 
-        if($r->image){
-            $imageName = rand(111,999).time().'.'.$r->image->extension();
-            $r->image->move(public_path('uploads/category'), $imageName);
-            $cat->image[]=$imageName;
-        }
+        // if($r->image){
+        //     $imageName = rand(111,999).time().'.'.$r->image->extension();
+        //     $r->image->move(public_path('uploads/category'), $imageName);
+        //     $cat->image[]=$imageName;
+        // }
         $cat->save();
         return redirect(route('category.index'));
 
@@ -114,6 +120,7 @@ class CategoryController extends Controller
      */
     public function update(Request $r, category $category)
     {
+        
         $category->name=$r->FullName;
         $category->is_game=$r->is_game;
         $category->feature_cat=$r->featured;
@@ -121,29 +128,31 @@ class CategoryController extends Controller
         $category->cat_page_order=$r->order;
       
        
-        if($r->image){
-            $imageName = rand(111,999).time().'.'.$r->image->extension();
-            $r->image->move(public_path('uploads/category'), $imageName);
+        if($r->cat_icon){
+            $imageName = rand(111,999).time().'.'.$r->cat_icon->extension();
+            $r->cat_icon->move(public_path('uploads/category'), $imageName);
             $category->cat_icon=$imageName;
         }
 
-        if($r->image){
-            $imageName = rand(111,999).time().'.'.$r->image->extension();
-            $r->image->move(public_path('uploads/category'), $imageName);
+        if($r->cat_img){
+            $imageName = rand(111,999).time().'.'.$r->cat_img->extension();
+            $r->cat_img->move(public_path('uploads/category'), $imageName);
+            $category->cat_image=$imageName;
+        }
+
+        if($r->feature_image){
+            $imageName = rand(111,999).time().'.'.$r->feature_image->extension();
+            $r->feature_image->move(public_path('uploads/category'), $imageName);
             $category->feature_image=$imageName;
         }
 
-        if($r->image){
-            $imageName = rand(111,999).time().'.'.$r->image->extension();
-            $r->image->move(public_path('uploads/category'), $imageName);
+        if($r->lsb_image){
+            $imageName = rand(111,999).time().'.'.$r->lsb_image->extension();
+            $r->lsb_image->move(public_path('uploads/category'), $imageName);
             $category->lsb_image=$imageName;
         }
 
-        if($r->image){
-            $imageName = rand(111,999).time().'.'.$r->image->extension();
-            $r->image->move(public_path('uploads/category'), $imageName);
-            $category->image[]=$imageName;
-        }
+      
         $category->save();
         return redirect(route('category.index'));
     }
