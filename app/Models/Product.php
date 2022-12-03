@@ -42,15 +42,7 @@ class Product extends Model
         'qty',
         'max_qty',
     ];
-    public function category(){
-        return $this->belongsTo(Category::class,'category_id','id');
-    }
-    public function subcategory(){
-        return $this->belongsTo(SubCategory::class,'subcategory_id','id');
-    }
-    public function manufacturer(){
-        return $this->belongsTo(manufacturer::class,'manufacturer_id','id');
-    }
+   
 
 }
  // 'manufacturer',

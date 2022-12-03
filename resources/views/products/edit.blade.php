@@ -6,7 +6,9 @@
 @section('content')
  
 <div class="container">
-    <form class="form" method="post" enctype="multipart/form-data" action="{{route('product.update',$product->id)}}">
+    <form class="form" method="post" enctype="multipart/form-data" action="{{route('products.update',$products->id)}}">
+        @csrf
+        @method('petch')
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="userName1">Name</label>
