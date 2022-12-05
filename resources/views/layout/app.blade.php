@@ -44,7 +44,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="./"><img src="{{asset('public/images/1648631826.svg')}}" style="background-color: #ddd;padding:10px;border-radius:5px" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{{asset('public/images/1648631826.svg')}}" style="background-color: #ddd;padding:10px;border-radius:5px" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -71,27 +71,27 @@
                     </li>
                     
                     <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Product</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Product</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{route('products.index')}}">Product List</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{route('products.create')}}">Add products</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('products.index')}}">Product List</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('products.create')}}">Add products</a></li>
                         </ul>
                     </li>
 
 
                 <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Order</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Order</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="">Order List</a></li>
-                            <li><i class="fa fa-table"></i><a href="">Show Order</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="">Order List</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="">Show Order</a></li>
                         </ul>
             </li>
 
             <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Customer</a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Customer</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-table"></i><a href="{{route('customer.create')}}">Add New</a></li>
-                            <li><i class="fa fa-table"></i><a href="{{route('customer.index')}}">Customer list</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a href="{{route('customer.create')}}">Add New</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('customer.index')}}">Customer list</a></li>
                         </ul>
             </li>
 
