@@ -6,20 +6,22 @@
 @section('content')
  
 <div class="container">
-    <form class="form" method="post" enctype="multipart/form-data" action="{{route('products.update',$products->id)}}">
+    <form class="form" method="post" enctype="multipart/form-data" action="{{route('products.update',$p)}}">
         @csrf
-        @method('petch')
+        @method('patch')
+
+        
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="userName1">Name</label>
-            <input type="text" value="{{ old('name',$product->name)}}" class="form-control" name="name" id="name" placeholder="Name">
+            <input type="text" value="{{ old('name',$p->name)}}" class="form-control" name="name" id="name" placeholder="Name">
             @if($errors->has('name'))
                 <span class="text-danger"> {{ $errors->first('name') }}</span>
             @endif
         </div>
         <div class="form-group col-md-6">
             <label for="sku">Sku</label>
-            <input type="text" value="{{ old('sku',$product->sku)}}" class="form-control" id="sku" name="sku" placeholder="Sku">
+            <input type="text" value="{{ old('sku',$p->sku)}}" class="form-control" id="sku" name="sku" placeholder="Sku">
             @if($errors->has('sku'))
                 <span class="text-danger"> {{ $errors->first('sku') }}</span>
             @endif
@@ -28,14 +30,14 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label for="userName1">Model No</label>
-            <input type="text"  value="{{ old('model_no',$product->model_no)}}" class="form-control" id="model_no" name="model_no" placeholder="Model No">
+            <input type="text"  value="{{ old('model_no',$p->model_no)}}" class="form-control" id="model_no" name="model_no" placeholder="Model No">
             @if($errors->has('model_no'))
                 <span class="text-danger"> {{ $errors->first('model_no') }}</span>
             @endif
         </div>
         <div class="form-group col-md-6">
             <label for="confirm1">Order Note</label>
-            <input type="text" value="{{ old('product_title',$product->product_title)}}" class="form-control" name="product_title"  name="sku" placeholder="">
+            <input type="text" value="{{ old('product_title',$p->product_title)}}" class="form-control" name="product_title"  name="sku" placeholder="">
             @if($errors->has('model_no'))
                 <span class="text-danger"> {{ $errors->first('product_title') }}</span>
             @endif
@@ -44,9 +46,9 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="userName1" >Manufacturer</label>
-            <select name="manufacturer" value="{{ old('manufacturer',$product->manufacturer)}}" class="form-control">
+            <select name="manufacturer" value="{{ old('manufacturer',$p->manufacturer)}}" class="form-control">
               @if($errors->has('manufacturer'))
-                  <option value="{{ old('manufacturer',$product->manufacturer)}}"></option>
+                  <option value="{{ old('manufacturer',$p->manufacturer)}}"></option>
               @endif
             </select>
         </div>
