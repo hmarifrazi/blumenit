@@ -102,7 +102,7 @@
     <div class="form-row">
          <div class="form-group col-md-3">
                 <label for="name1">Feature Image</label>
-                <input type="file" class="form-control" data-height="300" name="imageName" >
+                <input type="file" class="form-control" data-height="300" name="feature_image" >
         </div> 
         <div class="form-group col-md-3">
             <label for="name1">Short Description</label>
@@ -153,7 +153,7 @@
         </div>
     </div>
     <div class="form-group">
-        <input type="submit" value="submit" class="btn btn-success"  >
+        <input type="submit" value="submit" class="btn btn-success">
     </div>
     
     </form>

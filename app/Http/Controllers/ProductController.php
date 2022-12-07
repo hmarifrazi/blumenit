@@ -37,7 +37,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products =product::all();
+        $products =Product::all();
         $category=Category::get(['id','name']);
         $manufacturer=Manufacturer::get(['id','name']);
         $subcategory=SubCategory::get(['id','name']);
@@ -61,7 +61,7 @@ class ProductController extends Controller
         // $data['manufacturer_id'] = $request->manufacturer_id;
         // $data['category_id'] = $request->category_id;
         // $data['subcategory_id'] = $request->subcategory_id;
-        $data['feature_image'] = $request->imageName;
+        $data['feature_image'] = $request->feature_image;
         $data['short_description'] = $request->short_description;
         $data['long_description'] = $request->long_description;
         $data['price'] = $request->price;
@@ -123,7 +123,7 @@ class ProductController extends Controller
         $p->sku=$request->sku;
         $p->model_no=$request->model_no;
         $p->product_title=$request->product_title;
-        $p->feature_image=$request->imageName;
+        $p->feature_image=$request->feature_image;
         $p->short_description=$request->short_description;
         $p->long_description=$request->long_description;
         $p->price=$request->price;
@@ -133,7 +133,7 @@ class ProductController extends Controller
         $p->product_condition=$request->product_condition;
         $p->qty=$request->qty;
         $p->max_qty=$request->max_qty;
-        // $p->manufacturer_id=$request->manufacturer;
+        $p->manufacturer_id=$request->manufacturer;
         // $p->category_id=$request->category;
         // $p->subcategory_id=$request->subcategory;
        

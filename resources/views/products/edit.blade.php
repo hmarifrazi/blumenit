@@ -48,7 +48,7 @@
             <label for="userName1" >Manufacturer</label>
             <select name="manufacturer" value="{{ old('manufacturer',$p->manufacturer)}}" class="form-control">
               @if($errors->has('manufacturer'))
-                  <option value="{{ old('manufacturer',$p->manufacturer)}}"></option>
+                  <option value="{{ old('manufacturer',$p->manufacturer)}}">{{$p->manufacturer}}</option>
               @endif
             </select>
         </div>
@@ -62,7 +62,7 @@
                 </select>
         </div>
         <div class="form-group col-md-4">
-            <label for=""confirm1""> Sub Category</label>
+            <label for="subcat"> Sub Category</label>
                 <select name="subcategory" id="subcat" class="form-control">
                 <option value="" >--Select Category--</option>
                         <option value="">--Select Category--</option>
@@ -72,7 +72,7 @@
     <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="name1">Feature Image</label>
-                <input type="file" class="form-control" data-height="300" name="feature_image" >
+                <input type="file" class="form-control" value="{{ old('$p->feature_image',$p->feature_image)}}" data-height="300" name="feature_image" >
             </div>
         <div class="form-group col-md-3">
             <label for="name1">Short Description</label>
@@ -118,15 +118,7 @@
         </div>
     </div>
    
-    <div class="form-group">
-        <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-            Check me out
-        </label>
-        </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary">Change</button>
     </form>
 </div>
 
