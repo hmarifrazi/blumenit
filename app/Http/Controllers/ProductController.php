@@ -26,8 +26,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product=Product::paginate(10);
-        return view('products.index',compact('product'));
+        $product = Product::paginate(10);
+        return view('products.index', compact('product'));
     }
 
     /**
@@ -37,14 +37,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products =Product::all();
-        $category=Category::get(['id','name']);
-        $manufacturer=Manufacturer::get(['id','name']);
-        $subcategory=SubCategory::get(['id','name']);
-        return view('products.create',compact('products','category','manufacturer','subcategory'));
-        
+        $products = Product::all();
+        $category = Category::get(['id', 'name']);
+        $manufacturer = Manufacturer::get(['id', 'name']);
+        $subcategory = SubCategory::get(['id', 'name']);
+        return view('products.create', compact('products', 'category', 'manufacturer', 'subcategory'));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -53,7 +52,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
+        dd($request->all());
         $data['name'] = $request->name;
         $data['sku'] = $request->sku;
         $data['model_no'] = $request->model_no;
@@ -77,8 +76,7 @@ class ProductController extends Controller
 
         Product::create($data);
         return redirect('products');
-    
-}
+    }
 
     /**
      * Display the specified resource.
@@ -100,12 +98,12 @@ class ProductController extends Controller
     public function edit($id)
     {
         // $manufacturer=Manufacturer::all();
-        $category=Category::all();
+        $category = Category::all();
         // $subcategory=Subcategory::where('category_id',$products->category_id)->get();
         // return view('products.edit',compact('products','manufacturer','category','subcategory'));
 
-        $p=Product::findOrFail($id);
-        return view('products.edit',compact('p','category'));
+        $p = Product::findOrFail($id);
+        return view('products.edit', compact('p', 'category'));
     }
 
     /**
@@ -117,31 +115,31 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-       try{
-        $p=Product::findOrFail($id);
-        $p->name=$request->name;
-        $p->sku=$request->sku;
-        $p->model_no=$request->model_no;
-        $p->product_title=$request->product_title;
-        $p->feature_image=$request->feature_image;
-        $p->short_description=$request->short_description;
-        $p->long_description=$request->long_description;
-        $p->price=$request->price;
-        $p->discount=$request->discount;
-        $p->vat_status=$request->vat_status;
-        $p->warranty=$request->warranty;
-        $p->product_condition=$request->product_condition;
-        $p->qty=$request->qty;
-        $p->max_qty=$request->max_qty;
-        $p->manufacturer_id=$request->manufacturer;
-        // $p->category_id=$request->category;
-        // $p->subcategory_id=$request->subcategory;
-       
-       
-    }catch(Exception $e){
-           
-        return back()->withInput();
-    }
+        try {
+            $p = Product::findOrFail($id);
+            $p->name = $request->name;
+            $p->sku = $request->sku;
+            $p->model_no = $request->model_no;
+            $p->product_title = $request->product_title;
+            $p->feature_image = $request->feature_image;
+            $p->short_description = $request->short_description;
+            $p->long_description = $request->long_description;
+            $p->price = $request->price;
+            $p->discount = $request->discount;
+            $p->vat_status = $request->vat_status;
+            $p->warranty = $request->warranty;
+            $p->product_condition = $request->product_condition;
+            $p->qty = $request->qty;
+            $p->max_qty = $request->max_qty;
+            $p->manufacturer_id = $request->manufacturer;
+            // $p->category_id=$request->category;
+            // $p->subcategory_id=$request->subcategory;
+
+
+        } catch (Exception $e) {
+
+            return back()->withInput();
+        }
     }
 
     /**
