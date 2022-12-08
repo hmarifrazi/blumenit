@@ -6,6 +6,7 @@
 <html class="no-js" lang="en">
 <!--<![endif]-->
 {{-- dsad? --}}
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +26,7 @@
 
 
     <link rel="stylesheet" href="{{ asset('public/assets/css/style.css') }}">
-    
+
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -43,8 +44,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="{{asset('public/images/1648631826.svg')}}" style="background-color: #ddd;padding:10px;border-radius:5px" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="{{asset('public/images/1648631826.svg')}}" style="background-color: #ddd;padding:10px;border-radius:5px" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="{{asset('public/images/1648631826.svg')}}" style="background-color: #ddd;padding:5px;border-radius:5px" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{{asset('public/images/1648631826.svg')}}" style="background-color: #ddd;padding:5px;border-radius:5px" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -58,7 +59,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{route('category.index')}}">Category</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="{{route('subcategory.index')}}">Sub Category</a></li>
-                         
+
                         </ul>
                     </li>
 
@@ -66,10 +67,10 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Manufacturer</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{route('manufacturer.create')}}">New manufacturer</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="{{route('manufacturer.index')}}">List</a></li> 
+                            <li><i class="fa fa-id-badge"></i><a href="{{route('manufacturer.index')}}">List</a></li>
                         </ul>
                     </li>
-                    
+
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Product</a>
                         <ul class="sub-menu children dropdown-menu">
@@ -79,21 +80,21 @@
                     </li>
 
 
-                <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Order</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="">Order List</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="">Show Order</a></li>
                         </ul>
-            </li>
+                    </li>
 
-            <li class="menu-item-has-children dropdown">
+                    <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Customer</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{route('customer.create')}}">Add New</a></li>
                             <li><i class="fa fa-id-badge"></i><a href="{{route('customer.index')}}">Customer list</a></li>
                         </ul>
-            </li>
+                    </li>
 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -120,7 +121,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img  style="width:60px;height:60px;border-radius:50%;"  src="{{asset('public/images/1668066690060.jpg')}}" alt="User Avatar">
+                            <img style="width:50px;height:50px;border-radius:50%;" src="{{asset('public/images/1668066690060.jpg')}}" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -141,51 +142,51 @@
         </header><!-- /header -->
         <!-- Header-->
 
-       
+
 
         @yield('content')
-           
-    
 
 
 
 
-                                 
 
-    <!-- Right Panel -->
-    <script src="{{ asset('public/assets/vendors/jquery/dist/jquery.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/assets/js/main.js') }}"></script>
 
-    <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
 
-    
-    <script src="{{ asset('public/assets/vendors/chart.js/dist/Chart.bundle.min.js') }}"></script>
-    
-    <script src="{{ asset('public/assets/js/widgets.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/jqvmap/dist/jquery.vmap.min.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
-    <script src="{{ asset('public/assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
-    <script>
-        (function($) {
-            "use strict";
 
-            jQuery('#vmap').vectorMap({
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: ['#1de9b6', '#03a9f5'],
-                normalizeFunction: 'polynomial'
-            });
-        })(jQuery);
-    </script>
-    @stack('script')
+        <!-- Right Panel -->
+        <script src="{{ asset('public/assets/vendors/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/popper.js/dist/umd/popper.min.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('public/assets/js/main.js') }}"></script>
+
+        <script src="{{ asset('public/assets/js/dashboard.js') }}"></script>
+
+
+        <script src="{{ asset('public/assets/vendors/chart.js/dist/Chart.bundle.min.js') }}"></script>
+
+        <script src="{{ asset('public/assets/js/widgets.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/jqvmap/dist/jquery.vmap.min.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js') }}"></script>
+        <script src="{{ asset('public/assets/vendors/jqvmap/dist/maps/jquery.vmap.world.js') }}"></script>
+        <script>
+            (function($) {
+                "use strict";
+
+                jQuery('#vmap').vectorMap({
+                    map: 'world_en',
+                    backgroundColor: null,
+                    color: '#ffffff',
+                    hoverOpacity: 0.7,
+                    selectedColor: '#1de9b6',
+                    enableZoom: true,
+                    showTooltip: true,
+                    values: sample_data,
+                    scaleColors: ['#1de9b6', '#03a9f5'],
+                    normalizeFunction: 'polynomial'
+                });
+            })(jQuery);
+        </script>
+        @stack('script')
 
 
 </body>
