@@ -75,6 +75,12 @@ class ProductController extends Controller
         $data['category_id'] = $request->category;
         $data['subcategory_id'] = $request->subcategory;
 
+        if($request->hasFile('feature_image')){
+            $imageName = rand(111,999).time().'.'.$request->feature_image->extension();
+            $request->feature_image->move(public_path('uploads/subcategory'),$imageName);
+            $data['feature_image']=$imageName;
+       }
+
         Product::create($data);
         return redirect('products');
     
@@ -99,13 +105,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        // $manufacturer=Manufacturer::all();
+        $manufacturer=Manufacturer::all();
         $category=Category::all();
-        // $subcategory=Subcategory::where('category_id',$products->category_id)->get();
+        $subcategory=Subcategory::all();
         // return view('products.edit',compact('products','manufacturer','category','subcategory'));
 
         $p=Product::findOrFail($id);
-        return view('products.edit',compact('p','category'));
+        return view('products.edit',compact('p','category','manufacturer','subcategory'));
     }
 
     /**
@@ -123,7 +129,7 @@ class ProductController extends Controller
         $p->sku=$request->sku;
         $p->model_no=$request->model_no;
         $p->product_title=$request->product_title;
-        $p->feature_image=$request->imageName;
+        // $p->feature_image=$request->imageName;
         $p->short_description=$request->short_description;
         $p->long_description=$request->long_description;
         $p->price=$request->price;
@@ -133,9 +139,15 @@ class ProductController extends Controller
         $p->product_condition=$request->product_condition;
         $p->qty=$request->qty;
         $p->max_qty=$request->max_qty;
-        // $p->manufacturer_id=$request->manufacturer;
-        // $p->category_id=$request->category;
-        // $p->subcategory_id=$request->subcategory;
+        $p->manufacturer_id=$request->manufacturer;
+        $p->category_id=$request->category;
+        $p->subcategory_id=$request->subcategory;
+
+        if($request->hasFile('feature_image')){
+            $imageName = rand(111,999).time().'.'.$request->feature_image->extension();
+            $request->feature_image->move(public_path('uploads/subcategory'),$imageName);
+            $p->feature_image=$imageName;
+       }
        
        
     }catch(Exception $e){
