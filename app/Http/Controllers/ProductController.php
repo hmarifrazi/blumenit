@@ -52,14 +52,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $data['name'] = $request->name;
         $data['sku'] = $request->sku;
         $data['model_no'] = $request->model_no;
         $data['product_title'] = $request->product_title;
-        // $data['manufacturer_id'] = $request->manufacturer_id;
-        // $data['category_id'] = $request->category_id;
-        // $data['subcategory_id'] = $request->subcategory_id;
+        $data['manufacturer_id'] = $request->manufacturer_id;
+        $data['category_id'] = $request->category_id;
+        $data['subcategory_id'] = $request->subcategory_id;
         $data['feature_image'] = $request->feature_image;
         $data['short_description'] = $request->short_description;
         $data['long_description'] = $request->long_description;
@@ -70,9 +70,9 @@ class ProductController extends Controller
         $data['product_condition'] = $request->product_condition;
         $data['qty'] = $request->qty;
         $data['max_qty'] = $request->max_qty;
-        $data['manufacturer_id'] = $request->manufacturer;
-        $data['category_id'] = $request->category;
-        $data['subcategory_id'] = $request->subcategory;
+        // $data['manufacturer_id'] = $request->manufacturer;
+        // $data['category_id'] = $request->category;
+        // $data['subcategory_id'] = $request->subcategory;
 
         Product::create($data);
         return redirect('products');
@@ -99,11 +99,13 @@ class ProductController extends Controller
     {
         // $manufacturer=Manufacturer::all();
         $category = Category::all();
+        $manufacturer = Manufacturer::all();
+        $subcategory = SubCategory::all();
         // $subcategory=Subcategory::where('category_id',$products->category_id)->get();
         // return view('products.edit',compact('products','manufacturer','category','subcategory'));
 
         $p = Product::findOrFail($id);
-        return view('products.edit', compact('p', 'category'));
+        return view('products.edit', compact('p', 'category','manufacturer','subcategory'));
     }
 
     /**
@@ -124,6 +126,7 @@ class ProductController extends Controller
             $p->feature_image = $request->feature_image;
             $p->short_description = $request->short_description;
             $p->long_description = $request->long_description;
+            $p->specification = $request->specification;
             $p->price = $request->price;
             $p->discount = $request->discount;
             $p->vat_status = $request->vat_status;
@@ -132,8 +135,8 @@ class ProductController extends Controller
             $p->qty = $request->qty;
             $p->max_qty = $request->max_qty;
             $p->manufacturer_id = $request->manufacturer;
-            // $p->category_id=$request->category;
-            // $p->subcategory_id=$request->subcategory;
+            $p->category_id=$request->category;
+            $p->subcategory_id=$request->subcategory;
 
 
         } catch (Exception $e) {

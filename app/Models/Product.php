@@ -20,7 +20,7 @@ class Product extends Model
 
 
     public function subcategory(){
-       return view (subcategory::class,'subcategory_id','id');
+       return $this->belongsTo(subcategory::class,'subcategory_id','id');
 
     }
     protected $fillable = [

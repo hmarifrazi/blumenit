@@ -46,10 +46,10 @@
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="userName1" >Manufacturer</label>
-            <select name="manufacturer" value="{{ old('manufacturer',$p->manufacturer)}}" class="form-control">
-              @if($errors->has('manufacturer'))
-                  <option value="{{ old('manufacturer',$p->manufacturer)}}">{{$p->manufacturer}}</option>
-              @endif
+            <select name="manufacturer" class="form-control">
+                    @foreach($manufacturer as $manufac)
+                  <option value="{{$manufac->id }}">{{$manufac->name}}</option>
+                  @endforeach
             </select>
         </div>
         <div class="form-group col-md-4">
@@ -64,57 +64,61 @@
         <div class="form-group col-md-4">
             <label for="subcat"> Sub Category</label>
                 <select name="subcategory" id="subcat" class="form-control">
+                    @foreach($subcategory as $subcat)
                 <option value="" >--Select Category--</option>
-                        <option value="">--Select Category--</option>
+                        <option value="{{$subcat->id}}">--Select Category--
+                            {{$subcat->name}}
+                        </option>
+                    @endforeach
                 </select>
         </div>
     </div>
     <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="name1">Feature Image</label>
-                <input type="file" class="form-control" value="{{ old('$p->feature_image',$p->feature_image)}}" data-height="300" name="feature_image" >
+                <input type="file" class="form-control" value="{{ old('feature_image',$p->feature_image)}}" data-height="300" name="feature_image" >
             </div>
         <div class="form-group col-md-3">
             <label for="name1">Short Description</label>
-            <textarea class="summernote" name="short_description" rows="13" id="example-textarea">Write your address</textarea>
+            <textarea class="summernote" name="short_description" rows="13" id="example-textarea">{{old('short_description',$p->short_description)}}</textarea>
         </div>
         <div class="form-group col-md-3">
             <label for="name1">Long Description</label>
-            <textarea class="summernote" name="long_description" rows="13" id="example-textarea"></textarea>
+            <textarea class="summernote" name="long_description" rows="13" id="example-textarea">{{old('short_description',$p->long_description)}}</textarea>
         </div>
         <div class="form-group col-md-3">
             <label for="name1">Specification</label>
-            <textarea class="summernote" name="specification" rows="13" id="example-textarea"></textarea>
+            <textarea class="summernote" name="specification" rows="13" id="example-textarea">{{old('short_description',$p->specification)}}</textarea>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="userName1">Price</label>
-            <input type="text" class="form-control" id="userName1" name="price" placeholder="Name">
+            <input type="text" class="form-control" id="userName1" name="price" placeholder="Price" value="{{ old('price',$p->price)}}">
         </div>
     
         <div class="form-group col-md-4">
             <label>Discount (%)</label>
-            <input type="text" class="form-control" id="password1" name="discount" placeholder="Discount">
+            <input type="text" class="form-control" id="password1" name="discount" placeholder="Discount" value="{{ old('discount',$p->discount)}}">
         </div>
         <div class="form-group col-md-4">
             <label for="confirm1">VAT Status</label>
-            <input type="text" class="form-control"  name="vat" placeholder="VAT Status">
+            <input type="text" class="form-control"  name="vat" placeholder="VAT Status" value="{{ old('vat',$p->vat_status)}}">
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-4">
             <label for="userName1">Warranty</label>
-            <input type="text" class="form-control" name="warranty">
+            <input type="text" class="form-control" name="warranty" value="{{ old('warranty',$p->warranty)}}">
         </div>
     
         <div class="form-group col-md-4">
             <label>Product Condition</label>
-            <input type="text" class="form-control"  name="product_condition" >
+            <input type="text" class="form-control"  name="product_condition"  value="{{ old('product_condition',$p->product_condition)}}">
         </div>
         <div class="form-group col-md-4">
             <label >Max Qty</label>
-            <input type="text" class="form-control" name="max_qty" placeholder="Max Qty To buy in single order">
+            <input type="text" class="form-control" name="max_qty" placeholder="Max Qty To buy in single order" value="{{ old('max_qty',$p->max_qty)}}">
         </div>
     </div>
    
