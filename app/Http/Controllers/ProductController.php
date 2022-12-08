@@ -26,8 +26,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product=Product::paginate(10);
-        return view('products.index',compact('product'));
+        $product = Product::paginate(10);
+        return view('products.index', compact('product'));
     }
 
     /**
@@ -37,14 +37,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products =product::all();
-        $category=Category::get(['id','name']);
-        $manufacturer=Manufacturer::get(['id','name']);
-        $subcategory=SubCategory::get(['id','name']);
-        return view('products.create',compact('products','category','manufacturer','subcategory'));
-        
+        $products = Product::all();
+        $category = Category::get(['id', 'name']);
+        $manufacturer = Manufacturer::get(['id', 'name']);
+        $subcategory = SubCategory::get(['id', 'name']);
+        return view('products.create', compact('products', 'category', 'manufacturer', 'subcategory'));
     }
-    
+
     /**
      * Store a newly created resource in storage.
      *
@@ -61,7 +60,7 @@ class ProductController extends Controller
         // $data['manufacturer_id'] = $request->manufacturer_id;
         // $data['category_id'] = $request->category_id;
         // $data['subcategory_id'] = $request->subcategory_id;
-        $data['feature_image'] = $request->imageName;
+        $data['feature_image'] = $request->feature_image;
         $data['short_description'] = $request->short_description;
         $data['long_description'] = $request->long_description;
         $data['price'] = $request->price;
@@ -83,8 +82,7 @@ class ProductController extends Controller
 
         Product::create($data);
         return redirect('products');
-    
-}
+    }
 
     /**
      * Display the specified resource.
@@ -107,7 +105,8 @@ class ProductController extends Controller
     {
         $manufacturer=Manufacturer::all();
         $category=Category::all();
-        $subcategory=Subcategory::all();
+        $subcategory=SubCategory::all();
+        // $subcategory=Subcategory::where('category_id',$products->category_id)->get();
         // return view('products.edit',compact('products','manufacturer','category','subcategory'));
 
         $p=Product::findOrFail($id);
@@ -129,7 +128,7 @@ class ProductController extends Controller
         $p->sku=$request->sku;
         $p->model_no=$request->model_no;
         $p->product_title=$request->product_title;
-        // $p->feature_image=$request->imageName;
+        $p->feature_image=$request->imageName;
         $p->short_description=$request->short_description;
         $p->long_description=$request->long_description;
         $p->price=$request->price;
@@ -142,12 +141,6 @@ class ProductController extends Controller
         $p->manufacturer_id=$request->manufacturer;
         $p->category_id=$request->category;
         $p->subcategory_id=$request->subcategory;
-
-        if($request->hasFile('feature_image')){
-            $imageName = rand(111,999).time().'.'.$request->feature_image->extension();
-            $request->feature_image->move(public_path('uploads/subcategory'),$imageName);
-            $p->feature_image=$imageName;
-       }
        
        
     }catch(Exception $e){
@@ -168,6 +161,3 @@ class ProductController extends Controller
         return redirect()->back();
     }
 }
-// $data['manufacturer_id'] = $request->manufacturer;
-// $data['category_id'] = $request->category;
-// $data['subcategory_id'] = $request->subcategory;

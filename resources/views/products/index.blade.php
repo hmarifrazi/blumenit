@@ -25,15 +25,15 @@
                 <td>{{$p->name}}</td>
                 <td>{{$p->sku}}</td>
                 <td>{{$p->price}}</td>
-                <td><img width="50px" src="{{asset('uploads/'.$p->image)}}" alt="">{{$p->image}}</td>
+                <td><img width="50px" src="{{asset('uploads/'.$p->feature_image)}}" alt="">{{$p->feature_image}}</td>
                 <td class="white-space-nowrap">
-                    <a href="{{route('products.edit',$p)}}">
-                        <i class="btn btn-primary">Edit</i>
+                    <a href="{{route('products.edit',$p)}}" class="btn btn-info btn-sm">
+                        Edit
                     </a>
                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                         <i class="bi bi-trash"></i>
                     </a>
-                    <form class="btn btn-primary" id="form{{$p->id}}" action="{{route('products.destroy',$p->id)}}" method="post"> delete
+                    <form class="btn btn-danger btn-sm" id="form{{$p->id}}" action="{{route('products.destroy',$p->id)}}" method="post"> delete
                         @csrf
                         @method('delete')
                         
