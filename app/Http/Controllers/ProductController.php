@@ -120,7 +120,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Product $id)
     {
        try{
         $p=Product::findOrFail($id);
@@ -141,11 +141,12 @@ class ProductController extends Controller
         $p->manufacturer_id=$request->manufacturer;
         $p->category_id=$request->category;
         $p->subcategory_id=$request->subcategory;
-       
-       
+        return redirect(route('products.index'));
+        
     }catch(Exception $e){
            
-        return back()->withInput();
+        //  dd($e);
+        return redirect(route('products.edit'));
     }
     }
 
@@ -155,9 +156,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy(product $p)
     {
-        $product->delete();
+        $p->delete();
         return redirect()->back();
     }
 }
