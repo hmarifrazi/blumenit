@@ -8,6 +8,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SubCategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ManufacturerController;
+use App\Http\Controllers\OrderController;
 
 use App\Http\Middleware\SuperAdminMiddleware;
 use App\Http\Middleware\isAdmin;
@@ -92,4 +93,5 @@ Route::resource('subcategory',SubCategoryController::class);
 Route::resource('products',ProductController::class);
 Route::resource('manufacturer',ManufacturerController::class);
 Route::resource('customer',CustomerController::class);
+Route::resource('order',OrderController::class);
 

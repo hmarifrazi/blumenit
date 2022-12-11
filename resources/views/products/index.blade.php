@@ -27,17 +27,21 @@
                 <td>{{$p->price}}</td>
                 <td><img width="50px" src="{{asset('uploads/'.$p->feature_image)}}" alt="">{{$p->feature_image}}</td>
                 <td class="white-space-nowrap">
-                    <a href="{{route('products.edit',$p)}}" class="btn btn-info btn-sm">
-                        Edit
+                   <a href="{{route('products.show',$p)}}" class="btn btn-success btn rounded">
+                        Show
                     </a>
-                    <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
+                    {{-- <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                         <i class="bi bi-trash"></i>
-                    </a>
-                    <form class="btn btn-danger btn-sm" id="form{{$p->id}}" action="{{route('products.destroy',$p->id)}}" method="post"> delete
+                     </a>
+                    <form class="btn btn-danger btn-sm" id="form{{$p->id}}" action="{{route('products.destroy',$p)}}" method="post"> delete
                         @csrf
                         @method('delete')
                         
-                    </form>
+                    </form> --}}
+                   
+                     <a href="{{route('products.edit',$p)}}" class="btn btn-info btn rounded">
+                        Edit
+                    </a>
                 </td>
             </tr>
             @empty

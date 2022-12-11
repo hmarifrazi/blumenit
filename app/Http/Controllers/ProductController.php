@@ -52,14 +52,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        // dd($request->all());
         $data['name'] = $request->name;
         $data['sku'] = $request->sku;
         $data['model_no'] = $request->model_no;
         $data['product_title'] = $request->product_title;
-        // $data['manufacturer_id'] = $request->manufacturer_id;
-        // $data['category_id'] = $request->category_id;
-        // $data['subcategory_id'] = $request->subcategory_id;
+        $data['manufacturer_id'] = $request->manufacturer_id;
+        $data['category_id'] = $request->category_id;
+        $data['subcategory_id'] = $request->subcategory_id;
         $data['feature_image'] = $request->feature_image;
         $data['short_description'] = $request->short_description;
         $data['long_description'] = $request->long_description;
@@ -70,9 +70,15 @@ class ProductController extends Controller
         $data['product_condition'] = $request->product_condition;
         $data['qty'] = $request->qty;
         $data['max_qty'] = $request->max_qty;
-        $data['manufacturer_id'] = $request->manufacturer;
-        $data['category_id'] = $request->category;
-        $data['subcategory_id'] = $request->subcategory;
+        // $data['manufacturer_id'] = $request->manufacturer;
+        // $data['category_id'] = $request->category;
+        // $data['subcategory_id'] = $request->subcategory;
+
+        if($request->hasFile('feature_image')){
+            $imageName = rand(111,999).time().'.'.$request->feature_image->extension();
+            $request->feature_image->move(public_path('uploads/subcategory'),$imageName);
+            $data['feature_image']=$imageName;
+       }
 
         Product::create($data);
         return redirect('products');
@@ -86,7 +92,8 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        //
+        
+       return view('products.show',compact('product'));
     }
 
     /**
@@ -97,13 +104,14 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        // $manufacturer=Manufacturer::all();
-        $category = Category::all();
+        $manufacturer=Manufacturer::all();
+        $category=Category::all();
+        $subcategory=SubCategory::all();
         // $subcategory=Subcategory::where('category_id',$products->category_id)->get();
         // return view('products.edit',compact('products','manufacturer','category','subcategory'));
 
-        $p = Product::findOrFail($id);
-        return view('products.edit', compact('p', 'category'));
+        $p=Product::findOrFail($id);
+        return view('products.edit',compact('p','category','manufacturer','subcategory'));
     }
 
     /**
@@ -115,31 +123,38 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
-            $p = Product::findOrFail($id);
-            $p->name = $request->name;
-            $p->sku = $request->sku;
-            $p->model_no = $request->model_no;
-            $p->product_title = $request->product_title;
-            $p->feature_image = $request->feature_image;
-            $p->short_description = $request->short_description;
-            $p->long_description = $request->long_description;
-            $p->price = $request->price;
-            $p->discount = $request->discount;
-            $p->vat_status = $request->vat_status;
-            $p->warranty = $request->warranty;
-            $p->product_condition = $request->product_condition;
-            $p->qty = $request->qty;
-            $p->max_qty = $request->max_qty;
-            $p->manufacturer_id = $request->manufacturer;
-            // $p->category_id=$request->category;
-            // $p->subcategory_id=$request->subcategory;
-
-
-        } catch (Exception $e) {
-
-            return back()->withInput();
-        }
+       try{
+        $p=Product::findOrFail($id);
+        // dd($p);
+        $p->name=$request->name;
+        $p->sku=$request->sku;
+        $p->model_no=$request->model_no;
+        $p->product_title=$request->product_title;
+        $p->feature_image=$request->imageName;
+        $p->short_description=$request->short_description;
+        $p->long_description=$request->long_description;
+        $p->price=$request->price;
+        $p->discount=$request->discount;
+        $p->vat_status=$request->vat_status;
+        $p->warranty=$request->warranty;
+        $p->product_condition=$request->product_condition;
+        $p->qty=$request->qty;
+        $p->max_qty=$request->max_qty;
+        $p->manufacturer_id=$request->manufacturer;
+        $p->category_id=$request->category;
+        $p->subcategory_id=$request->subcategory;
+        
+        if($p->save()){
+                return redirect(route('products.index'));
+            }
+        
+    }catch(Exception $e){
+           
+        //  dd($e);
+         if($p->save()){
+                return redirect(route('products.index'));
+            }
+    }
     }
 
     /**
@@ -148,12 +163,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $product)
+    public function destroy(Product $p)
     {
-        $product->delete();
-        return redirect()->back();
+        // $p->delete();
+        // return redirect(route('products.index'));
     }
 }
-// $data['manufacturer_id'] = $request->manufacturer;
-// $data['category_id'] = $request->category;
-// $data['subcategory_id'] = $request->subcategory;
