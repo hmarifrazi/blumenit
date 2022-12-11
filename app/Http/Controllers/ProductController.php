@@ -92,7 +92,8 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        //
+        
+       return view('products.show',compact('product'));
     }
 
     /**
@@ -120,10 +121,11 @@ class ProductController extends Controller
      * @param  \App\Models\Product\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Product $id)
+    public function update(Request $request, $id)
     {
        try{
         $p=Product::findOrFail($id);
+        // dd($p);
         $p->name=$request->name;
         $p->sku=$request->sku;
         $p->model_no=$request->model_no;
@@ -141,12 +143,17 @@ class ProductController extends Controller
         $p->manufacturer_id=$request->manufacturer;
         $p->category_id=$request->category;
         $p->subcategory_id=$request->subcategory;
-        return redirect(route('products.index'));
+        
+        if($p->save()){
+                return redirect(route('products.index'));
+            }
         
     }catch(Exception $e){
            
         //  dd($e);
-        return redirect(route('products.edit'));
+         if($p->save()){
+                return redirect(route('products.index'));
+            }
     }
     }
 
@@ -156,9 +163,9 @@ class ProductController extends Controller
      * @param  \App\Models\Product\product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(product $p)
+    public function destroy(Product $p)
     {
-        $p->delete();
-        return redirect()->back();
+        // $p->delete();
+        // return redirect(route('products.index'));
     }
 }
