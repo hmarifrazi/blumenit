@@ -32,12 +32,13 @@
                     </a>
                     <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
                         <i class="bi bi-trash"></i>
-                    </a>
-                    <form class="btn btn-danger btn-sm" id="form{{$p->id}}" action="{{route('products.destroy',$p->id)}}" method="post"> delete
+                     </a>
+                    <form class="btn btn-danger btn-sm" id="form{{$p->id}}" action="{{route('products.destroy',$p)}}" method="post"> delete
                         @csrf
                         @method('delete')
                         
                     </form>
+                   
                 </td>
             </tr>
             @empty

@@ -82,7 +82,7 @@
     <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="name1">Feature Image</label>
-                <input type="file" class="form-control" value="{{ old('$p->feature_image',$p->feature_image)}}" data-height="300" name="feature_image" >
+                <input type="file" class="form-control" value="{{ old('feature_image',$p->feature_image)}}" data-height="300" name="feature_image" >
             </div>
         <div class="form-group col-md-3">
             <label for="name1">Short Description</label>
