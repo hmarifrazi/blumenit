@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card-body">
-    <a class="btn btn-sm btn-primary float-right m-3" href="{{ route('order.create') }}">Add New</a>
+    {{-- <a class="btn btn-sm btn-primary float-right m-3" href="{{ route('order.create') }}">Add New</a> --}}
     <table class="table">
         <thead>
             <tr>
@@ -30,16 +30,16 @@
                 Email:{{$or->email}}
                 </td>
                 <td>{{date('d/m/Y',strtotime($or->created_at))}}</td>
-                <td>{{$number_format($or->total,2)}}</td>
+                {{-- <td>{{$number_format($or->total,2)}}</td> --}}
                 <td><span class="{{$statusclass[$or->status]}}">{{$status[$or->status]}}</td>
                 
-                 <td>
+                 {{-- <td>
                     <a href="{{route('order.show',$or->id)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Show</a>                        
                     <a href="{{route('order.edit',$or->id)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Edit</a>
                     @if($or->status !=2)
                     <a href="{{route('order.delete',$or->id)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Delete</a>
-                </td> 
-                @endif
+                </td>  --}}
+                {{-- @endif --}}
                   @empty
                 
                 <td colspan="6" class="text-center">
