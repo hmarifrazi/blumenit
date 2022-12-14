@@ -30,15 +30,17 @@
                 Email:{{$or->email}}
                 </td>
                 <td>{{date('d/m/Y',strtotime($or->created_at))}}</td>
-                {{-- <td>{{$number_format($or->total,2)}}</td> --}}
+                <td>{{number_format($or->total,2)}}</td> 
                 <td><span class="{{$statusclass[$or->status]}}">{{$status[$or->status]}}</td>
                 
-                 {{-- <td>
-                    <a href="{{route('order.show',$or->id)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Show</a>                        
-                    <a href="{{route('order.edit',$or->id)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Edit</a>
+                 <td>
+                    <a href="{{route('order.show',$or->id)}}" class="btn btn-primary rounded btn-sm waves-effect">Show</a>                   
+                    <a href="{{route('order.edit',$or->id)}}" class="btn btn-success rounded btn-sm waves-effect">Edit</a>
+
+                    {{--
                     @if($or->status !=2)
-                    <a href="{{route('order.delete',$or->id)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Delete</a>
-                </td>  --}}
+                    <a href="{{route('order.delete',$or->id)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Delete</a> --}}
+                </td> 
                 {{-- @endif --}}
                   @empty
                 
