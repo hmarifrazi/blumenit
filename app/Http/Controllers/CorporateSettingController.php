@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CorporateSetting;
 use Illuminate\Http\Request;
+use App\Models\Corporate_inquiry;
 
 class CorporateSettingController extends Controller
 {
@@ -14,7 +15,8 @@ class CorporateSettingController extends Controller
      */
     public function index()
     {
-        //
+        $data=Corporate_inquiry::paginate(10);
+        return view('corporate.index',compact('data'));
     }
 
     /**
@@ -81,5 +83,10 @@ class CorporateSettingController extends Controller
     public function destroy(CorporateSetting $corporateSetting)
     {
         //
+    }
+
+    public function inq_list(){
+        $data=Corporate_inquiry::paginate();
+        return view('corporate.index',compact('data'));
     }
 }
