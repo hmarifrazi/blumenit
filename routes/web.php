@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CorporateSettingController;
+use App\Http\Controllers\CorporateInqueryController;
 use App\Http\Controllers\HeaderviewController;
 use App\Http\Middleware\SuperAdminMiddleware;
 use App\Http\Middleware\isAdmin;
