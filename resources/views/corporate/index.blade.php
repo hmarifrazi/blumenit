@@ -3,14 +3,16 @@
 @section('content')
 
 <div class="card-body">
-    {{-- <a class="btn btn-sm btn-primary float-right m-3" href="{{ route('order.create') }}">Add New</a> --}}
+
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">#SL</th>
-                <th scope="col">Customer</th>
-                <th scope="col">Order Date</th>
-                <th scope="col">Price</th>
+                <th scope="col">#SL No</th>
+                <th scope="col">Title</th>
+                <th scope="col">Name</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
                 
@@ -19,18 +21,22 @@
 
 
         <tbody>
-            @php $status=array('Pending','Processing','Delivered','Canceled'); @endphp
+            @php $status=array('Pending','Done'); @endphp
             @php $statusclass=array('warning','info','success','danger'); @endphp
       
-             @forelse($order as $or)
+             @forelse($data as $c)
             <tr>
                 <th scope="row">{{++$loop->index }}</th>
-                <td>{{$or->full_name}}<br>
-                Call:{{$or->contact_ext}}-{{$or->contact}}<br>
-                Email:{{$or->email}}
+                <td>{{$c->title}}<br>
+                <td>{{$c->name}}<br>
+                <td>{{$c->contact}}<br>
+                <td>{{$c->email}}<br>
+                <td>{{$c->address}}<br>
+                <td>{{$c->status==1?"Active":"Inactive"}}<br>
+               
                 </td>
-                <td>{{date('d/m/Y',strtotime($or->created_at))}}</td>
-                <td>{{number_format($or->total,2)}}</td> 
+                
+                
                 <td><span class="{{$statusclass[$or->status]}}">{{$status[$or->status]}}</td>
                 
                  <td>
