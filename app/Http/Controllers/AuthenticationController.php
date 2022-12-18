@@ -15,7 +15,7 @@ class AuthenticationController extends Controller
     use ResponseTrait;
 
     public function signUpForm(){
-        return view('authentication.register');
+        return view('backend.authentication.register');
     }
     public function signUpStore(SignupRequest $request){
         try{
@@ -35,7 +35,7 @@ class AuthenticationController extends Controller
     }
 
     public function signInForm(){
-        return view('authentication.login');
+        return view('backend.authentication.login');
     }
 
     public function signInCheck(SigninRequest $request){
