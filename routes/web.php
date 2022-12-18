@@ -10,7 +10,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CorporateSettingController;
-
+use App\Http\Controllers\HeaderviewController;
 use App\Http\Middleware\SuperAdminMiddleware;
 use App\Http\Middleware\isAdmin;
 
@@ -60,6 +60,8 @@ use App\Http\Middleware\isAdmin;
 // Route::get('/finishorder/{id}', [CheckoutController::class, 'finish_order'])->name('front.finishorder');
 //     /* checkout */
 
+
+//For Banckend
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
 Route::post('/register', [auth::class ,'signUpStore'])->name('register.store');
 Route::get('/', [auth::class,'signInForm'])->name('signIn');
@@ -100,3 +102,5 @@ Route::resource('corporate',CorporateSettingController::class);
 // Route::get('/corporate_setting_inq','inq_list')->name('superadmin.corporate_setting_inq.list');
 Route::resource('corporate_set',CorporateSettingController::class,['as'=>'superadmin']);
 
+//For Frontend
+// Route::resource('frontend',HeaderviewController::class,['as'=>'superadmin']);

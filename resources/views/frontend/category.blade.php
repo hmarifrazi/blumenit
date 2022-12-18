@@ -56,10 +56,10 @@
                   <div class="cs-card_info">
                     <div class="cs-card_desc">{{$item->name}}</div>
                     @if($item->discount>0)
-                    <div class="cs-card_price"><span>AED</span> {{number_format(($item->price - ($item->price * ($item->discount/100))),2)}}</div>
-                    <div class="cs-card_previous_price">AED {{number_format($item->price,2)}}</div>
+                    <div class="cs-card_price"><span>BDT</span> {{number_format(($item->price - ($item->price * ($item->discount/100))),2)}}</div>
+                    <div class="cs-card_previous_price">BDT {{number_format($item->price,2)}}</div>
                     @else
-                    <div class="cs-card_price"><span>AED</span> {{number_format($item->price,2)}}</div>
+                    <div class="cs-card_price"><span>BDT</span> {{number_format($item->price,2)}}</div>
                     @endif
                   </div>
                 </a>
@@ -121,10 +121,10 @@
                   <div class="cs-card_info">
                     <div class="cs-card_desc">{{$item->name}}</div>
                     @if($item->discount>0)
-                    <div class="cs-card_price"><span>AED</span> {{number_format(($item->price - ($item->price * ($item->discount/100))),2)}}</div>
-                    <div class="cs-card_previous_price">AED {{number_format($item->price,2)}}</div>
+                    <div class="cs-card_price"><span>BDT</span> {{number_format(($item->price - ($item->price * ($item->discount/100))),2)}}</div>
+                    <div class="cs-card_previous_price">BDT {{number_format($item->price,2)}}</div>
                     @else
-                    <div class="cs-card_price"><span>AED</span> {{number_format($item->price,2)}}</div>
+                    <div class="cs-card_price"><span>BDT</span> {{number_format($item->price,2)}}</div>
                     @endif
                   </div>
                 </a>
@@ -220,10 +220,10 @@
                             <div class="cs-card_info">
                               <div class="cs-card_desc">{{$item->name}}</div>
                               @if($item->discount)
-                              <div class="cs-card_price"><span>AED</span> {{$item->price - ($item->price * ($item->discount/100))}}</div>
-                              <div class="cs-card_previous_price">AED {{$item->price}}</div>
+                              <div class="cs-card_price"><span>BDT</span> {{$item->price - ($item->price * ($item->discount/100))}}</div>
+                              <div class="cs-card_previous_price">BDT {{$item->price}}</div>
                               @else
-                              <div class="cs-card_price"><span>AED</span> {{$item->price}}</div>
+                              <div class="cs-card_price"><span>BDT</span> {{$item->price}}</div>
                               @endif
                             </div>
                           </a>
@@ -274,10 +274,10 @@
                             <div class="cs-card_info">
                               <div class="cs-card_desc">{{$item->name}}</div>
                               @if($item->discount)
-                              <div class="cs-card_price"><span>AED</span> {{$item->price - ($item->price * ($item->discount/100))}}</div>
-                              <div class="cs-card_previous_price">AED {{$item->price}}</div>
+                              <div class="cs-card_price"><span>BDT</span> {{$item->price - ($item->price * ($item->discount/100))}}</div>
+                              <div class="cs-card_previous_price">BDT {{$item->price}}</div>
                               @else
-                              <div class="cs-card_price"><span>AED</span> {{$item->price}}</div>
+                              <div class="cs-card_price"><span>BDT</span> {{$item->price}}</div>
                               @endif
                             </div>
                           </a>
@@ -357,10 +357,10 @@
                             <div class="cs-card_info">
                               <div class="cs-card_desc">{{$item->name}}</div>
                               @if($item->discount)
-                              <div class="cs-card_price"><span>AED</span> {{$item->price - ($item->price * ($item->discount/100))}}</div>
-                              <div class="cs-card_previous_price">AED {{$item->price}}</div>
+                              <div class="cs-card_price"><span>BDT</span> {{$item->price - ($item->price * ($item->discount/100))}}</div>
+                              <div class="cs-card_previous_price">BDT {{$item->price}}</div>
                               @else
-                              <div class="cs-card_price"><span>AED</span> {{$item->price}}</div>
+                              <div class="cs-card_price"><span>BDT</span> {{$item->price}}</div>
                               @endif
                             </div>
                           </a>
@@ -411,10 +411,10 @@
                             <div class="cs-card_info">
                               <div class="cs-card_desc">{{$item->name}}</div>
                               @if($item->discount)
-                              <div class="cs-card_price"><span>AED</span> {{$item->price - ($item->price * ($item->discount/100))}}</div>
-                              <div class="cs-card_previous_price">AED {{$item->price}}</div>
+                              <div class="cs-card_price"><span>BDT</span> {{$item->price - ($item->price * ($item->discount/100))}}</div>
+                              <div class="cs-card_previous_price">BDT {{$item->price}}</div>
                               @else
-                              <div class="cs-card_price"><span>AED</span> {{$item->price}}</div>
+                              <div class="cs-card_price"><span>BDT</span> {{$item->price}}</div>
                               @endif
                             </div>
                           </a>

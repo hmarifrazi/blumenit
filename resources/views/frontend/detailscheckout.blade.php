@@ -138,7 +138,7 @@
                 <div class="cs-card_image"><img src="{{asset($item['image'])}}" alt=""></div>
                 <div class="cs-card_content">
                   <h2>{{$item['name']}}</h2>
-                  <h3>AED: {{number_format($item['price'],2)}}</h3>
+                  <h3>BDT: {{number_format($item['price'],2)}}</h3>
                   <h4><b>Sku:</b> {{$item['sku']}}</h4>
                   <h4><b>Qty:</b> {{$item['quantity']}}</h4>
                 </div>
@@ -149,7 +149,7 @@
           <ul class="cs-list cs-style2">
             <li>
               <span>Sub Total</span>
-              <span>AED {{$cal_cart['sub_total']}}</span>
+              <span>BDT {{$cal_cart['sub_total']}}</span>
             </li>
             <li>
               <span>Delivery Charges</span>
@@ -157,7 +157,7 @@
             </li>
             <li class="cs-list_focus">
               <span>Total <span>(Inclusive of VAT)</span></span>
-              <span class="total">AED {{$cal_cart['total']}} </span>
+              <span class="total">BDT {{$cal_cart['total']}} </span>
             </li>
           </ul>
         </div>
@@ -216,8 +216,8 @@
             dataType: 'JSON',
             success: function (d) {
                 if(d){
-                    $('.total').text('AED '+d.total)
-                    $('.dcharge').text('AED '+d.cost)
+                    $('.total').text('BDT '+d.total)
+                    $('.dcharge').text('BDT '+d.cost)
                     $('.ship-terms').html(d.terms)
                 }
             }

@@ -1,4 +1,9 @@
-
+@php
+  $footsupport = App\Models\Homefootersupportview::all();
+  $footercol1 = App\Models\Footercol1::all();
+  $footercol4 = App\Models\Footercol4::all();
+  $Social = App\Models\Sociallink::all();
+@endphp
 <footer class="cs-footer no-print">
     <div class="cs-gray_bg">
       <div class="container">
@@ -7,7 +12,9 @@
             <li>
               <div class="cs-info cs-color1 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="cs-info_icon">
-                  
+                  @if($footsupport[0]->image_1st)
+                  <img src="{{asset($footsupport[0]->image_1st)}}" alt="" width="50" height="50">
+                  @else
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
                     <defs>
                       <clipPath id="care-clip-path">
@@ -35,16 +42,20 @@
                       </g>
                     </g>
                   </svg>
-                  
+                  @endif
                 </div>
                 <div class="cs-info_right">
-                  
+                  <h3 class="cs-info_title">{{$footsupport[0]->header_1st}}</h3>
+                  <div class="cs-info_subtitle">{{$footsupport[0]->details_1st}}</div>
+                </div>
               </div><!-- .cs-info -->
             </li>
             <li>
               <div class="cs-info cs-color2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="cs-info_icon">
-                 
+                  @if($footsupport[0]->image_2nd)
+                    <img src="{{asset($footsupport[0]->image_2nd)}}" alt="" width="50" height="50">
+                  @else
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
                     <defs>
                       <clipPath id="quote-clip-path">
@@ -62,17 +73,20 @@
                       </g>
                     </g>
                   </svg>
-                            
+                  @endif              
                 </div>
                 <div class="cs-info_right">
-                  
+                  <h3 class="cs-info_title">{{$footsupport[0]->header_2nd}}</h3>
+                  <div class="cs-info_subtitle">{{$footsupport[0]->details_2nd}}</div>
                 </div>
               </div><!-- .cs-info -->
             </li>
             <li>
               <div class="cs-info cs-color3 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="cs-info_icon">
-                  
+                  @if($footsupport[0]->image_3rd)
+                    <img src="{{asset($footsupport[0]->image_3rd)}}" alt="" width="50" height="50">
+                  @else
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
                     <defs>
                       <clipPath id="wholesale-clip-path">
@@ -96,17 +110,20 @@
                       </g>
                     </g>
                   </svg>
-                 
+                  @endif  
                 </div>
                 <div class="cs-info_right">
-                  
+                  <h3 class="cs-info_title">{{$footsupport[0]->header_3rd}}</h3>
+                  <div class="cs-info_subtitle">{{$footsupport[0]->details_3rd}}</div>
                 </div>
               </div><!-- .cs-info -->
             </li>
             <li>
               <div class="cs-info cs-color4 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="cs-info_icon">
-                 
+                  @if($footsupport[0]->image_4th)
+                    <img src="{{asset($footsupport[0]->image_4th)}}" alt="" width="50" height="50">
+                  @else
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
                     <defs>
                       <clipPath id="insurence-clip-path">
@@ -131,10 +148,11 @@
                       <path d="M35.186,20.264l.791-1.436h1.348l-1.465,2.324,1.484,2.363h-1.27L35.186,22,34.3,23.516h-1.27l1.484-2.363-1.465-2.324h1.348Z" fill="#020288"/>
                     </g>
                   </svg>
-                 
+                  @endif
                 </div>
                 <div class="cs-info_right">
-                  
+                  <h3 class="cs-info_title">{{$footsupport[0]->header_4th}}</h3>
+                  <div class="cs-info_subtitle">{{$footsupport[0]->details_4th}}</div>
                 </div>
               </div><!-- .cs-info -->
             </li>
@@ -148,11 +166,11 @@
           <div class="cs-footer_col cs-first_column">
             <div class="cs-footer_widget">
               <div class="cs-footer_logo">
-                <img src="" alt="Logo" width="200" height="200">
+                <img src="{{asset($footercol1[0]->logo)}}" alt="Logo" width="200" height="200">
               </div>
               <div class="cs-footer_newsletter">
-                <h3 class="cs-newsletter_title">gfhgfhggf</h3>
-                <div class="cs-newsletter_subtitle">gfghfrhg</div>
+                <h3 class="cs-newsletter_title">{{$footercol1[0]->title}}</h3>
+                <div class="cs-newsletter_subtitle">{{$footercol1[0]->text}}</div>
                 <form class="cs-newsletter_form">
                   <input type="text" class="cs-newsletter_input" placeholder="Your email address">
                   <button class="cs-newsletter_button">Subscribe</button>
@@ -185,7 +203,7 @@
             <div class="cs-footer_social">
               <h2 class="cs-footer_social_title">Follow with us:  </h2>
               <div class="cs-footer_social_links">
-                <a href="">
+                <a href="{{$Social[0]->facebook}}">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
                     <defs>
                       <clipPath id="facebook_clip">
@@ -197,7 +215,7 @@
                     </g>
                   </svg>                 
                 </a>
-                <a href="">                
+                <a href="{{$Social[0]->twitter}}">                
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="25" viewBox="0 0 24 25">
                     <defs>
                       <clipPath id="twitter_clip">
@@ -209,7 +227,7 @@
                     </g>
                   </svg>
                 </a>
-                <a href="">              
+                <a href="{{$Social[0]->whatsapp}}">              
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
                     <defs>
                       <clipPath id="whatsapp_clip">
@@ -221,7 +239,7 @@
                     </g>
                   </svg>
                 </a>
-                <a href="">                
+                <a href="{{$Social[0]->linkedin}}">                
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25" height="25" viewBox="0 0 25 25">
                     <defs>
                       <clipPath id="linkedin_clip">
@@ -251,7 +269,7 @@
                       <path d="M11.429,1.429c-3.943,0-7.143,2.88-7.143,6.429,0,5.714,7.143,13.571,7.143,13.571s7.143-7.857,7.143-13.571C18.571,4.309,15.372,1.429,11.429,1.429Zm0,10a2.857,2.857,0,1,1,2.857-2.857A2.857,2.857,0,0,1,11.429,11.429Z" transform="translate(1294.571 4733.571)" fill="#39b54a"/>
                     </g>
                   </svg>
-                  
+                  {{$footercol4[0]->address}}
                 </li>
                 <li>
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
@@ -264,7 +282,7 @@
                       <path d="M17.986.984a1.944,1.944,0,0,1,1.429.586A1.941,1.941,0,0,1,20,3V14.988A2,2,0,0,1,17.986,17H2.014a1.944,1.944,0,0,1-1.429-.586A1.941,1.941,0,0,1,0,14.989V3A1.944,1.944,0,0,1,.586,1.569,1.941,1.941,0,0,1,2.014.984Zm0,4.028V3L9.977,8.009,2.014,3V5.011L9.977,9.976Z" transform="translate(1296 4810.007)" fill="#39b54a"/>
                     </g>
                   </svg>
-                  
+                  {{$footercol4[0]->email}}
                 </li>
                 <li>
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
@@ -277,7 +295,7 @@
                       <path d="M17.455,21.428a8.412,8.412,0,0,1-3.929-1.339,25.54,25.54,0,0,1-6.17-4.615A23.431,23.431,0,0,1,2.723,9.306C1.079,6.315,1.359,4.747,1.672,4.077A4.175,4.175,0,0,1,3.309,2.321a7.87,7.87,0,0,1,1.279-.679l.123-.054a1.194,1.194,0,0,1,.98-.09,2.868,2.868,0,0,1,.931.714A15.466,15.466,0,0,1,8.95,5.67a3.441,3.441,0,0,1,.457,1.416,2.239,2.239,0,0,1-.569,1.331c-.058.08-.117.156-.173.23-.34.446-.414.575-.365.806a8.467,8.467,0,0,0,2.062,3.058,8.122,8.122,0,0,0,3.023,2.012c.24.051.372-.026.832-.378.066-.05.134-.1.205-.155a2.249,2.249,0,0,1,1.351-.6h0a3.237,3.237,0,0,1,1.422.5A17.041,17.041,0,0,1,20.642,16.2a2.88,2.88,0,0,1,.717.929,1.2,1.2,0,0,1-.09.982c-.017.037-.035.077-.054.123a7.878,7.878,0,0,1-.683,1.276,4.172,4.172,0,0,1-1.758,1.633,3.009,3.009,0,0,1-1.32.29Z" transform="translate(1294.569 4849.571)" fill="#39b54a"/>
                     </g>
                   </svg>
-                  
+                  {{$footercol4[0]->contact}}
                 </li>
               </ul>
             </div>
@@ -285,7 +303,7 @@
         </div>
         <div class="container">
           <div class="cs-footer_bottom">
-            <div class="cs-copyright"></div>
+            <div class="cs-copyright">{{$footercol1[0]->copyright_notice}}</div>
             <div class="cs-scroll_up">         
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
                 <defs>

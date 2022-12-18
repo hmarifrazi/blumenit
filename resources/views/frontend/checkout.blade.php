@@ -138,7 +138,7 @@
                 <div class="cs-card_image"><img src="assets/img/product-view/thumb_lg_1.png" alt=""></div>
                 <div class="cs-card_content">
                   <h2>{{$item->name}}</h2>
-                  <h3>AED: {{number_format($item->price,2)}}</h3>
+                  <h3>BDT: {{number_format($item->price,2)}}</h3>
                   <h4><b>Sku:</b> {{$item->sku}}</h4>
                   @if(isset($cart[$item->id]))
                   <h4><b>Qty:</b> {{$cart[$item->id]['quantity']}}</h4>
@@ -151,7 +151,7 @@
           <ul class="cs-list cs-style2">
             <li>
               <span>Sub Total</span>
-              <span>AED {{$cal_cart['sub_total']}}</span>
+              <span>BDT {{$cal_cart['sub_total']}}</span>
             </li>
             @if($cal_cart['shipping'])
             <li>
@@ -161,7 +161,7 @@
             @endif
             <li class="cs-list_focus">
               <span>Total <span>(Inclusive of VAT)</span></span>
-              <span>AED {{$cal_cart['total']}} </span>
+              <span>BDT {{$cal_cart['total']}} </span>
             </li>
           </ul>
         </div>

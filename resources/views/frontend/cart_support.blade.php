@@ -24,17 +24,17 @@
                     <div class="cs-cart_product_meta">
                     @if($item->discount >0)
                         <div class="cs-cart_meta_left">
-                            <h3 class="cs-orange_color">AED: {{number_format(($item->price - ($item->price * ($item->discount/100))),2 )}}</h3>
+                            <h3 class="cs-orange_color">BDT: {{number_format(($item->price - ($item->price * ($item->discount/100))),2 )}}</h3>
                             <p>@if((float) $item->vat_status > 0) {{$item->vat_status}}% Vat @else {{$item->vat_status}}  @endif</p>
                         </div>
                         <div class="cs-cart_meta_right">
                             <span class="cs-badge cs-color3">{{$item->discount}}% OFF</span>
                             <div class="cs-height_5 cs-height_lg_5"></div>
-                            <div class="cs-single_past_price">Was <span>{{number_format($item->price,2)}} AED</span></div>
+                            <div class="cs-single_past_price">Was <span>{{number_format($item->price,2)}} BDT</span></div>
                         </div>
                     @else
                         <div class="cs-cart_meta_left">
-                            <h3 class="cs-orange_color">AED: {{number_format($item->price,2)}}</h3>
+                            <h3 class="cs-orange_color">BDT: {{number_format($item->price,2)}}</h3>
                             <p>@if((float) $item->vat_status > 0) {{$item->vat_status}}% Vat @else {{$item->vat_status}}  @endif</p>
                         </div>
                     @endif
@@ -95,23 +95,23 @@
           <ul class="cs-list cs-style2">
             <li>
               <span>Total MRP</span>
-              <span>AED {{number_format($total,2)}} </span>
+              <span>BDT {{number_format($total,2)}} </span>
             </li>
             @if($t_discount>0)
             <li>
               <span>Cart Discount</span>
-              <span class="cs-accent_color">-AED {{number_format($t_discount,2)}} </span>
+              <span class="cs-accent_color">-BDT {{number_format($t_discount,2)}} </span>
             </li>
             @endif
             @if($t_vat>0)
             <li>
               <span>VAT</span>
-              <span class="cs-accent_color">-AED {{number_format($t_vat,2)}} </span>
+              <span class="cs-accent_color">-BDT {{number_format($t_vat,2)}} </span>
             </li>
             @endif
             <li>
               <span>Sub Total</span>
-              <span>AED {{number_format((($total - $t_discount)+$t_vat),2)}} </span>
+              <span>BDT {{number_format((($total - $t_discount)+$t_vat),2)}} </span>
             </li>
             <li>
               <span>Delivery Charges</span>
@@ -119,7 +119,7 @@
             </li>
             <li>
               <span>Total <span>(Inclusive of VAT)</span></span>
-              <span>AED {{number_format((($total - $t_discount)+$t_vat),2)}} </span>
+              <span>BDT {{number_format((($total - $t_discount)+$t_vat),2)}} </span>
             </li>
           </ul>
           <div class="cs-height_20 cs-height_lg_20"></div>

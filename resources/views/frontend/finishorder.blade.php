@@ -22,7 +22,7 @@
                     <div class="cs-card_image"><img src="{{asset($item['image'])}}" alt=""></div>
                     <div class="cs-card_content">
                     <h2>{{$item['name']}}</h2>
-                    <h3>AED: {{number_format($item['price'],2)}}</h3>
+                    <h3>BDT: {{number_format($item['price'],2)}}</h3>
                     <h4><b>Sku:</b> {{$item['sku']}}</h4>
                     <h4><b>Qty:</b> {{$item['quantity']}}</h4>
                     </div>
@@ -78,15 +78,15 @@
           <ul class="cs-list cs-style2">
             <li>
               <span>Total MRP</span>
-              <span>AED {{number_format($order->total_mrp,2)}} </span>
+              <span>BDT {{number_format($order->total_mrp,2)}} </span>
             </li>
             <li>
               <span>Cart Discount</span>
-              <span class="cs-accent_color">-AED {{number_format($order->discount,2)}} </span>
+              <span class="cs-accent_color">-BDT {{number_format($order->discount,2)}} </span>
             </li>
             <li>
               <span>Sub Total</span>
-              <span>AED {{number_format($order->subtotal,2)}} </span>
+              <span>BDT {{number_format($order->subtotal,2)}} </span>
             </li>
             <li>
               <span>Delivery Charges</span>
@@ -98,7 +98,7 @@
             </li>
             <li class="cs-list_focus">
               <span>Total <span>(Inclusive of VAT)</span></span>
-              <span>AED {{number_format($order->total,2)}} </span>
+              <span>BDT {{number_format($order->total,2)}} </span>
             </li>
           </ul>
         </div>
