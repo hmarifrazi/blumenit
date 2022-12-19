@@ -120,14 +120,14 @@
        <div class="cs-single_main">
          <div class="cs-single_main_left">
            @if($product->discount>0)
-           <div class="cs-single_price">AED: {{ number_format(($product->price *(1-$product->discount/100)),2) }} </div>
+           <div class="cs-single_price">BDT: {{ number_format(($product->price *(1-$product->discount/100)),2) }} </div>
            <p class="cs-single_price_meta">@if((float) $product->vat_status > 0) {{$product->vat_status}}% Vat @else {{$product->vat_status}}  @endif</p>
            <div class="cs-height_30 cs-height_lg_20"></div>
            <span class="cs-badge cs-color3">{{$product->discount}}% OFF</span>
            <div class="cs-height_5 cs-height_lg_5"></div>
-           <div class="cs-single_past_price">Was <span>{{number_format($product->price,2)}} AED</span></div>
+           <div class="cs-single_past_price">Was <span>{{number_format($product->price,2)}} BDT</span></div>
           @else
-            <div class="cs-single_price">AED: {{number_format($product->price,2)}} </div>
+            <div class="cs-single_price">BDT: {{number_format($product->price,2)}} </div>
            <p class="cs-single_price_meta">@if((float) $product->vat_status > 0) {{$product->vat_status}}% Vat @else {{$product->vat_status}}  @endif</p>
            <div class="cs-height_30 cs-height_lg_20"></div>
           @endif
@@ -169,7 +169,7 @@
                  <span>TBA</span>
                 </a>
               @else
-                <a href="javascript:void(0)" onclick="add_to_cart({{$product->id}})" class="cs-btn cs-style3">
+                <a href="javascript:void(0)" onclick="add_to_cart('{{$product->id}}')" class="cs-btn cs-style3">
                  <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                    <path d="M28.9889 9.64004C28.7789 10.32 28.5689 11.001 28.3709 11.687C27.4239 14.942 26.4879 18.197 25.5409 21.452C25.5256 21.5676 25.4875 21.6789 25.4287 21.7796C25.37 21.8802 25.2918 21.9682 25.1988 22.0384C25.1057 22.1085 24.9996 22.1595 24.8867 22.1883C24.7738 22.217 24.6562 22.2231 24.5409 22.206H9.54993C9.43416 22.2233 9.3161 22.2173 9.20271 22.1882C9.08931 22.1592 8.98288 22.1077 8.88968 22.0369C8.79648 21.9661 8.71841 21.8773 8.66006 21.7758C8.60171 21.6743 8.56427 21.5622 8.54993 21.446C7.22993 16.6854 5.91094 11.922 4.59294 7.15604C4.56994 7.06504 4.54193 6.97504 4.50793 6.86104H3.80794C2.92294 6.86104 2.03294 6.83804 1.14794 6.86704C0.915242 6.90167 0.677614 6.85886 0.47163 6.74521C0.265646 6.63156 0.10272 6.45336 0.00793457 6.23804V5.78404C0.10272 5.56872 0.265646 5.39052 0.47163 5.27687C0.677614 5.16321 0.915242 5.12041 1.14794 5.15504C2.42994 5.17804 3.71094 5.16104 4.99794 5.16104C5.11551 5.14241 5.23564 5.14759 5.35117 5.17627C5.46671 5.20494 5.57531 5.25653 5.67054 5.32797C5.76576 5.39942 5.84567 5.48925 5.90551 5.59216C5.96536 5.69507 6.00393 5.80894 6.01894 5.92704L6.35894 7.15204C6.48894 7.61704 6.62594 8.08804 6.74994 8.54104H12.5109C12.4599 8.41604 12.4199 8.31404 12.3809 8.21204C11.7928 6.74103 11.8123 5.09674 12.4353 3.64015C13.0584 2.18355 14.2339 1.03371 15.7039 0.443038C16.2379 0.266555 16.781 0.119007 17.3309 0.0010376H18.4649C18.6579 0.0410376 18.8509 0.0800385 19.0429 0.114038C20.4978 0.411361 21.7904 1.23867 22.6696 2.43537C23.5488 3.63207 23.952 5.11278 23.8009 6.59004C23.7159 7.24804 23.5169 7.89004 23.3639 8.54604H23.6079C25.0309 8.54604 26.4549 8.56304 27.8839 8.54004C28.1123 8.50992 28.3443 8.55502 28.5448 8.66851C28.7452 8.78201 28.9032 8.95771 28.9949 9.16904C28.9889 9.34004 28.9889 9.49304 28.9889 9.64004ZM27.0039 10.281C26.9359 10.275 26.9039 10.27 26.8619 10.27C25.3139 10.27 23.7709 10.264 22.2229 10.276C22.0959 10.2884 21.9765 10.3422 21.8829 10.429C20.7918 11.4183 19.3725 11.9677 17.8997 11.9708C16.4269 11.974 15.0053 11.4307 13.9099 10.446C13.7842 10.345 13.6291 10.2874 13.4679 10.282C11.4889 10.271 9.50994 10.276 7.52494 10.276H7.20694C8.15494 13.705 9.09594 17.105 10.0329 20.511H24.0439C25.0329 17.105 26.0119 13.705 27.0039 10.281ZM17.8859 10.264C18.7332 10.2702 19.5632 10.0243 20.2703 9.55763C20.9775 9.09096 21.53 8.42459 21.8576 7.6432C22.1852 6.8618 22.2731 6.00065 22.1101 5.16919C21.9471 4.33773 21.5406 3.57349 20.9423 2.9736C20.3439 2.3737 19.5807 1.96523 18.7497 1.80009C17.9187 1.63496 17.0573 1.72061 16.2751 2.04617C15.4928 2.37172 14.825 2.92248 14.3565 3.62846C13.888 4.33444 13.64 5.16376 13.6439 6.01104C13.6434 7.13726 14.0898 8.21767 14.8851 9.01506C15.6805 9.81246 16.7597 10.2617 17.8859 10.264V10.264Z" fill="currentColor"/>
                    <path d="M11.6079 29C11.2011 28.8633 10.808 28.6885 10.4339 28.478C9.96075 28.1415 9.62051 27.6497 9.47234 27.0883C9.32417 26.5269 9.37745 25.9313 9.62291 25.405C9.801 25.0075 10.0781 24.6622 10.4277 24.4023C10.7773 24.1424 11.1877 23.9765 11.6197 23.9204C12.0517 23.8644 12.4909 23.9201 12.8952 24.0822C13.2996 24.2443 13.6556 24.5075 13.9292 24.8464C14.2028 25.1854 14.385 25.5889 14.4581 26.0183C14.5313 26.4478 14.4932 26.8888 14.3473 27.2993C14.2014 27.7098 13.9526 28.076 13.6248 28.3629C13.297 28.6498 12.9011 28.8478 12.4749 28.938C12.4129 28.949 12.3499 28.978 12.2879 28.995C12.0619 29 11.8329 29 11.6079 29ZM12.7929 26.46C12.7935 26.2921 12.7442 26.1277 12.6512 25.9878C12.5583 25.8479 12.4259 25.7387 12.2708 25.6742C12.1157 25.6096 11.945 25.5926 11.7802 25.6252C11.6154 25.6578 11.4641 25.7386 11.3453 25.8574C11.2265 25.9762 11.1457 26.1276 11.1131 26.2923C11.0804 26.4571 11.0975 26.6279 11.162 26.7829C11.2266 26.938 11.3357 27.0704 11.4757 27.1634C11.6156 27.2563 11.7799 27.3056 11.9479 27.305C12.1711 27.3017 12.3843 27.2114 12.5421 27.0535C12.6998 26.8955 12.7898 26.6823 12.7929 26.459V26.46Z" fill="currentColor"/>
@@ -318,7 +318,7 @@
    <div class="cs-slider cs-style3 cs-gap-10">
      <div class="cs-slider_container" data-autoplay="0" data-loop="1" data-speed="600" data-center="0" data-slides-per-view="responsive" data-xs-slides="1" data-sm-slides="2" data-md-slides="3" data-lg-slides="5" data-add-slides="6">
        <div class="cs-slider_wrapper">
-          @if(@similar_products)
+          @if($similar_products)
             @foreach($similar_products as $item)
               <div class="cs-slide">
                 <a href="{{route('front.product',$item->id)}}" class="cs-card cs-style1">
@@ -339,10 +339,10 @@
                   <div class="cs-card_info">
                     <div class="cs-card_desc">{{$item->name}}</div>
                     @if($item->discount>0)
-                    <div class="cs-card_price"><span>AED</span> {{number_format(($item->price - ($item->price * ($item->discount/100))),2)}}</div>
-                    <div class="cs-card_previous_price">AED {{number_format($item->price,2)}}</div>
+                    <div class="cs-card_price"><span>BDT</span> {{number_format(($item->price - ($item->price * ($item->discount/100))),2)}}</div>
+                    <div class="cs-card_previous_price">BDT {{number_format($item->price,2)}}</div>
                     @else
-                    <div class="cs-card_price"><span>AED</span> {{number_format($item->price,2)}}</div>
+                    <div class="cs-card_price"><span>BDT</span> {{number_format($item->price,2)}}</div>
                     @endif
                   </div>
                 </a>
@@ -382,7 +382,7 @@ function rev_cl(){
     
     $.ajax({
       dataType: "json",
-      url: '{{ route('front.addcart') }}',
+      url: "{{ route('front.addcart') }}",
       method: "get",
       data: {
         id: i, 

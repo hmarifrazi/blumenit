@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CorporateSetting;
 use Illuminate\Http\Request;
 use App\Models\Corporate_inquiry;
 
-class CorporateSettingController extends Controller
+class CorporateInqueryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,10 @@ class CorporateSettingController extends Controller
      */
     public function index()
     {
-        
+       $data=Corporate_inquiry::paginate(10);
+       return view('backend.corporate.index',compact('data'));
+
+     
     }
 
     /**
@@ -42,10 +44,10 @@ class CorporateSettingController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CorporateSetting  $corporateSetting
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(CorporateSetting $corporateSetting)
+    public function show($id)
     {
         //
     }
@@ -53,10 +55,10 @@ class CorporateSettingController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CorporateSetting  $corporateSetting
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CorporateSetting $corporateSetting)
+    public function edit($id)
     {
         //
     }
@@ -65,10 +67,10 @@ class CorporateSettingController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CorporateSetting  $corporateSetting
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CorporateSetting $corporateSetting)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -76,13 +78,11 @@ class CorporateSettingController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CorporateSetting  $corporateSetting
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CorporateSetting $corporateSetting)
+    public function destroy($id)
     {
         //
     }
-
-    
 }

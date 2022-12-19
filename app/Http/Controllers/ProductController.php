@@ -27,7 +27,7 @@ class ProductController extends Controller
     public function index()
     {
         $product = Product::paginate(10);
-        return view('products.index', compact('product'));
+        return view('backend.products.index', compact('product'));
     }
 
     /**
@@ -41,7 +41,7 @@ class ProductController extends Controller
         $category = Category::get(['id', 'name']);
         $manufacturer = Manufacturer::get(['id', 'name']);
         $subcategory = SubCategory::get(['id', 'name']);
-        return view('products.create', compact('products', 'category', 'manufacturer', 'subcategory'));
+        return view('backend.products.create', compact('products', 'category', 'manufacturer', 'subcategory'));
     }
 
     /**
@@ -81,7 +81,7 @@ class ProductController extends Controller
        }
 
         Product::create($data);
-        return redirect('products');
+        return redirect('backend.products');
     }
 
     /**
@@ -93,7 +93,7 @@ class ProductController extends Controller
     public function show(product $product)
     {
         
-       return view('products.show',compact('product'));
+       return view('backend.products.show',compact('product'));
     }
 
     /**
@@ -111,7 +111,7 @@ class ProductController extends Controller
         // return view('products.edit',compact('products','manufacturer','category','subcategory'));
 
         $p=Product::findOrFail($id);
-        return view('products.edit',compact('p','category','manufacturer','subcategory'));
+        return view('backend.products.edit',compact('p','category','manufacturer','subcategory'));
     }
 
     /**
@@ -145,14 +145,14 @@ class ProductController extends Controller
         $p->subcategory_id=$request->subcategory;
         
         if($p->save()){
-                return redirect(route('products.index'));
+                return redirect(route('backend.products.index'));
             }
         
     }catch(Exception $e){
            
         //  dd($e);
          if($p->save()){
-                return redirect(route('products.index'));
+                return redirect(route('backend.products.index'));
             }
     }
     }

@@ -218,8 +218,8 @@ Category | {{"k"}}
                   <div class="cs-card_alert">Available</div>
                   <div class="cs-card_info">
                     <div class="cs-card_desc">{{$item->name}}</div>
-                    <div class="cs-card_price"><span>AED</span> {{$item->price}}</div>
-                    <div class="cs-card_previous_price">AED 345.00</div>
+                    <div class="cs-card_price"><span>BDT</span> {{$item->price}}</div>
+                    <div class="cs-card_previous_price">BDT 345.00</div>
                   </div>
                 </a>
             @endforeach

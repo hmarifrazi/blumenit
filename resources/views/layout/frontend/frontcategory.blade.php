@@ -10,11 +10,11 @@
   <!-- Site Title -->
   <title>@yield('title')</title>
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('assets/css/extra.css')}}?id={{time()}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/slick.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/animate.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/extra.css')}}?id={{time()}}">
 </head>
 
 <body>
@@ -247,11 +247,11 @@
   @yield('content')
   @include('layout.frontend.frontfooter')
   <!-- Script -->
-  <script src="{{asset('assets/js/jquery-1.12.4.min.js')}}"></script>
-  <script src="{{asset('assets/js/jquery.slick.min.js')}}"></script>
-  <script src="{{asset('assets/js/wow.min.js')}}"></script>
-  <script src="{{asset('assets/js/main.js')}}"></script>
-  <script src="{{asset('assets/js/extra.js')}}?id={{time()}}"></script>
+  <script src="{{asset('assets_frontend/js/jquery-1.12.4.min.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/jquery.slick.min.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/wow.min.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/main.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/extra.js')}}?id={{time()}}"></script>
   @stack('scripts')
 </body>
 </html>

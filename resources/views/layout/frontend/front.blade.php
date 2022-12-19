@@ -9,11 +9,14 @@
   <meta name="author" content="Shariful Islam">
   
   <meta name="title" content="Blumen It | Best Leading Online Computer & Computer Accessories Shop in UAE" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
+  <meta name="keywords" content="computer shop in uae, computer accessories shop in uae, best computer shop in uae, computer shop website in uae, computer shop in uae, online computer shop in uae, computer accessories online shop in uae, computer parts shop in uae, Laptop price in uae, Laptop in uae, Notebook, Laptop, Desktop, Brand PC, computer, computer store uae, laptop store uae, gaming, desktop, monitor, Blumen It, computer accessories, Desktop accessories, Laptop accessories, motherboard, hard disk, graphic card, cooler fan, Gaming PCs, Computers, Computer Parts, Computer Components, Monitors, Graphic Cards, CPUs, SSD, Dubai, UAE, Abu Dhabi" />
+  <meta name="description" content="Blumen It is best online computer accessories stores in UAE.  We offer the best prices on Desktops, Laptops, PC Parts, Cameras, Gaming, Printers &more" />
   <meta name="subject" CONTENT="Computer store">
-
-  <link rel="shortcut icon" href="">
+@php
+    $head=App\Models\Headerview::all();
+    $menu_settings=json_decode($head[0]->menu_setting);
+@endphp
+  <link rel="shortcut icon" href="{{asset($head[0]->favicon )}}">
 
   <meta property="og:url"           content="{{Request::url()}}" />
   <meta property="og:type"          content="Ecommerce" />
@@ -26,11 +29,11 @@
   <!-- Site Title -->
   <title>@yield('title')</title>
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="{{asset('public/assets_fontent/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('public/assets_fontent/css/slick.css')}}">
-  <link rel="stylesheet" href="{{asset('public/assets_fontent/css/animate.css')}}">
-  <link rel="stylesheet" href="{{asset('public/assets_fontent/css/style.css')}}">
-  <link rel="stylesheet" href="{{asset('public/assets_fontent/css/extra.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/slick.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/animate.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets_frontend/css/extra.css')}}">
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91EXVKRE2"></script>
     <script>
@@ -50,7 +53,7 @@
     <div class="cs-top_header wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
       <div class="cs-top_header_in">
         <div class="cs-top_header_left">
-          <a class="cs-site_branding" href="{{route('front.home')}}"><img src="" alt="" width="100%"></a>
+          <a class="cs-site_branding" href="{{route('front.home')}}"><img src="{{asset($head[0]->logo_image )}}" alt="" width="100%"></a>
         </div>
         <div class="cs-top_header_middle">
           <div class="cs-search_wrap">
@@ -105,7 +108,7 @@
                   <path d="M6.825 12.6C7.70203 12.6 8.413 11.889 8.413 11.012C8.413 10.135 7.70203 9.42398 6.825 9.42398C5.94797 9.42398 5.237 10.135 5.237 11.012C5.237 11.889 5.94797 12.6 6.825 12.6Z" fill="#A4FCC4"/>
                   <path d="M23.129 27.369L22.115 7.74799C22.1066 7.59799 22.0413 7.45684 21.9324 7.35334C21.8235 7.24984 21.6792 7.19177 21.529 7.19099H17.757V5.75499C17.757 4.22708 17.15 2.76174 16.0696 1.68135C14.9892 0.600949 13.5239 -0.00601196 11.996 -0.00601196C10.4681 -0.00601196 9.00274 0.600949 7.92235 1.68135C6.84195 2.76174 6.23499 4.22708 6.23499 5.75499V7.19099H2.47099C2.32076 7.19177 2.17648 7.24984 2.06759 7.35334C1.9587 7.45684 1.89339 7.59799 1.88499 7.74799L0.870989 27.369C0.853183 27.7083 0.904737 28.0477 1.0225 28.3664C1.14027 28.6852 1.32177 28.9766 1.55593 29.2228C1.79009 29.469 2.07199 29.6649 2.3844 29.7986C2.69682 29.9322 3.0332 30.0007 3.37299 30H20.621C20.9611 30.0018 21.298 29.9336 21.6106 29.7996C21.9232 29.6656 22.2048 29.4686 22.438 29.221C22.676 28.9776 22.8605 28.6871 22.9797 28.3681C23.0989 28.0492 23.1501 27.7089 23.13 27.369H23.129ZM7.41099 5.75499C7.41099 4.53791 7.89447 3.37068 8.75508 2.51008C9.61568 1.64947 10.7829 1.16599 12 1.16599C13.2171 1.16599 14.3843 1.64947 15.2449 2.51008C16.1055 3.37068 16.589 4.53791 16.589 5.75499V7.19099H7.41099V5.75499ZM21.594 28.424C21.4703 28.5563 21.3205 28.6616 21.154 28.7332C20.9876 28.8048 20.8082 28.8412 20.627 28.84H3.37299C3.19236 28.84 3.01363 28.8032 2.84767 28.7319C2.6817 28.6606 2.53196 28.5564 2.40755 28.4254C2.28315 28.2945 2.18668 28.1396 2.124 27.9702C2.06133 27.8008 2.03377 27.6204 2.04299 27.44L3.02699 8.37499H6.24499V10.76C6.24499 10.9154 6.30673 11.0645 6.41662 11.1744C6.52652 11.2842 6.67557 11.346 6.83099 11.346C6.98641 11.346 7.13546 11.2842 7.24535 11.1744C7.35525 11.0645 7.41699 10.9154 7.41699 10.76V8.37499H16.589V10.76C16.589 10.9154 16.6507 11.0645 16.7606 11.1744C16.8705 11.2842 17.0196 11.346 17.175 11.346C17.3304 11.346 17.4795 11.2842 17.5894 11.1744C17.6992 11.0645 17.761 10.9154 17.761 10.76V8.37499H20.978L21.963 27.439C21.9695 27.6194 21.9402 27.7993 21.8769 27.9683C21.8135 28.1374 21.7174 28.2922 21.594 28.424V28.424Z" fill="#020288"/>
                 </svg>                
-                <span class="cs-count cart-count">0</span>
+                <span class="cs-count cart-count">{{ count((array) session('cart')) }}</span>
               </a>
             </li>
           </ul>
@@ -122,7 +125,7 @@
                   <path d="M7.53389 12.802C7.55386 12.8272 7.57223 12.8535 7.58889 12.881C8.89919 14.8522 10.7077 16.4417 12.8309 17.488C13.4089 17.7391 14.0005 17.9577 14.6029 18.143C15.2252 18.3336 15.8839 18.374 16.5249 18.261C16.9427 18.1751 17.3385 18.0048 17.6881 17.7604C18.0377 17.5161 18.3337 17.2028 18.5579 16.84C18.7476 16.3994 18.813 15.9152 18.7469 15.44C18.6379 15.3313 18.5055 15.2489 18.3599 15.199C18.3049 15.171 18.2489 15.144 18.1859 15.116C17.7789 14.916 16.3269 14.2 16.0619 14.105C15.7699 13.998 15.6359 13.979 15.4739 14.223C15.2529 14.555 14.6209 15.293 14.4739 15.459C14.2569 15.708 14.0279 15.735 13.6739 15.559C13.6269 15.535 13.5599 15.504 13.4739 15.468C12.6179 15.1124 11.8288 14.6133 11.1409 13.992C10.4534 13.3535 9.86379 12.6173 9.39089 11.807C9.31955 11.6981 9.29035 11.567 9.30876 11.4381C9.32717 11.3093 9.39192 11.1915 9.49089 11.107C9.50689 11.091 9.51889 11.071 9.53389 11.056C9.8175 10.7266 10.075 10.3755 10.3039 10.006C10.3389 9.93368 10.3548 9.85355 10.3499 9.77334C10.345 9.69312 10.3195 9.61552 10.2759 9.548C10.2209 9.441 9.93289 8.735 9.65189 8.048C9.52189 7.728 9.39489 7.424 9.30889 7.215C9.10889 6.737 8.93789 6.737 8.76789 6.741H8.69089C8.50189 6.733 8.28389 6.729 8.09889 6.729C7.95388 6.73251 7.81121 6.76626 7.68 6.82807C7.54878 6.88989 7.43192 6.97842 7.33689 7.088C7.31689 7.108 7.29789 7.131 7.27389 7.155C6.94516 7.47635 6.68611 7.86192 6.51286 8.28772C6.33962 8.71353 6.25589 9.17044 6.26689 9.63C6.36869 10.7888 6.80934 11.892 7.53389 12.802V12.802Z" fill="#1CAB8F"/>
                   <path d="M6.59791 23.314C8.4181 24.3024 10.4557 24.822 12.5269 24.826C15.2602 24.8288 17.918 23.9296 20.0882 22.2679C22.2583 20.6062 23.8194 18.2747 24.5295 15.6353C25.2395 12.9958 25.0587 10.1958 24.0151 7.66961C22.9715 5.14339 21.1235 3.03211 18.7577 1.66326C16.3919 0.294409 13.6405 -0.255514 10.9303 0.0987887C8.22003 0.453091 5.70245 1.69182 3.76802 3.62283C1.83358 5.55385 0.5904 8.06923 0.2313 10.7788C-0.127799 13.4884 0.417252 16.2408 1.78191 18.609L1.80191 18.645L0.0609131 25L6.56091 23.295L6.59791 23.314ZM3.64491 17.993C2.4091 16.022 1.86335 13.6962 2.09345 11.3812C2.32355 9.06617 3.31647 6.89328 4.91609 5.20409C6.51572 3.5149 8.63135 2.4052 10.9304 2.04944C13.2294 1.69369 15.5815 2.11205 17.6169 3.23876C19.6523 4.36547 21.2555 6.13664 22.1745 8.27382C23.0936 10.411 23.2763 12.793 22.694 15.0454C22.1117 17.2977 20.7974 19.2927 18.9577 20.7167C17.1181 22.1407 14.8573 22.9129 12.5309 22.912V22.912C10.6515 22.9133 8.8066 22.4071 7.19091 21.447L6.84791 21.242L2.78491 22.307L3.87091 18.348L3.64491 17.993Z" fill="#1CAB8F"/>
                 </svg>              
-                <span>01712223344</span>
+                <span>{{$head[0]->whatsapp}}</span>
               </li>
               <li>
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -130,7 +133,7 @@
                   <path d="M13.479 5.961C14.8618 6.20092 16.1367 6.86237 17.1292 7.85481C18.1216 8.84724 18.783 10.1221 19.023 11.505C19.0509 11.6705 19.1365 11.8207 19.2646 11.9291C19.3928 12.0375 19.5551 12.097 19.723 12.097C19.7638 12.096 19.8046 12.0923 19.845 12.086C19.9377 12.0705 20.0265 12.0368 20.1063 11.9869C20.186 11.9371 20.2551 11.8719 20.3097 11.7953C20.3642 11.7187 20.4031 11.632 20.424 11.5403C20.445 11.4487 20.4477 11.3537 20.432 11.261C20.1423 9.58781 19.3423 8.04515 18.1415 6.84443C16.9408 5.6437 15.3982 4.84368 13.725 4.554C13.5385 4.52289 13.3474 4.56655 13.1929 4.67551C13.0385 4.78446 12.9332 4.94993 12.9 5.136C12.8829 5.22828 12.8844 5.32304 12.9044 5.41473C12.9243 5.50643 12.9624 5.59322 13.0163 5.67003C13.0702 5.74685 13.1389 5.81215 13.2183 5.86211C13.2978 5.91206 13.3864 5.94569 13.479 5.961V5.961Z" fill="#1CAB8F"/>
                   <path d="M24.968 11.056C24.4912 8.30068 23.1739 5.76024 21.1968 3.78289C19.2196 1.80554 16.6793 0.488047 13.924 0.0110001C13.8316 -0.00429893 13.7371 -0.00125156 13.6459 0.0199682C13.5547 0.0411879 13.4686 0.0801645 13.3924 0.134673C13.3163 0.18918 13.2516 0.258152 13.2021 0.33765C13.1526 0.417148 13.1193 0.505615 13.104 0.598C13.0887 0.690385 13.0918 0.784879 13.113 0.876086C13.1342 0.967293 13.1732 1.05343 13.2277 1.12957C13.2822 1.20572 13.3512 1.27038 13.4307 1.31987C13.5102 1.36936 13.5986 1.4027 13.691 1.418C16.154 1.84318 18.425 3.02023 20.1924 4.7876C21.9598 6.55496 23.1368 8.826 23.562 11.289C23.5899 11.4545 23.6755 11.6047 23.8036 11.7131C23.9318 11.8215 24.0942 11.881 24.262 11.881C24.3029 11.88 24.3436 11.8763 24.384 11.87C24.4763 11.856 24.5648 11.8236 24.6444 11.7748C24.724 11.7261 24.7931 11.6619 24.8475 11.586C24.9019 11.5102 24.9406 11.4242 24.9613 11.3332C24.982 11.2422 24.9843 11.1479 24.968 11.056V11.056Z" fill="#1CAB8F"/>
                 </svg>              
-                <span>017</span>
+                <span>{{$head[0]->contact}}</span>
               </li>
               <li>
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -146,7 +149,7 @@
                   </clipPath>
                   </defs>
                 </svg>         
-                <span>admin@gmail.com</span>
+                <span>{{$head[0]->email}}</span>
               </li>
             </ul>
           </div>
@@ -207,13 +210,21 @@
           <a class="cs-site_branding_mini" href="{{route('front.home')}}"><img src="{{asset('assets/img/logo_mini.svg')}}" alt=""></a>
           <div class="cs-nav">
             <ul class="cs-nav_list">
-              <li class=""><a href="">About Us</a></li>
-              <li class=""><a href="{{route('front.category')}}">Category</a></li>
-              <li class=""><a href="{{route('front.games')}}">Gaming</a></li>
-              
-              <li class=""><a href="{{route('front.corporate')}}">Corporate</a></li>
-              <li class=""><a href="{{route('front.shopview')}}" class="cs-nav_btn cs-style1"><span>Products</span></a></li>
-              <li class=""><a href="{{route('front.contactus')}}">Contact Us</a></li>
+              <li class="{{$menu_settings->about}}"><a href="{{route('front.aboutus')}}">About Us</a></li>
+              <li class="{{$menu_settings->category}}"><a href="{{route('front.category')}}">Category</a></li>
+              <li class="{{$menu_settings->games}}"><a href="{{route('front.games')}}">Gaming</a></li>
+              {{--<li class="menu-item-has-children"><a href="{{route('front.games')}}">Gaming</a>
+                <ul>
+                    @if(App\Models\Category::where('is_game',1)->orderBy('id','DESC')->count() > 0)
+                        @foreach(App\Models\Category::where('is_game',1)->orderBy('id','DESC')->get() as $cat)
+                          <li><a href="{{route('front.categoryview',$cat->id)}}">{{$cat->name}}</a></li>
+                        @endforeach
+                      @endif
+                </ul>
+              </li>--}}
+              <li class="{{$menu_settings->corporate}}"><a href="{{route('front.corporate')}}">Corporate</a></li>
+              <li class="{{$menu_settings->shopview}}"><a href="{{route('front.shopview')}}" class="cs-nav_btn cs-style1"><span>Products</span></a></li>
+              <li class="{{$menu_settings->contact}}"><a href="{{route('front.contactus')}}">Contact Us</a></li>
               <li class="cs-nav_btns">
               @if(session()->get('contact_ext'))
                 <a href="{{route('front.cprofile')}}" class="cs-nav_btn cs-style2 cs-color2">
@@ -231,7 +242,7 @@
                   Logout
                 </a>
               @else
-                <a href="#" class="cs-nav_btn cs-style2 cs-color1">
+                <a href="{{route('front.signin')}}?p={{\Route::currentRouteName()}}" class="cs-nav_btn cs-style2 cs-color1">
                   <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M9.74999 11.458C8.67885 11.4578 7.63182 11.14 6.7413 10.5448C5.85077 9.94952 5.15675 9.10359 4.74698 8.11393C4.3372 7.12427 4.23009 6.03532 4.43918 4.98479C4.64827 3.93425 5.16418 2.96931 5.92166 2.21197C6.67914 1.45462 7.64418 0.9389 8.69475 0.730003C9.74533 0.521107 10.8343 0.62842 11.8238 1.03837C12.8134 1.44833 13.6592 2.14251 14.2543 3.03315C14.8494 3.92378 15.167 4.97087 15.167 6.04201C15.1651 7.47803 14.5938 8.85468 13.5783 9.87001C12.5628 10.8853 11.186 11.4564 9.74999 11.458V11.458ZM9.74999 2.25001C9.00001 2.25001 8.26686 2.47241 7.64327 2.88908C7.01968 3.30575 6.53365 3.89798 6.24664 4.59087C5.95964 5.28377 5.88454 6.04622 6.03086 6.78179C6.17717 7.51737 6.53832 8.19304 7.06865 8.72336C7.59897 9.25368 8.27464 9.61483 9.01021 9.76115C9.74579 9.90746 10.5082 9.83237 11.2011 9.54536C11.894 9.25835 12.4863 8.77232 12.9029 8.14873C13.3196 7.52514 13.542 6.792 13.542 6.04201C13.5399 5.03696 13.1397 4.07368 12.429 3.363C11.7183 2.65232 10.755 2.25212 9.74999 2.25001V2.25001Z" fill="currentColor"/>
                     <path d="M18.687 23.375H0.812C0.596552 23.3747 0.390019 23.289 0.237769 23.1365C0.0855177 22.9841 -1.62979e-07 22.7775 0 22.562L0 18.771C0.00158796 17.4067 0.544264 16.0987 1.50898 15.134C2.4737 14.1693 3.78168 13.6266 5.146 13.625H14.354C15.7183 13.6266 17.0263 14.1693 17.991 15.134C18.9557 16.0987 19.4984 17.4067 19.5 18.771V22.563C19.4997 22.7785 19.414 22.985 19.2615 23.1372C19.1091 23.2895 18.9024 23.375 18.687 23.375V23.375ZM1.625 21.75H17.875V18.771C17.8739 17.8375 17.5026 16.9425 16.8426 16.2825C16.1825 15.6224 15.2875 15.2511 14.354 15.25H5.146C4.2125 15.2511 3.31753 15.6224 2.65745 16.2825C1.99736 16.9425 1.62606 17.8375 1.625 18.771V21.75Z" fill="currentColor"/>
@@ -240,7 +251,7 @@
                   </svg>                               
                   Login
                 </a>
-                <a href="#" class="cs-nav_btn cs-style2 cs-color2">
+                <a href="{{route('front.signup')}}?p={{\Route::currentRouteName()}}" class="cs-nav_btn cs-style2 cs-color2">
                   <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M23.015 23.916H2.98C2.18982 23.9155 1.43215 23.6013 0.873407 23.0426C0.314663 22.4838 0.000529791 21.7262 0 20.936L0 3.06398C0.000529791 2.2738 0.314663 1.51613 0.873407 0.957391C1.43215 0.398648 2.18982 0.0845142 2.98 0.0839844H23.02C23.8102 0.0845142 24.5678 0.398648 25.1266 0.957391C25.6853 1.51613 25.9995 2.2738 26 3.06398V20.936C25.9976 21.7265 25.6822 22.4838 25.1228 23.0423C24.5634 23.6008 23.8055 23.9149 23.015 23.916V23.916ZM2.98 1.70898C2.62096 1.71004 2.27692 1.85314 2.02304 2.10702C1.76915 2.3609 1.62606 2.70494 1.625 3.06398V20.936C1.62606 21.295 1.76915 21.6391 2.02304 21.8929C2.27692 22.1468 2.62096 22.2899 2.98 22.291H23.02C23.3794 22.2902 23.7238 22.1471 23.978 21.8929C24.2321 21.6388 24.3752 21.2944 24.376 20.935V3.06398C24.3749 2.70477 24.2317 2.36058 23.9776 2.10667C23.7235 1.85276 23.3792 1.70978 23.02 1.70898H2.98Z" fill="currentColor"/>
                     <path d="M8.12299 11.901C7.5878 11.901 7.06462 11.7423 6.61962 11.445C6.17462 11.1476 5.82779 10.725 5.62298 10.2306C5.41816 9.7361 5.36458 9.19201 5.46899 8.6671C5.5734 8.14219 5.83112 7.66003 6.20956 7.28158C6.588 6.90314 7.07017 6.64542 7.59508 6.54101C8.11999 6.4366 8.66408 6.49019 9.15854 6.695C9.65299 6.89981 10.0756 7.24664 10.373 7.69164C10.6703 8.13664 10.829 8.65982 10.829 9.19501C10.8282 9.91245 10.5428 10.6003 10.0355 11.1076C9.52825 11.6149 8.84043 11.9002 8.12299 11.901V11.901ZM8.12299 8.10801C7.90894 8.10722 7.69947 8.17 7.52113 8.28839C7.34279 8.40678 7.20361 8.57544 7.12124 8.77302C7.03887 8.97059 7.01701 9.18817 7.05843 9.39818C7.09985 9.60819 7.20268 9.80118 7.3539 9.95268C7.50512 10.1042 7.69792 10.2074 7.90785 10.2492C8.11779 10.291 8.33541 10.2695 8.53313 10.1875C8.73086 10.1055 8.89979 9.96666 9.0185 9.78854C9.13722 9.61043 9.20039 9.40107 9.19999 9.18702C9.20106 8.90022 9.08822 8.62474 8.88627 8.4211C8.68432 8.21747 8.40978 8.10234 8.12299 8.10101V8.10801Z" fill="currentColor"/>
@@ -264,11 +275,11 @@
   @include('layout.frontend.frontfooter')
   
   <!-- Script -->
-  <script src="{{asset('public/assets_fontent/js/jquery-1.12.4.min.js')}}"></script>
-  <script src="{{asset('public/assets_fontent/js/jquery.slick.min.js')}}"></script>
-  <script src="{{asset('public/assets_fontent/js/wow.min.js')}}"></script>
-  <script src="{{asset('public/assets_fontent/js/main.js')}}"></script>
-  <script src="{{asset('public/assets_fontent/js/extra.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/jquery-1.12.4.min.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/jquery.slick.min.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/wow.min.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/main.js')}}"></script>
+  <script src="{{asset('assets_frontend/js/extra.js')}}"></script>
   @stack('scripts')
 </body>
 </html>

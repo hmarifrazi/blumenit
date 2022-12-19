@@ -199,7 +199,7 @@ function profileup(UpdateCustomerRequest $request){
     public function index()
     {
          $customers = Customer::paginate(10);
-        return view('customers.index', compact('customers'));
+        return view('backend.customers.index', compact('customers'));
     }
 
     /**
@@ -213,7 +213,7 @@ function profileup(UpdateCustomerRequest $request){
         $country = Country::get(['id','country']);
         $state = State::get(['id','state']);
         $city = City::get(['id','city']);
-        return view('customers.create',compact(['context','country','state','city']));
+        return view('backend.customers.create',compact(['context','country','state','city']));
     }
 
     /**

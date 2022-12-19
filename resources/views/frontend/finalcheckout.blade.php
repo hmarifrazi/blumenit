@@ -114,7 +114,7 @@
                 <div class="cs-card_image"><img src="{{asset($item['image'])}}" alt=""></div>
                 <div class="cs-card_content">
                   <h2>{{$item['name']}}</h2>
-                  <h3>AED: {{number_format($item['price'],2)}}</h3>
+                  <h3>BDT: {{number_format($item['price'],2)}}</h3>
                   <h4><b>Sku:</b> {{$item['sku']}}</h4>
                   <h4><b>Qty:</b> {{$item['quantity']}}</h4>
                 </div>
@@ -125,15 +125,15 @@
           <ul class="cs-list cs-style2">
             <li>
               <span>Sub Total</span>
-              <span>AED {{$cal_cart['sub_total']}}</span>
+              <span>BDT {{$cal_cart['sub_total']}}</span>
             </li>
             <li>
               <span>Delivery Charges</span>
-              <span class="cs-accent_color">AED {{$cal_cart['shipping']}}</span>
+              <span class="cs-accent_color">BDT {{$cal_cart['shipping']}}</span>
             </li>
             <li class="cs-list_focus">
               <span>Total <span>(Inclusive of VAT)</span></span>
-              <span>AED {{$cal_cart['total']}} </span>
+              <span>BDT {{$cal_cart['total']}} </span>
             </li>
           </ul>
         </div>

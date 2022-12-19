@@ -10,7 +10,8 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ManufacturerController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CorporateSettingController;
-
+use App\Http\Controllers\CorporateInqueryController;
+use App\Http\Controllers\HeaderviewController;
 use App\Http\Middleware\SuperAdminMiddleware;
 use App\Http\Middleware\isAdmin;
 
@@ -60,6 +61,8 @@ use App\Http\Middleware\isAdmin;
 // Route::get('/finishorder/{id}', [CheckoutController::class, 'finish_order'])->name('front.finishorder');
 //     /* checkout */
 
+
+//For Banckend
 Route::get('/register', [auth::class,'signUpForm'])->name('register');
 Route::post('/register', [auth::class ,'signUpStore'])->name('register.store');
 Route::get('/', [auth::class,'signInForm'])->name('signIn');
@@ -96,7 +99,9 @@ Route::resource('manufacturer',ManufacturerController::class);
 Route::resource('customer',CustomerController::class);
 Route::resource('order',OrderController::class);
 // Route::resource('corporate',[CorporateSettingController::class,'inq_list']);
-Route::resource('corporate',CorporateSettingController::class);
+Route::resource('corporate',CorporateInqueryController::class);
 // Route::get('/corporate_setting_inq','inq_list')->name('superadmin.corporate_setting_inq.list');
-Route::resource('corporate_set',CorporateSettingController::class,['as'=>'superadmin']);
+// Route::resource('corporate_set',CorporateSettingController::class,['as'=>'superadmin']);
 
+//For Frontend
+// Route::resource('frontend',HeaderviewController::class,['as'=>'superadmin']);

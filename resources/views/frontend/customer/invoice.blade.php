@@ -280,9 +280,9 @@
                                 <td>{{$item['name']}}</td>
                                 <td>{{$item['sku']}}</td>
                                 <td>{{$item['quantity']}}</td>
-                                <td>AED {{number_format($item['price'],2)}}</td>
-                                <td>@if($item['discount_amount'] > 0)AED {{number_format($item['discount_amount'],2)}} ({{$item['discount']}}%)@endif</td>
-                                <td>AED {{number_format(($item['price'] * $item['quantity']),2)}}</td>
+                                <td>BDT {{number_format($item['price'],2)}}</td>
+                                <td>@if($item['discount_amount'] > 0)BDT {{number_format($item['discount_amount'],2)}} ({{$item['discount']}}%)@endif</td>
+                                <td>BDT {{number_format(($item['price'] * $item['quantity']),2)}}</td>
                             </tr>
                         @endforeach
                     @endif
@@ -317,16 +317,16 @@
                 <p>Total</p>
             </div>
             <div class="amount" style="text-align:right">
-                <p>AED {{number_format($order->total_mrp,2)}}</p>
-                <p>AED {{number_format($order->discount,2)}}</p>
-                <p>AED {{number_format($order->vat,2)}}</p>
-                <p>AED {{number_format($order->subtotal,2)}}</p>
+                <p>BDT {{number_format($order->total_mrp,2)}}</p>
+                <p>BDT {{number_format($order->discount,2)}}</p>
+                <p>BDT {{number_format($order->vat,2)}}</p>
+                <p>BDT {{number_format($order->subtotal,2)}}</p>
                 @if(((float) $order->delivery_charge) <= 0)
                     <p>{{$order->delivery_charge}}</p>
                 @else
-                    <p>AED {{number_format($order->delivery_charge,2)}}</p>
+                    <p>BDT {{number_format($order->delivery_charge,2)}}</p>
                 @endif
-                <p>AED {{number_format($order->total,2)}}</p>
+                <p>BDT {{number_format($order->total,2)}}</p>
             </div>
         </section>
         <footer>
