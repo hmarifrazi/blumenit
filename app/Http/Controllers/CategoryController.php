@@ -21,7 +21,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories=Category::paginate(10);
-        return view('category.index',compact('categories'));
+        return view('backend.category.index',compact('categories'));
     }
 
     /**
@@ -31,7 +31,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('backend.category.create');
     }
 
     /**
@@ -83,7 +83,7 @@ class CategoryController extends Controller
         //     $cat->image[]=$imageName;
         // }
         $cat->save();
-        return redirect(route('category.index'));
+        return redirect(route('backend.category.index'));
 
 
 }
@@ -108,7 +108,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        return view('category.edit',compact('category'));
+        return view('backend.category.edit',compact('category'));
     }
 
     /**
@@ -154,7 +154,7 @@ class CategoryController extends Controller
 
       
         $category->save();
-        return redirect(route('category.index'));
+        return redirect(route('backend.category.index'));
     }
 
     /**

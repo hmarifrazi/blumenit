@@ -44,8 +44,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="{{asset('public/images/1648631826.svg')}}" style="background-color: #ddd;padding:5px;border-radius:5px" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="{{asset('public/images/1648631826.svg')}}" style="background-color: #ddd;padding:5px;border-radius:5px" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="{{asset('public/assets/images/1648631826.svg')}}" style="background-color: #ddd;padding:5px;border-radius:5px" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="{{asset('public/assets/images/1648631826.svg')}}" style="background-color: #ddd;padding:5px;border-radius:5px" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -177,7 +177,7 @@
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img style="width:50px;height:50px;border-radius:50%;" src="{{asset('public/images/1668066690060.jpg')}}" alt="User Avatar">
+                            <img style="width:50px;height:50px;border-radius:50%;" src="{{asset('public/assets/images/1668066690060.jpg')}}" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">

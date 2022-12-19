@@ -22,7 +22,7 @@ class ManufacturerController extends Controller
     public function index()
     {
         $manufacturers = Manufacturer::paginate(10);
-        return view('manufacturer.index', compact('manufacturers'));
+        return view('backend.manufacturer.index', compact('manufacturers'));
     }
 
     /**
@@ -32,7 +32,7 @@ class ManufacturerController extends Controller
      */
     public function create()
     {
-        return view('manufacturer.create');
+        return view('backend.manufacturer.create');
     }
 
     /**
@@ -83,7 +83,7 @@ class ManufacturerController extends Controller
      */
     public function edit(Manufacturer $manufacturer)
     {
-      return view('manufacturer.edit', compact('manufacturer'));
+      return view('backend.manufacturer.edit', compact('manufacturer'));
     }
 
     /**

@@ -17,7 +17,7 @@ class SubCategoryController extends Controller
     public function index()
     {
        $subcategory=SubCategory::paginate(10);
-       return view('subcategory.index',compact('subcategory'));
+       return view('backend.subcategory.index',compact('subcategory'));
 
     }
 
@@ -31,7 +31,7 @@ class SubCategoryController extends Controller
         $category=Category::get(['id','name']);
         // dd($subcategory);
     
-        return view('subcategory.create',compact('category'));
+        return view('backend.subcategory.create',compact('category'));
     }
 
     /**
@@ -57,7 +57,7 @@ class SubCategoryController extends Controller
 
        
        if($subcat->save()){
-        return redirect('subcategory')->with('success','Data saved');
+        return redirect('backend.subcategory')->with('success','Data saved');
        }
      }
         catch(Exception $e){
@@ -86,7 +86,7 @@ class SubCategoryController extends Controller
     public function edit(SubCategory $subCategory)
     {
        $cat=SubCategory::all();
-       return view('subcategory.edit',compact('cat'));
+       return view('backend.subcategory.edit',compact('cat'));
     }
 
     /**
