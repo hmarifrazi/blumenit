@@ -132,7 +132,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="{{route('corporate.index')}}">Corporate Settings</a></li>
+                        <li><a href="{{route('corporate_setting.index')}}">Corporate Settings</a></li>
                         <li><a href="{{route('corporate.index')}}">Slide</a></li>
                         <li><a href="{{route('corporate.index')}}">About Us Setting</a></li>
                         <li><a href="{{route('corporate.index')}}">Admin Users</a></li>
