@@ -18,7 +18,7 @@ $view4 = App\Models\Homesection4view::all();
             @foreach ($slide as $item)
             <div class="cs-slide">
                 <div class="cs-hero">
-                    <div class="cs-hero_img cs-bg" style="background-image: url({{asset($item->image)}})"></div>
+                    <div class="cs-hero_img cs-bg" style="background-image: url('{{asset($item->image)}}')"></div>
                     <div class="container wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="cs-hero_text">
                             <h1 class="cs-hero_title">{{$item->title}}</h1>
@@ -118,7 +118,7 @@ $view4 = App\Models\Homesection4view::all();
     <div class="row">
         <div class="col-lg-6">
             <div class="cs-left_full_width cs-space_85">
-                <div class="cs-image_box cs-style1 cs-bg  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" style="background-image: url({{asset($view1[0]->feature_image)}})"></div>
+                <div class="cs-image_box cs-style1 cs-bg  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" style="background-image: url('{{asset($view1[0]->feature_image)}}')"></div>
             </div>
         </div>
         <div class="col-lg-6">
@@ -187,7 +187,7 @@ $view4 = App\Models\Homesection4view::all();
                     <div class="cs-image_box_2_wrap  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="cs-image_box cs-style2">
                             <div class="cs-image_box_shape">
-                                <div class="cs-image_box_in cs-bg" style="background-image:url({{asset($view2[0]->feature_image)}})"></div>
+                                <div class="cs-image_box_in cs-bg" style="background-image:url('{{asset($view2[0]->feature_image)}}')"></div>
                             </div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@ $view4 = App\Models\Homesection4view::all();
                     <div class="cs-image_box_3_wrap wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="cs-image_box cs-style3">
                             <div class="cs-image_box_shape">
-                                <div class="cs-image_box_in cs-bg" style="background-image:url({{asset($view3[0]->feature_image)}})"></div>
+                                <div class="cs-image_box_in cs-bg" style="background-image:url('{{asset($view3[0]->feature_image)}}')"></div>
                             </div>
                         </div>
                     </div>
@@ -274,7 +274,7 @@ $view4 = App\Models\Homesection4view::all();
             </div>
             <div class="col-lg-6">
                 <div class="cs-right_full_width cs-space_85">
-                    <div class="cs-image_box cs-style1 cs-bg  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s" style="background-image:url({{asset($view4[0]->feature_image)}})"></div>
+                    <div class="cs-image_box cs-style1 cs-bg  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s" style="background-image:url('{{asset($view4[0]->feature_image)}}')"></div>
                 </div>
             </div>
         </div>
