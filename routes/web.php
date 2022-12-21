@@ -121,4 +121,3 @@ Route::resource('order', OrderController::class);
 
 Route::resource('corporate', CorporateInqueryController::class);
 Route::resource('corporate_setting', CorporateSettingController::class);
-
