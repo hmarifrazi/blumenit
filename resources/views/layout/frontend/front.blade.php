@@ -30,11 +30,11 @@
     <!-- Site Title -->
     <title>@yield('title')</title>
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/extra.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/extra.css')}}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91EXVKRE2"></script>
     <script>
@@ -215,10 +215,10 @@
                     <a class="cs-site_branding_mini" href="{{route('front.home')}}"><img src="{{asset('assets/img/logo_mini.svg')}}" alt=""></a>
                     <div class="cs-nav">
                         <ul class="cs-nav_list">  
-                            <li class="{{$menu_settings->about}}"><a href="{{route('front.aboutus')}}">About Us</a></li>
+                            <li class=""><a href="{{route('front.aboutus')}}">About Us</a></li>
                           
-                            <li class="{{$menu_settings->category}}"><a href="{{route('front.category')}}">Category</a></li>
-                            <li class="{{$menu_settings->games}}"><a href="{{route('front.games')}}">Gaming</a></li>
+                            {{-- <li class=""><a href="{{route('front.category')}}">Category</a></li> --}}
+                            <li class=""><a href="{{route('front.games')}}">Gaming</a></li>
                             {{--<li class="menu-item-has-children"><a href="{{route('front.games')}}">Gaming</a>
                             <ul>
                                 @if(App\Models\Category::where('is_game',1)->orderBy('id','DESC')->count() > 0)
@@ -228,9 +228,9 @@
                                 @endif
                             </ul>
                             </li>--}}
-                            <li class="{{$menu_settings->corporate}}"><a href="{{route('front.corporate')}}">Corporate</a></li>
-                            <li class="{{$menu_settings->shopview}}"><a href="{{route('front.shopview')}}" class="cs-nav_btn cs-style1"><span>Products</span></a></li>
-                            <li class="{{$menu_settings->contact}}"><a href="{{route('front.contactus')}}">Contact Us</a></li>
+                            <li class=""><a href="{{route('front.corporate')}}">Corporate</a></li>
+                            <li class=""><a href="{{route('front.shopview')}}" class="cs-nav_btn cs-style1"><span>Products</span></a></li>
+                            <li class=""><a href="{{route('front.contactus')}}">Contact Us</a></li>
                             <li class="cs-nav_btns">
                                 @if(session()->get('contact_ext'))
                                 <a href="{{route('front.cprofile')}}" class="cs-nav_btn cs-style2 cs-color2">
@@ -281,11 +281,11 @@
     @include('layout.frontend.frontfooter')
 
     <!-- Script -->
-    <script src="{{asset('assets_frontend/js/jquery-1.12.4.min.js')}}"></script>
-    <script src="{{asset('assets_frontend/js/jquery.slick.min.js')}}"></script>
-    <script src="{{asset('assets_frontend/js/wow.min.js')}}"></script>
-    <script src="{{asset('assets_frontend/js/main.js')}}"></script>
-    <script src="{{asset('assets_frontend/js/extra.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/jquery.slick.min.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/wow.min.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/main.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/extra.js')}}"></script>
     @stack('scripts')
 </body>
 
