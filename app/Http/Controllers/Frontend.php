@@ -17,7 +17,7 @@ use App\Models\GamingSetting;
 use App\Models\CorporateSettings;
 use App\Models\CorporateInquiry;
 use App\Http\Traits\ResponseTrait;
-
+use Exception;
 
 class Frontend extends Controller
 {
