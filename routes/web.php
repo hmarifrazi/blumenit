@@ -118,8 +118,7 @@ Route::resource('products', ProductController::class);
 Route::resource('manufacturer', ManufacturerController::class);
 Route::resource('customer', CustomerController::class);
 Route::resource('order', OrderController::class);
-// Route::resource('corporate',[CorporateSettingController::class,'inq_list']);
+
 Route::resource('corporate', CorporateInqueryController::class);
 Route::resource('corporate_setting', CorporateSettingController::class);
-// Route::get('/corporate_setting_inq','inq_list')->name('superadmin.corporate_setting_inq.list');
-// Route::resource('corporate_set',CorporateSettingController::class,['as'=>'superadmin']);
+
