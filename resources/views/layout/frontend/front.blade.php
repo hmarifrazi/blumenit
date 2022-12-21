@@ -214,8 +214,9 @@
                 <div class="cs-main_header_right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
                     <a class="cs-site_branding_mini" href="{{route('front.home')}}"><img src="{{asset('assets/img/logo_mini.svg')}}" alt=""></a>
                     <div class="cs-nav">
-                        <ul class="cs-nav_list">
+                        <ul class="cs-nav_list">  
                             <li class="{{$menu_settings->about}}"><a href="{{route('front.aboutus')}}">About Us</a></li>
+                          
                             <li class="{{$menu_settings->category}}"><a href="{{route('front.category')}}">Category</a></li>
                             <li class="{{$menu_settings->games}}"><a href="{{route('front.games')}}">Gaming</a></li>
                             {{--<li class="menu-item-has-children"><a href="{{route('front.games')}}">Gaming</a>
