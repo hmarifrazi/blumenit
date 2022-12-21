@@ -18,7 +18,6 @@
     $menu_settings=json_decode($head[0]->menu_setting);
     @endphp
     <link rel="shortcut icon" href="{{asset($head[0]->favicon )}}">
-    hryhyrh
     <meta property="og:url" content="{{Request::url()}}" />
     <meta property="og:type" content="Ecommerce" />
     @if (Request::is('product/*'))
@@ -212,22 +211,22 @@
                     </div>
                 </div>
                 <div class="cs-main_header_right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <a class="cs-site_branding_mini" href="{{route('front.home')}}"><img src="{{asset('assets/img/logo_mini.svg')}}" alt=""></a>
+                    <a class="cs-site_branding_mini" href="{{route('front.home')}}"><img src="{{asset('public/assets/img/logo_mini.svg')}}" alt=""></a>
                     <div class="cs-nav">
                         <ul class="cs-nav_list">
                             <li class=""><a href="{{route('front.aboutus')}}">About Us</a></li>
-
-                            {{-- <li class=""><a href="{{route('front.category')}}">Category</a></li> --}}
+                           
+                            <li class=""><a href="">Category</a></li>
                             <li class=""><a href="{{route('front.games')}}">Gaming</a></li>
-                            {{--<li class="menu-item-has-children"><a href="{{route('front.games')}}">Gaming</a>
-                            <ul>
-                                @if(App\Models\Category::where('is_game',1)->orderBy('id','DESC')->count() > 0)
-                                @foreach(App\Models\Category::where('is_game',1)->orderBy('id','DESC')->get() as $cat)
-                                <li><a href="{{route('front.categoryview',$cat->id)}}">{{$cat->name}}</a></li>
-                                @endforeach
-                                @endif
-                            </ul>
-                            </li>--}}
+                            <li class="menu-item-has-children"><a href="{{route('front.games')}}">Gaming</a>
+                                <ul>
+                                    @if(App\Models\Category::where('is_game',1)->orderBy('id','DESC')->count() > 0)
+                                    @foreach(App\Models\Category::where('is_game',1)->orderBy('id','DESC')->get() as $cat)
+                                    <li><a href="{{route('front.categoryview',$cat->id)}}">{{$cat->name}}</a></li>
+                                    @endforeach
+                                    @endif
+                                </ul>
+                            </li>
                             <li class=""><a href="{{route('front.corporate')}}">Corporate</a></li>
                             <li class=""><a href="{{route('front.shopview')}}" class="cs-nav_btn cs-style1"><span>Products</span></a></li>
                             <li class=""><a href="{{route('front.contactus')}}">Contact Us</a></li>
