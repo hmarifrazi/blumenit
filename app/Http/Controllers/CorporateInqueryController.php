@@ -15,7 +15,7 @@ class CorporateInqueryController extends Controller
     public function index()
     {
        $data=Corporate_inquiry::paginate(10);
-       return view('backend.corporate.index',compact('data'));
+       return view('backend.corporate.inquery',compact('data'));
 
      
     }
