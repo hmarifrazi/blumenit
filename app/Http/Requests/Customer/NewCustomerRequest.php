@@ -4,7 +4,7 @@ namespace App\Http\Requests\Customer;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class NewReviewRequest extends FormRequest
+class NewCustomerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,16 @@ class NewReviewRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'review' => 'required',
-            'rating' => 'required'
+            'contact_ext' => 'required',
+            'contact' => 'required',
+            'email' => 'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'required' => 'The :attribute field is required',
+            'unique' => 'The :attribute field is not unique'
         ];
     }
 }
