@@ -111,14 +111,11 @@ Route::group(['middleware' => isAdmin::class], function () {
     });
 });
 
-
-
 Route::resource('category', CategoryController::class);
 Route::resource('subcategory', SubCategoryController::class);
 Route::resource('products', ProductController::class);
 Route::resource('manufacturer', ManufacturerController::class);
 Route::resource('customer', CustomerController::class);
 Route::resource('order', OrderController::class);
-
 Route::resource('corporate', CorporateInqueryController::class);
 Route::resource('corporate_setting', CorporateSettingController::class);
