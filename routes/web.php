@@ -80,7 +80,8 @@ Route::get('/customer_order_list', [CustomerController::class, 'order_list'])->n
 Route::get('/customer_invoice/{id}', [CustomerController::class, 'invoice'])->name('front.cinvoice');
 /* customer */
 
-
+//For Dynamic Frontend
+Route::resource('headerview', HeaderviewController::class);
 
 
 

@@ -100,56 +100,56 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Corporate Inquary</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a href="{{route('corporate.index')}}">Add New</a></li>
-                           
+
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Settings</a>
                         <ul class="submenu children dropdown-menu bg-dark px-3">
-                        <li class="submenu">
-                            <a href="#">Home Page <div class="arrow-down"></div></a>
-                            <ul class="submenu">
-                                <li><a href="">Header</a></li>
-                                <li><a href="">Home header support</a></li>
-                                <li><a href="">Home footer support</a></li>
-                                <li><a href="">Home Section 1</a></li>
-                                <li><a href="">Home Section 2</a></li>
-                                <li><a href="">Home Section 3</a></li>
-                                <li><a href="">Home Section 4</a></li>
-                            </ul>
-                        </li>
-                        <li class="has-submenu">
-                            <a href="#">Footer<div class="arrow-down"></div></a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href="{{route('corporate.index')}}">Footer 1st column</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('corporate.index')}}">Footer 4th column</a>
-                                </li>
-                                <li>
-                                    <a href="{{route('corporate.index')}}">Footer Social</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="{{route('corporate_setting.index')}}">Corporate Settings</a></li>
-                        <li><a href="{{route('corporate.index')}}">Slide</a></li>
-                        <li><a href="{{route('corporate.index')}}">About Us Setting</a></li>
-                        <li><a href="{{route('corporate.index')}}">Admin Users</a></li>
-                        <li><a href="{{route('corporate.index')}}">General Settings</a></li>
-                        <li><a href="{{route('corporate.index')}}">Shipping Settings</a></li>
-                        <li><a href="{{route('corporate.index')}}">Category Page Settings</a></li>
-                        <li><a href="{{route('corporate.index')}}">Gaming Page Settings</a></li>
-                        <li><a href="{{route('corporate.index')}}">Contact country code</a></li>
-                        <li class="has-submenu">
-                            <a href="#">Location<div class="arrow-down"></div></a>
-                            <ul class="submenu">
-                                <li><a href="{{route('corporate.index')}}">Country</a></li>
-                                <li><a href="{{route('corporate.index')}}">State</a></li>
-                                <li><a href="{{route('corporate.index')}}">City</a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                            <li class="submenu">
+                                <a href="#">Home Page <div class="arrow-down"></div></a>
+                                <ul class="submenu">
+                                    <li><a href="{{route('headerview.index')}}">Header</a></li>
+                                    <li><a href="">Home header support</a></li>
+                                    <li><a href="">Home footer support</a></li>
+                                    <li><a href="">Home Section 1</a></li>
+                                    <li><a href="">Home Section 2</a></li>
+                                    <li><a href="">Home Section 3</a></li>
+                                    <li><a href="">Home Section 4</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-submenu">
+                                <a href="#">Footer<div class="arrow-down"></div></a>
+                                <ul class="submenu">
+                                    <li>
+                                        <a href="{{route('corporate.index')}}">Footer 1st column</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('corporate.index')}}">Footer 4th column</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('corporate.index')}}">Footer Social</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="{{route('corporate_setting.index')}}">Corporate Settings</a></li>
+                            <li><a href="{{route('corporate.index')}}">Slide</a></li>
+                            <li><a href="{{route('corporate.index')}}">About Us Setting</a></li>
+                            <li><a href="{{route('corporate.index')}}">Admin Users</a></li>
+                            <li><a href="{{route('corporate.index')}}">General Settings</a></li>
+                            <li><a href="{{route('corporate.index')}}">Shipping Settings</a></li>
+                            <li><a href="{{route('corporate.index')}}">Category Page Settings</a></li>
+                            <li><a href="{{route('corporate.index')}}">Gaming Page Settings</a></li>
+                            <li><a href="{{route('corporate.index')}}">Contact country code</a></li>
+                            <li class="has-submenu">
+                                <a href="#">Location<div class="arrow-down"></div></a>
+                                <ul class="submenu">
+                                    <li><a href="{{route('corporate.index')}}">Country</a></li>
+                                    <li><a href="{{route('corporate.index')}}">State</a></li>
+                                    <li><a href="{{route('corporate.index')}}">City</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </li>
 
                 </ul>
