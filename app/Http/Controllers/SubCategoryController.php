@@ -16,9 +16,8 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-       $subcategory=SubCategory::paginate(10);
-       return view('backend.subcategory.index',compact('subcategory'));
-
+        $subcategory = SubCategory::paginate(10);
+        return view('backend.subcategory.index', compact('subcategory'));
     }
 
     /**
@@ -28,10 +27,10 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        $category=Category::get(['id','name']);
+        $category = Category::get(['id', 'name']);
         // dd($subcategory);
-    
-        return view('backend.subcategory.create',compact('category'));
+
+        return view('backend.subcategory.create', compact('category'));
     }
 
     /**
@@ -42,26 +41,25 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-           
-       $subcat=new Subcategory;
-       $subcat->name=$request->FullName;
-       $subcat->category_id=$request->category;
-      
-       
-       if($request->hasFile('cat_icon')){
-            $imageName = rand(111,999).time().'.'.$request->cat_icon->extension();
-            $request->cat_icon->move(public_path('uploads/subcategory'),$imageName);
-            $subcat->cat_icon=$imageName;
-       }
+        try {
 
-       
-       if($subcat->save()){
-        return redirect('backend.subcategory')->with('success','Data saved');
-       }
-     }
-        catch(Exception $e){
-           
+            $subcat = new Subcategory;
+            $subcat->name = $request->FullName;
+            $subcat->category_id = $request->category;
+
+
+            if ($request->hasFile('cat_icon')) {
+                $imageName = rand(111, 999) . time() . '.' . $request->cat_icon->extension();
+                $request->cat_icon->move(public_path('uploads/subcategory'), $imageName);
+                $subcat->cat_icon = $imageName;
+            }
+
+
+            if ($subcat->save()) {
+                return redirect('subcategory')->with('success', 'Data saved');
+            }
+        } catch (Exception $e) {
+
             return back()->withInput();
         }
     }
@@ -85,8 +83,8 @@ class SubCategoryController extends Controller
      */
     public function edit(SubCategory $subCategory)
     {
-       $cat=SubCategory::all();
-       return view('backend.subcategory.edit',compact('cat'));
+        $cat = SubCategory::all();
+        return view('backend.subcategory.edit', compact('cat'));
     }
 
     /**
@@ -98,25 +96,24 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, SubCategory $subCategory)
     {
-        try{
+        try {
 
-            $s=new Subcategory;
-        $s->name=$request->name;
-        $s->category_id=$request->name;
-        $s->FullName=$request->name;
+            $s = new Subcategory;
+            $s->name = $request->name;
+            $s->category_id = $request->name;
+            $s->FullName = $request->name;
 
-        
-       if($request->hasFile('cat_icon')){
-        $imageName = rand(111,999).time().'.'.$request->cat_icon->extension();
-        $request->cat_icon->move(public_path('uploads/subcategory'),$imageName);
-        $s->cat_icon=$imageName;
-   }
-        
-    }catch(Exception $e){
-           
-        return back()->withInput();
+
+            if ($request->hasFile('cat_icon')) {
+                $imageName = rand(111, 999) . time() . '.' . $request->cat_icon->extension();
+                $request->cat_icon->move(public_path('uploads/subcategory'), $imageName);
+                $s->cat_icon = $imageName;
+            }
+        } catch (Exception $e) {
+
+            return back()->withInput();
+        }
     }
-}
 
 
     /**

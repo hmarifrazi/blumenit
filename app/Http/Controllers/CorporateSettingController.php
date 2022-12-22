@@ -26,10 +26,8 @@ class CorporateSettingController extends Controller
      */
     public function index()
     {
-         $data=CorporateSetting::paginate(10);
-         return view('backend.corporate.index',compact('data'));
-
-        
+        $data = CorporateSetting::paginate(10);
+        return view('backend.corporate.index', compact('data'));
     }
 
     /**
@@ -39,8 +37,8 @@ class CorporateSettingController extends Controller
      */
     public function create()
     {
-        $category=Category::orderBy('name')->get();
-        return view('backend.corporate.create',compact('category'));
+        $category = Category::orderBy('name')->get();
+        return view('backend.corporate.create', compact('category'));
     }
 
     /**
@@ -51,40 +49,40 @@ class CorporateSettingController extends Controller
      */
     public function store(Request $request)
     {
-        try{
-            $cor = new CorporateSettings;
-            $cor->category_id=1;//$request->category_id;
-            $cor->order_no=$request->order_no;
-            $cor->title=$request->title;
-            $cor->title_green=$request->title_green;
-            $cor->right_text=$request->right_text;
-            $cor->status=$request->status;
+        try {
+            $cor = new CorporateSetting;
+            $cor->category_id = 1; //$request->category_id;
+            $cor->order_no = $request->order_no;
+            $cor->title = $request->title;
+            $cor->title_green = $request->title_green;
+            $cor->right_text = $request->right_text;
+            $cor->status = $request->status;
 
-            if($request->file('side_image')){
+            if ($request->file('side_image')) {
                 $image = $request->file('side_image');
-                $side_image = '/source/public/images/corporate/'.time().'.'.$image->extension();
-                $image->move(public_path('images/corporate'),$side_image);
-                $cor->side_image=$side_image;
-             }
-             
-             if($cor->save()){
-                foreach($request->image as $key=>$value){
-                    $cimage=new CorporateLogo;
-                    
+                $side_image = '/source/public/images/corporate/' . time() . '.' . $image->extension();
+                $image->move(public_path('images/corporate'), $side_image);
+                $cor->side_image = $side_image;
+            }
+
+            if ($cor->save()) {
+                foreach ($request->image as $key => $value) {
+                    $cimage = new CorporateLogo;
+
                     $image = $request->file('image')[$key];
-                    $imageName = Str::random(8).time().'.'.$image->extension();
+                    $imageName = Str::random(8) . time() . '.' . $image->extension();
                     $destinationPath = public_path('/images/corporate');
                     $img = Image::make($image->path());
-                    $img->resize(119, 39)->save($destinationPath.'/'.$imageName);
-                    
-                    $cimage->corporate_settings_id=$cor->id;
-                    $cimage->logo='/source/public/images/corporate/'.$imageName;
+                    $img->resize(119, 39)->save($destinationPath . '/' . $imageName);
+
+                    $cimage->corporate_settings_id = $cor->id;
+                    $cimage->logo = '/source/public/images/corporate/' . $imageName;
                     $cimage->save();
                 }
-                return redirect(route('backend.corporate_setting.index'));
+                return redirect(route('corporate_setting.index'));
                 // return redirect('backend.subcategory')->with('success','Data saved');
-             }
-        }catch(Exception $e){
+            }
+        } catch (Exception $e) {
             return redirect()->back();
         }
     }
@@ -133,6 +131,4 @@ class CorporateSettingController extends Controller
     {
         //
     }
-
-    
 }

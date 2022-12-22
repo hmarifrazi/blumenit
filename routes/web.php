@@ -31,7 +31,7 @@ use App\Http\Middleware\isAdmin;
 /********for fronend********/
 Route::get('/', [FrontEnd::class, 'index'])->name('front.home');
 Route::get('/games', [FrontEnd::class, 'games'])->name('front.games');
-Route::get('/category', [FrontEnd::class, 'category'])->name('front.category');
+Route::get('/categories', [FrontEnd::class, 'category'])->name('front.categories');
 Route::get('/aboutus', [FrontEnd::class, 'aboutus'])->name('front.aboutus');
 
 Route::get('/corporate-business', [FrontEnd::class, 'corporatebusiness'])->name('front.corporate');
