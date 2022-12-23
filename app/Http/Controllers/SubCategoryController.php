@@ -57,7 +57,7 @@ class SubCategoryController extends Controller
 
        
        if($subcat->save()){
-        return redirect('backend.subcategory')->with('success','Data saved');
+        return redirect('subcategory')->with('success','Data saved');
        }
      }
         catch(Exception $e){

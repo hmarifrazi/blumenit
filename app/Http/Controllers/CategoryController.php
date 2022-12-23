@@ -83,10 +83,11 @@ class CategoryController extends Controller
         //     $cat->image[]=$imageName;
         // }
         $cat->save();
-        return redirect(route('backend.category.index'));
+        return redirect(route('category.index'));
 
 
 }
+
     
 
     /**
@@ -154,7 +155,7 @@ class CategoryController extends Controller
 
       
         $category->save();
-        return redirect(route('backend.category.index'));
+        return redirect(route('category.index'));
     }
 
     /**
