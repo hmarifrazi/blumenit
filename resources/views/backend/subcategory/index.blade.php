@@ -23,8 +23,8 @@
             @forelse($subcategory as $subcat)
             <tr>
                 <th scope="row">{{++$loop->index }}</th>
+                <td>{{$subcat->category->name}}</td>
                 <td>{{$subcat->name}}</td>
-                <td>{{$subcat->category?->name}}</td>
                 <td>{{$subcat->cat_icon}}</td>
 
 
@@ -38,7 +38,7 @@
             @empty
 
             <tr>
-                <th colspan="4">No Category Found</th>
+                <td colspan="4">No Category Found</td>
             </tr>
             @endforelse
         </tbody>

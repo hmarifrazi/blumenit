@@ -8,10 +8,6 @@
     <div class="card">
         <div class="card-header"><strong>Add New Category</strong>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 4e04825cf43a458a49bd48300ca11d6288507308
             <div class="card-body card-block">
                 <div class="form-group">
                     <label for="FullName" class=" form-control-label">Name</label>
