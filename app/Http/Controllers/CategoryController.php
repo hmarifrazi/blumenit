@@ -144,10 +144,10 @@ class CategoryController extends Controller
             $category->feature_image = $imageName;
         }
 
-        if ($r->lsb_image) {
-            $imageName = rand(111, 999) . time() . '.' . $r->lsb_image->extension();
-            $r->lsb_image->move(public_path('uploads/category'), $imageName);
-            $category->lsb_image = $imageName;
+        if ($r->Isb_image) {
+            $imageName = rand(111, 999) . time() . '.' . $r->Isb_image->extension();
+            $r->Isb_image->move(public_path('uploads/category'), $imageName);
+            $category->Isb_image = $imageName;
         }
 
 

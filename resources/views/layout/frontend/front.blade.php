@@ -29,11 +29,11 @@
     <!-- Site Title -->
     <title>@yield('title')</title>
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('assets_frontend/css/extra.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/extra.css')}}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91EXVKRE2"></script>
     <script>
@@ -278,11 +278,11 @@
     @include('layout.frontend.frontfooter')
 
     <!-- Script -->
-    <script src="{{asset('assets_frontend/js/jquery-1.12.4.min.js')}}"></script>
-    <script src="{{asset('assets_frontend/js/jquery.slick.min.js')}}"></script>
-    <script src="{{asset('assets_frontend/js/wow.min.js')}}"></script>
-    <script src="{{asset('assets_frontend/js/main.js')}}"></script>
-    <script src="{{asset('assets_frontend/js/extra.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/jquery.slick.min.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/wow.min.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/main.js')}}"></script>
+    <script src="{{asset('public/assets_frontend/js/extra.js')}}"></script>
     @stack('scripts')
 </body>
 
