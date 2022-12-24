@@ -29,8 +29,8 @@
     <!-- Site Title -->
     <title>@yield('title')</title>
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/assets_frontend/css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('public/assets_frontend/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('public/assets_frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('public/assets_frontend/css/extra.css')}}">

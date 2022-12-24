@@ -8,6 +8,10 @@
     <div class="card">
         <div class="card-header"><strong>Add New Category</strong>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e04825cf43a458a49bd48300ca11d6288507308
             <div class="card-body card-block">
                 <div class="form-group">
                     <label for="FullName" class=" form-control-label">Name</label>
@@ -105,7 +109,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="lsb_image" class=" form-control-label">Left Side Banner</label>
-                            <input type="file" class="dropify" id="lsb_image" name="lsb_image" class="form-control">
+                            <input type="file" class="dropify" id="Isb_image" name="Isb_image" class="form-control">
                         </div>
                     </div>
                 </div>

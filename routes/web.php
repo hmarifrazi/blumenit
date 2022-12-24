@@ -28,6 +28,10 @@ use App\Http\Middleware\isAdmin;
 |
 */
 
+Route::get('home', function () {
+    return view('welcome');
+});
+
 /********for fronend********/
 Route::get('/', [FrontEnd::class, 'index'])->name('front.home');
 Route::get('/games', [FrontEnd::class, 'games'])->name('front.games');

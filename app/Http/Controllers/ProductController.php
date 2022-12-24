@@ -74,14 +74,14 @@ class ProductController extends Controller
         // $data['category_id'] = $request->category;
         // $data['subcategory_id'] = $request->subcategory;
 
-        if($request->hasFile('feature_image')){
-            $imageName = rand(111,999).time().'.'.$request->feature_image->extension();
-            $request->feature_image->move(public_path('uploads/subcategory'),$imageName);
-            $data['feature_image']=$imageName;
-       }
+        if ($request->hasFile('feature_image')) {
+            $imageName = rand(111, 999) . time() . '.' . $request->feature_image->extension();
+            $request->feature_image->move(public_path('uploads/product'), $imageName);
+            $data['feature_image'] = $imageName;
+        }
 
         Product::create($data);
-        return redirect('backend.products');
+        return redirect('products');
     }
 
     /**
@@ -92,8 +92,8 @@ class ProductController extends Controller
      */
     public function show(product $product)
     {
-        
-       return view('backend.products.show',compact('product'));
+
+        return view('backend.products.show', compact('product'));
     }
 
     /**
@@ -104,14 +104,14 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $manufacturer=Manufacturer::all();
-        $category=Category::all();
-        $subcategory=SubCategory::all();
+        $manufacturer = Manufacturer::all();
+        $category = Category::all();
+        $subcategory = SubCategory::all();
         // $subcategory=Subcategory::where('category_id',$products->category_id)->get();
         // return view('products.edit',compact('products','manufacturer','category','subcategory'));
 
-        $p=Product::findOrFail($id);
-        return view('backend.products.edit',compact('p','category','manufacturer','subcategory'));
+        $p = Product::findOrFail($id);
+        return view('backend.products.edit', compact('p', 'category', 'manufacturer', 'subcategory'));
     }
 
     /**
@@ -123,38 +123,41 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-       try{
-        $p=Product::findOrFail($id);
-        // dd($p);
-        $p->name=$request->name;
-        $p->sku=$request->sku;
-        $p->model_no=$request->model_no;
-        $p->product_title=$request->product_title;
-        $p->feature_image=$request->imageName;
-        $p->short_description=$request->short_description;
-        $p->long_description=$request->long_description;
-        $p->price=$request->price;
-        $p->discount=$request->discount;
-        $p->vat_status=$request->vat_status;
-        $p->warranty=$request->warranty;
-        $p->product_condition=$request->product_condition;
-        $p->qty=$request->qty;
-        $p->max_qty=$request->max_qty;
-        $p->manufacturer_id=$request->manufacturer;
-        $p->category_id=$request->category;
-        $p->subcategory_id=$request->subcategory;
-        
-        if($p->save()){
-                return redirect(route('backend.products.index'));
+        try {
+            $p = Product::findOrFail($id);
+            // dd($p);
+            $p->name = $request->name;
+            $p->sku = $request->sku;
+            $p->model_no = $request->model_no;
+            $p->product_title = $request->product_title;
+            $p->feature_image = $request->imageName;
+            $p->short_description = $request->short_description;
+            $p->long_description = $request->long_description;
+            $p->price = $request->price;
+            $p->discount = $request->discount;
+            $p->vat_status = $request->vat_status;
+            $p->warranty = $request->warranty;
+            $p->product_condition = $request->product_condition;
+            $p->qty = $request->qty;
+            $p->max_qty = $request->max_qty;
+            $p->manufacturer_id = $request->manufacturer;
+            $p->category_id = $request->category;
+            $p->subcategory_id = $request->subcategory;
+            if ($request->hasFile('feature_image')) {
+                $imageName = rand(111, 999) . time() . '.' . $request->feature_image->extension();
+                $request->feature_image->move(public_path('uploads/product'), $imageName);
+                $p['feature_image'] = 'uploads/product/' . $imageName;
             }
-        
-    }catch(Exception $e){
-           
-        //  dd($e);
-         if($p->save()){
-                return redirect(route('backend.products.index'));
+            if ($p->save()) {
+                return redirect(route('products.index'));
             }
-    }
+        } catch (Exception $e) {
+
+            //  dd($e);
+            if ($p->save()) {
+                return redirect(route('products.index'));
+            }
+        }
     }
 
     /**
