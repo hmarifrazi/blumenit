@@ -70,9 +70,6 @@ class ProductController extends Controller
         $data['product_condition'] = $request->product_condition;
         $data['qty'] = $request->qty;
         $data['max_qty'] = $request->max_qty;
-        // $data['manufacturer_id'] = $request->manufacturer;
-        // $data['category_id'] = $request->category;
-        // $data['subcategory_id'] = $request->subcategory;
 
         if ($request->hasFile('feature_image')) {
             $imageName = rand(111, 999) . time() . '.' . $request->feature_image->extension();

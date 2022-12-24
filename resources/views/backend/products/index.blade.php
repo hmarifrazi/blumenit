@@ -8,7 +8,7 @@
         <thead>
             <tr>
                 <th scope="col">#SL</th>
-                <th scope="col">name</th>
+                <th scope="col">Name</th>
                 <th scope="col">SKU</th>
                 <th scope="col">Price</th>
                 <th scope="col">Image</th>
@@ -19,34 +19,23 @@
 
 
         <tbody>
-            @forelse($product as $p)
+            @forelse($product as $pro)
             <tr>
                 <th scope="row">{{ ++$loop->index }}</th>
-                <td>{{$p->name}}</td>
-                <td>{{$p->sku}}</td>
-                <td>{{$p->price}}</td>
-                <td><img width="50px" src="{{asset('public/'.$p->feature_image)}}" alt=""></td>
+                <td>{{$pro->name}}</td>
+                <td>{{$pro->sku}}</td>
+                <td>{{$pro->price}}</td>
+                <td><img width="50px" src="{{asset('public/'.$pro->feature_image)}}" alt=""></td>
                 <td class="white-space-nowrap">
-                    <a href="{{route('products.show',$p)}}" class="btn btn-success btn rounded">
+                    <a href="{{route('products.show',$pro)}}" class="btn btn-success btn rounded">
                         Show
                     </a>
-                    {{-- <a href="javascript:void()" onclick="$('#form{{$p->id}}').submit()">
-                    <i class="bi bi-trash"></i>
-                    </a>
-                    <form class="btn btn-danger btn-sm" id="form{{$p->id}}" action="{{route('products.destroy',$p)}}" method="post"> delete
-                        @csrf
-                        @method('delete')
-
-                    </form> --}}
-
-                    <a href="{{route('products.edit',$p)}}" class="btn btn-info btn rounded">
+                    <a href="{{route('products.edit',$pro)}}" class="btn btn-info btn rounded">
                         Edit
                     </a>
                 </td>
-            </tr>
-            @empty
-            <tr>
-                <th colspan="8" class="text-center">No Pruduct Found</th>
+                @empty
+                <th colspan="5" class="text-center">No Pruduct Found</th>
             </tr>
             @endforelse
 
