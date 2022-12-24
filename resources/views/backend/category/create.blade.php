@@ -8,16 +8,6 @@
     <div class="card">
         <div class="card-header"><strong>Add New Category</strong>
 
-
-            <!-- <div class="page-title-right">
-                <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">{{Session::get('identity')}}</a></li>
-                    <li class="breadcrumb-item"><a href="{{route(Session::get('identity').'.category.index')}}">Category</a></li>
-                    <li class="breadcrumb-item active">Add New</li>
-                </ol>
-            </div>  -->
-
-
             <div class="card-body card-block">
                 <div class="form-group">
                     <label for="FullName" class=" form-control-label">Name</label>
