@@ -18,7 +18,7 @@ $view4 = App\Models\Homesection4view::all();
             @foreach ($slide as $item)
             <div class="cs-slide">
                 <div class="cs-hero">
-                    <div class="cs-hero_img cs-bg" style="background-image: url('{{asset($item->image)}}')"></div>
+                    <div class="cs-hero_img cs-bg" style="background-image: url('public/images/1653721142.png')"></div>
                     <div class="container wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="cs-hero_text">
                             <h1 class="cs-hero_title">{{$item->title}}</h1>
@@ -42,7 +42,7 @@ $view4 = App\Models\Homesection4view::all();
         <li>
             <div class="cs-info cs-type1 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="cs-info_icon">
-                    <img src="{{asset($headsupport[0]->image_1st)}}" alt="" width="49" height="49">
+                    <img src="{{asset('public/images/MCGMW7Ld1648632508.svg')}}" alt="" width="49" height="49">
 
                 </div>
                 <div class="cs-info_right">
@@ -54,7 +54,7 @@ $view4 = App\Models\Homesection4view::all();
         <li>
             <div class="cs-info cs-type1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="cs-info_icon">
-                    <img src="{{asset($headsupport[0]->image_2nd)}}" alt="" width="49" height="49">
+                    <img src="{{asset('public/images/DzpCdITA1648632508.svg')}}" alt="" width="49" height="49">
                 </div>
                 <div class="cs-info_right">
                     <h3 class="cs-info_title">{{$headsupport[0]->header_2nd}}</h3>
@@ -65,7 +65,7 @@ $view4 = App\Models\Homesection4view::all();
         <li>
             <div class="cs-info cs-type1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="cs-info_icon">
-                    <img src="{{asset($headsupport[0]->image_3rd)}}" alt="" width="49" height="49">
+                    <img src="{{asset('public/images/kKlnBmr51648632508.svg')}}" alt="" width="49" height="49">
                 </div>
                 <div class="cs-info_right">
                     <h3 class="cs-info_title">{{$headsupport[0]->header_3rd}}</h3>
@@ -76,7 +76,7 @@ $view4 = App\Models\Homesection4view::all();
         <li>
             <div class="cs-info cs-type1 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
                 <div class="cs-info_icon">
-                    <img src="{{asset($headsupport[0]->image_4th)}}" alt="" width="49" height="49">
+                    <img src="{{asset('public/images/67yZl1u31648632508.svg')}}" alt="" width="49" height="49">
                 </div>
                 <div class="cs-info_right">
                     <h3 class="cs-info_title">{{$headsupport[0]->header_4th}}</h3>
@@ -87,7 +87,7 @@ $view4 = App\Models\Homesection4view::all();
         <li>
             <div class="cs-info cs-type1 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
                 <div class="cs-info_icon">
-                    <img src="{{asset($headsupport[0]->image_5th)}}" alt="" width="49" height="49">
+                    <img src="{{asset('public/images/d40s37Xw1648632508.svg')}}" alt="" width="49" height="49">
                 </div>
                 <div class="cs-info_right">
                     <h3 class="cs-info_title">{{$headsupport[0]->header_5th}}</h3>
@@ -118,7 +118,7 @@ $view4 = App\Models\Homesection4view::all();
     <div class="row">
         <div class="col-lg-6">
             <div class="cs-left_full_width cs-space_85">
-                <div class="cs-image_box cs-style1 cs-bg  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" style="background-image: url('{{asset($view1[0]->feature_image)}}')"></div>
+                <div class="cs-image_box cs-style1 cs-bg  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s" style="background-image: url('{{asset("public/images/homes1/1648632096.png")}}')"></div>
             </div>
         </div>
         <div class="col-lg-6">
@@ -187,7 +187,7 @@ $view4 = App\Models\Homesection4view::all();
                     <div class="cs-image_box_2_wrap  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="cs-image_box cs-style2">
                             <div class="cs-image_box_shape">
-                                <div class="cs-image_box_in cs-bg" style="background-image:url('{{asset($view2[0]->feature_image)}}')"></div>
+                                <div class="cs-image_box_in cs-bg" style="background-image:url('{{asset("public/images/homes2/1648632178.jpg")}}')"></div>
                             </div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@ $view4 = App\Models\Homesection4view::all();
                     <div class="cs-image_box_3_wrap wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
                         <div class="cs-image_box cs-style3">
                             <div class="cs-image_box_shape">
-                                <div class="cs-image_box_in cs-bg" style="background-image:url('{{asset($view3[0]->feature_image)}}')"></div>
+                                <div class="cs-image_box_in cs-bg" style="background-image:url('{{asset("public/images/homes3/1648632262.jpg")}}')"></div>
                             </div>
                         </div>
                     </div>
@@ -274,7 +274,7 @@ $view4 = App\Models\Homesection4view::all();
             </div>
             <div class="col-lg-6">
                 <div class="cs-right_full_width cs-space_85">
-                    <div class="cs-image_box cs-style1 cs-bg  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s" style="background-image:url('{{asset($view4[0]->feature_image)}}')"></div>
+                    <div class="cs-image_box cs-style1 cs-bg  wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s" style="background-image:url('{{asset("public/images/homes4/1648632323.jpg")}}')"></div>
                 </div>
             </div>
         </div>
