@@ -29,11 +29,11 @@
     <!-- Site Title -->
     <title>@yield('title')</title>
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/slick.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/animate.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('public/assets_frontend/css/extra.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_frontend/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_frontend/css/slick.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_frontend/css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_frontend/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets_frontend/css/extra.css')}}">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-N91EXVKRE2"></script>
     <script>
@@ -56,7 +56,7 @@
         <div class="cs-top_header wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
             <div class="cs-top_header_in">
                 <div class="cs-top_header_left">
-                    <a class="cs-site_branding" href="{{route('front.home')}}"><img src="{{asset($head[0]->logo_image )}}" alt="" width="100%"></a>
+                    <a class="cs-site_branding" href="{{url('home')}}"><img src="{{asset('images/1648631826.svg')}}" alt="" width="100%"></a>
                 </div>
                 <div class="cs-top_header_middle">
                     <div class="cs-search_wrap">
@@ -211,7 +211,7 @@
                     </div>
                 </div>
                 <div class="cs-main_header_right wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
-                    <a class="cs-site_branding_mini" href="{{route('front.home')}}"><img src="{{asset('public/assets/img/logo_mini.svg')}}" alt=""></a>
+                    <a class="cs-site_branding_mini" href="{{route('front.home')}}"><img src="{{asset('assets/img/logo_mini.svg')}}" alt=""></a>
                     <div class="cs-nav">
                         <ul class="cs-nav_list">
                             <li class=""><a href="{{route('front.aboutus')}}">About Us</a></li>
@@ -280,11 +280,11 @@
     @include('layout.frontend.frontfooter')
 
     <!-- Script -->
-    <script src="{{asset('public/assets_frontend/js/jquery-1.12.4.min.js')}}"></script>
-    <script src="{{asset('public/assets_frontend/js/jquery.slick.min.js')}}"></script>
-    <script src="{{asset('public/assets_frontend/js/wow.min.js')}}"></script>
-    <script src="{{asset('public/assets_frontend/js/main.js')}}"></script>
-    <script src="{{asset('public/assets_frontend/js/extra.js')}}"></script>
+    <script src="{{asset('assets_frontend/js/jquery-1.12.4.min.js')}}"></script>
+    <script src="{{asset('assets_frontend/js/jquery.slick.min.js')}}"></script>
+    <script src="{{asset('assets_frontend/js/wow.min.js')}}"></script>
+    <script src="{{asset('assets_frontend/js/main.js')}}"></script>
+    <script src="{{asset('assets_frontend/js/extra.js')}}"></script>
     @stack('scripts')
 </body>
 
