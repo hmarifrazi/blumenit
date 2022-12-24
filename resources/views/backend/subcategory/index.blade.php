@@ -32,12 +32,8 @@
                     <a href="{{route('subcategory.edit',$subcat)}}">
                         <i class="btn btn-primary btn-sm">Edit</i>
                     </a>
-
                 </td>
-            </tr>
-            @empty
-
-            <tr>
+                @empty
                 <td colspan="4">No Category Found</td>
             </tr>
             @endforelse
