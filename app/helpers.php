@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\HtmlString;
+use Exception;
 
 function vite_assets(): HtmlString
 {
@@ -11,7 +12,8 @@ function vite_assets(): HtmlString
         try {
             Http::get("http://localhost:3000");
             $devServerIsRunning = true;
-        } catch (Exception) {
+        } catch (Exception $r) {
+            dd($r);
         }
     }
 
