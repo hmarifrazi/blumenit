@@ -17,23 +17,23 @@ return new class extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
-            // $table->integer('country_id');
-            // $table->integer('state_id');
+            $table->bigint('country_id');
+            $table->bigint('state_id');
             $table->string('city');
             $table->timestamps();
         });
         DB::table('cities')->insert([
             [
-                'city'=>'Dhaka City',
-                'created_at'=>Carbon::now(),
+                'city' => 'Dhaka City',
+                'created_at' => Carbon::now(),
             ],
             [
-                'city'=>'Dubay City',
-                'created_at'=>Carbon::now(),
+                'city' => 'Dubay City',
+                'created_at' => Carbon::now(),
             ],
             [
-                'city'=>'Karachi City',
-                'created_at'=>Carbon::now(),
+                'city' => 'Karachi City',
+                'created_at' => Carbon::now(),
             ],
         ]);
     }

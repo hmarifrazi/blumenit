@@ -13,7 +13,7 @@ class NewReviewRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,9 +24,9 @@ class NewReviewRequest extends FormRequest
     public function rules()
     {
         return [
-           'name' => 'required',
-           'review' => 'required',
-           'rating' => 'required'
+            'name' => 'required',
+            'review' => 'required',
+            'rating' => 'required'
         ];
     }
 }

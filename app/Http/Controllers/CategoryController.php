@@ -10,9 +10,9 @@ use Session;
 class CategoryController extends Controller
 {
 
-    
+
     /**
-    
+
 
      * Display a listing of the resource.
      *
@@ -20,8 +20,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories=Category::paginate(10);
-        return view('backend.category.index',compact('categories'));
+        $categories = Category::paginate(10);
+        return view('backend.category.index', compact('categories'));
     }
 
     /**
@@ -41,40 +41,40 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $r)
-     {
+    {
 
-       
-        $cat=new Category;
-        $cat->name=$r->FullName;
-        $cat->is_game=$r->is_game;
-        $cat->feature_cat=$r->featured;
-        $cat->show_catpage=$r->catpage;
-        $cat->cat_page_order=$r->order;
-        
-      
-       
-        if($r->cat_icon){
-            $imageName = rand(111,999).time().'.'.$r->cat_icon->extension();
+
+        $cat = new Category;
+        $cat->name = $r->FullName;
+        $cat->is_game = $r->is_game;
+        $cat->feature_cat = $r->featured;
+        $cat->show_catpage = $r->catpage;
+        $cat->cat_page_order = $r->order;
+
+
+
+        if ($r->cat_icon) {
+            $imageName = rand(111, 999) . time() . '.' . $r->cat_icon->extension();
             $r->cat_icon->move(public_path('uploads/category'), $imageName);
-            $cat->cat_icon=$imageName;
+            $cat->cat_icon = $imageName;
         }
 
-        if($r->cat_img){
-            $imageName = rand(111,999).time().'.'.$r->cat_img->extension();
+        if ($r->cat_img) {
+            $imageName = rand(111, 999) . time() . '.' . $r->cat_img->extension();
             $r->cat_img->move(public_path('uploads/category'), $imageName);
-            $cat->cat_image=$imageName;
+            $cat->cat_image = $imageName;
         }
 
-        if($r->feature_image){
-            $imageName = rand(111,999).time().'.'.$r->feature_image->extension();
+        if ($r->feature_image) {
+            $imageName = rand(111, 999) . time() . '.' . $r->feature_image->extension();
             $r->feature_image->move(public_path('uploads/category'), $imageName);
-            $cat->feature_image=$imageName;
+            $cat->feature_image = $imageName;
         }
 
-        if($r->lsb_image){
-            $imageName = rand(111,999).time().'.'.$r->lsb_image->extension();
+        if ($r->lsb_image) {
+            $imageName = rand(111, 999) . time() . '.' . $r->lsb_image->extension();
             $r->lsb_image->move(public_path('uploads/category'), $imageName);
-            $cat->Isb_image=$imageName;
+            $cat->Isb_image = $imageName;
         }
 
         // if($r->image){
@@ -83,11 +83,10 @@ class CategoryController extends Controller
         //     $cat->image[]=$imageName;
         // }
         $cat->save();
-        return redirect(route('category.index'));
+        return redirect(route('backend.category.index'));
 
 
 }
-
     
 
     /**
@@ -109,7 +108,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        return view('backend.category.edit',compact('category'));
+        return view('backend.category.edit', compact('category'));
     }
 
     /**
@@ -121,39 +120,39 @@ class CategoryController extends Controller
      */
     public function update(Request $r, category $category)
     {
-        
-        $category->name=$r->FullName;
-        $category->is_game=$r->is_game;
-        $category->feature_cat=$r->featured;
-        $category->show_catpage=$r->catpage;
-        $category->cat_page_order=$r->order;
-      
-       
-        if($r->cat_icon){
-            $imageName = rand(111,999).time().'.'.$r->cat_icon->extension();
+
+        $category->name = $r->FullName;
+        $category->is_game = $r->is_game;
+        $category->feature_cat = $r->featured;
+        $category->show_catpage = $r->catpage;
+        $category->cat_page_order = $r->order;
+
+
+        if ($r->cat_icon) {
+            $imageName = rand(111, 999) . time() . '.' . $r->cat_icon->extension();
             $r->cat_icon->move(public_path('uploads/category'), $imageName);
-            $category->cat_icon=$imageName;
+            $category->cat_icon = $imageName;
         }
 
-        if($r->cat_img){
-            $imageName = rand(111,999).time().'.'.$r->cat_img->extension();
+        if ($r->cat_img) {
+            $imageName = rand(111, 999) . time() . '.' . $r->cat_img->extension();
             $r->cat_img->move(public_path('uploads/category'), $imageName);
-            $category->cat_image=$imageName;
+            $category->cat_image = $imageName;
         }
 
-        if($r->feature_image){
-            $imageName = rand(111,999).time().'.'.$r->feature_image->extension();
+        if ($r->feature_image) {
+            $imageName = rand(111, 999) . time() . '.' . $r->feature_image->extension();
             $r->feature_image->move(public_path('uploads/category'), $imageName);
-            $category->feature_image=$imageName;
+            $category->feature_image = $imageName;
         }
 
-        if($r->lsb_image){
-            $imageName = rand(111,999).time().'.'.$r->lsb_image->extension();
+        if ($r->lsb_image) {
+            $imageName = rand(111, 999) . time() . '.' . $r->lsb_image->extension();
             $r->lsb_image->move(public_path('uploads/category'), $imageName);
-            $category->lsb_image=$imageName;
+            $category->lsb_image = $imageName;
         }
 
-      
+
         $category->save();
         return redirect(route('category.index'));
     }

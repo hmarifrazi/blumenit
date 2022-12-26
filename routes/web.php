@@ -31,7 +31,7 @@ use App\Http\Middleware\isAdmin;
 /********for fronend********/
 Route::get('/', [FrontEnd::class, 'index'])->name('front.home');
 Route::get('/games', [FrontEnd::class, 'games'])->name('front.games');
-Route::get('/category', [FrontEnd::class, 'category'])->name('front.category');
+Route::get('/categories', [FrontEnd::class, 'category'])->name('front.categories');
 Route::get('/aboutus', [FrontEnd::class, 'aboutus'])->name('front.aboutus');
 
 Route::get('/corporate-business', [FrontEnd::class, 'corporatebusiness'])->name('front.corporate');
@@ -111,14 +111,11 @@ Route::group(['middleware' => isAdmin::class], function () {
     });
 });
 
-
-
 Route::resource('category', CategoryController::class);
 Route::resource('subcategory', SubCategoryController::class);
 Route::resource('products', ProductController::class);
 Route::resource('manufacturer', ManufacturerController::class);
 Route::resource('customer', CustomerController::class);
 Route::resource('order', OrderController::class);
-
 Route::resource('corporate', CorporateInqueryController::class);
 Route::resource('corporate_setting', CorporateSettingController::class);
