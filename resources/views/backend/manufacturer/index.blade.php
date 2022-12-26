@@ -14,13 +14,13 @@
                 <th scope="col">Address</th>
                 <th scope="col">Image</th>
                 <th scope="col">Action</th>
-                
+
             </tr>
         </thead>
 
 
         <tbody>
-      
+
             @forelse($manufacturers as $manufacturer)
             <tr>
                 <th scope="row">{{++$loop->index }}</th>
@@ -29,18 +29,18 @@
                 <td>{{$manufacturer->contact}}</td>
                 <td>{{$manufacturer->address}}</td>
                 <td><img src="{{asset($manufacturer->image)}}" width="60" height="60" alt=""></td>
-                 <td>
-                                               
+                <td>
+
                     <a href="{{route('manufacturer.edit',$manufacturer)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Edit</a>
-                    <!--<button type="button" class="btn btn-danger btn-rounded width-sm waves-effect waves-light">Delete</button>-->
+
                 </td>
-                  @empty
+                @empty
                 <td colspan="6" class="text-center">
                     there is no data
                 </td>
             </tr>
-          
-              @endforelse
+
+            @endforelse
 
         </tbody>
     </table>

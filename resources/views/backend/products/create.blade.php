@@ -66,7 +66,7 @@
 
                 </select>
 
-                @if($errors->has('Category'))
+                @if($errors->has('category'))
                 <span class="text-danger"> {{ $errors->first('category')}}</span>
                 @endif
 
@@ -80,7 +80,7 @@
                     <option value="">Select SubCategory</option>
                     @forelse($subcategory as $sub_cat)
 
-                    <option value="{{$sub_cat->id}}" {{ old('SubCategory')==$sub_cat->id?"selected":""}}>{{
+                    <option value="{{$sub_cat->id}}" {{ old('subcategory')==$sub_cat->id?"selected":""}}>{{
                 $sub_cat->name}}</option>
                     @empty
                     <option value="">No subcategory found</option>
@@ -102,7 +102,7 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="name1">Feature Image</label>
-                <input type="file" class="form-control" data-height="300" name="feature_image">
+                <input type="file" class="form-control" data-height="300" class="dropify" name="feature_image">
             </div>
             <div class="form-group col-md-3">
                 <label for="name1">Short Description</label>

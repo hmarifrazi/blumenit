@@ -16,13 +16,13 @@
                 <th scope="col">Country</th>
                 <th scope="col">Status</th>
                 <th scope="col">Action</th>
-                
+
             </tr>
         </thead>
 
 
         <tbody>
-      
+
             @forelse($customers as $customer)
             <tr>
                 <th scope="row">{{++$loop->index }}</th>
@@ -33,27 +33,23 @@
                 <td>{{$customer->countries->country}}</td>
                 {{-- <td>{{$customer->zip}},{{$customer->city_id}},<br>{{$customer->cities->city}},{{$customer->state_id}}{{$customer->states->state}},{{$customer->country_id}}<br>{{$customer->country->country}}</td> --}}
                 <td>{{$customer->status==1?"Active":"Inactive"}}</td>
-               
-                 <td>
-                                               
+
+                <td>
+
                     <a href="{{route('customer.edit',$customer)}}" class="btn btn-primary btn-rounded width-sm waves-effect">Edit</a>
-                    <!--<button type="button" class="btn btn-danger btn-rounded width-sm waves-effect waves-light">Delete</button>-->
+
                 </td>
-                  @empty
+                @empty
                 <td colspan="6" class="text-center">
                     there is no data
                 </td>
             </tr>
-          
-              @endforelse
+
+            @endforelse
 
         </tbody>
     </table>
-    <!-- <div class="card-box">
-        <div class="clearfix">
-            {{-- {{$customers->appends($_GET)->links('pagination::boostrap-4')}} --}}
-        </div>
-    </div> -->
+
 </div>
 
 @endsection
