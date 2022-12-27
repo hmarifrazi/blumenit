@@ -83,9 +83,11 @@ class CategoryController extends Controller
         //     $cat->image[]=$imageName;
         // }
         $cat->save();
-        return redirect(route('category.index'));
-    }
+        return redirect(route('backend.category.index'));
 
+
+}
+    
 
     /**
      * Display the specified resource.

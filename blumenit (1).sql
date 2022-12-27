@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2022 at 06:07 AM
+-- Generation Time: Dec 24, 2022 at 04:35 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -72,7 +72,7 @@ CREATE TABLE `about_us_settings` (
 --
 
 INSERT INTO `about_us_settings` (`id`, `page_image`, `fsecimage`, `fsectitle1`, `fsectitle2`, `fsectitle3`, `fsectitle4`, `fsectitle5`, `fsecdetails`, `visionimage`, `visiondetails`, `missionimage`, `missiondetails`, `goalsimage`, `goalsdetails`, `promisetext`, `relationimage`, `relationdetails`, `targetimage`, `targetdetails`, `retailimage`, `retaildetails`, `visionlastdetails`, `visionimage1`, `visiondetails1`, `visionimage2`, `visiondetails2`, `visionimage3`, `visiondetails3`, `visionimage4`, `visiondetails4`, `visionimage5`, `visiondetails5`, `visiondetails6`, `visionimage6`, `created_at`, `updated_at`) VALUES
-(1, 'wfdewfw', 'wfewf', 'efewfr', 'efefwef', 'efwf', 'freferf', 'feerwfr', 'ferferfg', 'efweff', 'efewff', 'fergerg', 'gfreger', 'fbvfbgbr', 'fbvbggbf', 'fbvddbfdbb', 'fvbdffb', 'bffgbfgb', 'bbgb', 'bdbfdbffdb', 'fbfbbfbb', 'fdvfdbdfb', 'gbfnghn', 'nbngngnh', 'gfnfgnghn', 'fvbfdbgfb', 'nhghngn', 'hnnhgnhygn', 'gnbngnhghn', 'hnghnmghghm', 'hgmmmgmj', 'gmhmgmghm', 'mgghmmgjhm', 'mmjghmjhmgmj', 'mjhmjhmhjmmhj', '2022-12-20 08:04:17', '2022-12-20 08:04:17');
+(1, 'efergrg', 'rgrr', 'gthgrth', 'thth', 'htrh', 'rthth', 'hrth', 'htrrth', 'hrrhthttrh', 'thrth', 'hththr', 'thrt', 'hhhertrtr', 'rhtrthrh', 'thjrhht', 'htrthyhr', 'trhtrh', 'htrthtr', 'trhrt', 'hrthrthrht', 'trhrthrhthr', 'trhrthtrtr', 'rhthtrh', 'thrtrhrth', 'htrth', 'hrttrhrt', 'hrrthrt', 'hrytrhrth', 'hrtrthtrh', 'httrhrth', 'rhtrthrth', 'hrtrthrhth', 'trhtrhh', 'hrrthrh', '2022-12-21 11:22:00', '2022-12-21 11:22:00');
 
 -- --------------------------------------------------------
 
@@ -101,8 +101,10 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `cat_icon`, `cat_image`, `feature_image`, `Isb_image`, `is_game`, `feature_cat`, `show_catpage`, `cat_page_order`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Courier', '7671670224159.jpg', '9621670224159.jpg', '6761670224159.jpg', '7371670224159.jpg', 0, 0, 1, 10, NULL, '2022-12-05 01:09:19', '2022-12-05 01:09:19'),
-(2, 'Mango', '7951671684644.jpg', '6161671684644.jpg', '4331671684644.jpg', '3441671684644.jpg', 0, 0, 1, 10, NULL, '2022-12-22 04:50:44', '2022-12-22 04:50:44');
+(1, 'laptop 12', '8881671881857.jpg', '7091671881857.jpg', '9921671881857.jpg', '3121670418894.jpg', 1, 0, 0, 10, NULL, '2022-12-07 07:14:54', '2022-12-24 11:37:37'),
+(2, 'arif', '2751671808171.jpg', NULL, NULL, NULL, 1, 1, 1, 10, NULL, '2022-12-23 15:09:31', '2022-12-23 15:09:31'),
+(3, 'mouse', '3531671819020.jpg', '3291671819020.jpg', '2551671819020.jpg', '6061671817362.jpg', 0, 0, 0, 10, NULL, '2022-12-23 17:42:43', '2022-12-23 18:10:20'),
+(4, 'laptop', '3341671881824.jpg', '7871671881824.jpg', '5001671881824.jpg', NULL, 1, 0, 1, 10, NULL, '2022-12-24 11:37:04', '2022-12-24 11:37:04');
 
 -- --------------------------------------------------------
 
@@ -124,7 +126,7 @@ CREATE TABLE `categoryimages` (
 --
 
 INSERT INTO `categoryimages` (`id`, `category_id`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(1, 1, '4t45y54', 'thtyhty', NULL, NULL);
+(1, 1, 'regergrgh', 'grgreg', '2022-12-21 11:23:40', '2022-12-21 11:23:40');
 
 -- --------------------------------------------------------
 
@@ -157,7 +159,7 @@ CREATE TABLE `category_settings` (
 --
 
 INSERT INTO `category_settings` (`id`, `mp_add`, `mp_add_link`, `fp_add`, `fp_add_link`, `large_add`, `large_add_link`, `small_add1`, `small_add1_link`, `small_add2`, `small_add2_link`, `small_add3`, `small_add3_link`, `bs_add`, `bs_add_link`, `created_at`, `updated_at`) VALUES
-(1, 'efregreg', 'rgeegtrtgh', 'rgrtgrtgtg', 'fgfgrg', 'fgbfgbff', 'gfbfgbgfg', 'gfbfgbghhbg', 'gbfbfbgg', 'fgfnbfn', 'nhfnghn', 'gnhghfn', 'fgbnghnnhg', 'nghhgngh', 'nghhgn', NULL, NULL);
+(1, 'gergegr', 'rgrger', 'rgerge', 'rgegte', 'gergrthrh', 'wfhgfhtg', 'qwwegfehgth', 'rhgher', 'ewgrhg', 'egger', 'rgge', 'rgrtg', 'grrger', 'grgerreg', '2022-12-21 11:24:14', '2022-12-21 11:24:14');
 
 -- --------------------------------------------------------
 
@@ -168,6 +170,7 @@ INSERT INTO `category_settings` (`id`, `mp_add`, `mp_add_link`, `fp_add`, `fp_ad
 CREATE TABLE `cities` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `city` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state_id` bigint(10) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -176,10 +179,10 @@ CREATE TABLE `cities` (
 -- Dumping data for table `cities`
 --
 
-INSERT INTO `cities` (`id`, `city`, `created_at`, `updated_at`) VALUES
-(1, 'Dhaka City', '2022-12-05 01:07:43', NULL),
-(2, 'Dubay City', '2022-12-05 01:07:43', NULL),
-(3, 'Karachi City', '2022-12-05 01:07:43', NULL);
+INSERT INTO `cities` (`id`, `city`, `state_id`, `created_at`, `updated_at`) VALUES
+(1, 'Dhaka City', 1, '2022-12-07 07:12:31', NULL),
+(2, 'Dubay City', 2, '2022-12-07 07:12:31', NULL),
+(3, 'Karachi City', 3, '2022-12-07 07:12:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -205,7 +208,7 @@ CREATE TABLE `corporate_inquiries` (
 --
 
 INSERT INTO `corporate_inquiries` (`id`, `title`, `name`, `contact`, `email`, `address`, `description`, `status`, `created_at`, `updated_at`) VALUES
-(1, 0, 'htyhjytujyu', 'jyyutjyu', 'jhmhmjh', 'myumjhjhm', 'jhgmmjhm', 0, NULL, NULL);
+(1, 1, 'erghgrth', 'gregrterg', 'erhgehhe', 'htrthrt', 'htrhrth', 1, '2022-12-21 11:24:54', '2022-12-21 11:24:54');
 
 -- --------------------------------------------------------
 
@@ -226,7 +229,7 @@ CREATE TABLE `corporate_logos` (
 --
 
 INSERT INTO `corporate_logos` (`id`, `corporate_setting_id`, `logo`, `created_at`, `updated_at`) VALUES
-(1, 1, 'ytjkyutkuik', NULL, NULL);
+(1, 1, 'dfdwqfeef', '2022-12-21 11:25:33', '2022-12-21 11:25:33');
 
 -- --------------------------------------------------------
 
@@ -252,7 +255,7 @@ CREATE TABLE `corporate_settings` (
 --
 
 INSERT INTO `corporate_settings` (`id`, `category_id`, `order_no`, `title`, `title_green`, `side_image`, `right_text`, `status`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'ykiyulkyil', 'ikl,uiyul', 'ikluyliou', 'ilulioloi', 1, NULL, NULL);
+(1, 1, 1, 'efwewgegr', 'reggerg', 'ergeger', 'rgeege', 1, '2022-12-21 11:26:05', '2022-12-21 11:26:05');
 
 -- --------------------------------------------------------
 
@@ -272,9 +275,9 @@ CREATE TABLE `countries` (
 --
 
 INSERT INTO `countries` (`id`, `country`, `created_at`, `updated_at`) VALUES
-(1, 'Bangladesh', '2022-12-05 01:07:45', NULL),
-(2, 'UAE', '2022-12-05 01:07:45', NULL),
-(3, 'Pakistan', '2022-12-05 01:07:45', NULL);
+(1, 'Bangladesh', '2022-12-07 07:12:32', NULL),
+(2, 'UAE', '2022-12-07 07:12:32', NULL),
+(3, 'Pakistan', '2022-12-07 07:12:32', NULL);
 
 -- --------------------------------------------------------
 
@@ -304,7 +307,10 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `first_name`, `last_name`, `email`, `contact_ext`, `country_id`, `state_id`, `city_id`, `contact`, `address`, `zip`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Aiko', 'Buck', 'xifevyj@mailinator.com', 1, 2, 1, 1, '01858380039', 'Nostrum dignissimos', NULL, 1, '2022-12-07 00:03:34', '2022-12-07 00:03:34');
+(1, 'wdwfewf', 'feewfwfr', 'ewfgewfgwger', 1, 1, 1, 1, 'egwgegerg', 'rgeegerg', 'rgegg', 1, '2022-12-21 11:26:58', '2022-12-21 11:26:58'),
+(2, NULL, NULL, 'hmatif.nazir@gmail.com', 1, 2, 1, 1, '01858380039', NULL, NULL, 1, '2022-12-22 11:31:05', '2022-12-22 11:31:05'),
+(3, NULL, NULL, 'akib@gmail.com', 1, 2, 1, 1, '01858380039', NULL, NULL, 1, '2022-12-22 16:13:40', '2022-12-22 16:13:40'),
+(4, NULL, NULL, 'amin@gmail.com', 1, 2, 1, 1, '01858380039', NULL, NULL, 1, '2022-12-24 15:06:00', '2022-12-24 15:06:00');
 
 -- --------------------------------------------------------
 
@@ -321,13 +327,6 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `failed_jobs`
---
-
-INSERT INTO `failed_jobs` (`id`, `uuid`, `connection`, `queue`, `payload`, `exception`, `failed_at`) VALUES
-(1, 'egrh', 'rhtyhyt', 'ghnhfg', 'hgnhjgnmhgjhgnjhgnmhj', 'nbmmnhj', '2022-12-20 07:36:35');
 
 -- --------------------------------------------------------
 
@@ -353,7 +352,7 @@ CREATE TABLE `footercol1s` (
 --
 
 INSERT INTO `footercol1s` (`id`, `logo`, `title`, `text`, `copyright_notice`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'efgewrgrtg', 'fggbvf', 'gfbgfgb', 'gbdbgf', 0, 0, NULL, NULL, NULL);
+(1, 'edrwqfrwef', 'Wholesale Price', 'If you want to get a better price. Please Subscribe your Email below the Box.', 'Copyright © 2015 - 2022 Blumen Computer Trading LLC - All Rights Reserved.', 1, 1, '2022-12-21 11:27:55', '2022-12-21 11:27:55', '2022-12-21 11:27:55');
 
 -- --------------------------------------------------------
 
@@ -377,7 +376,7 @@ CREATE TABLE `footercol2s` (
 --
 
 INSERT INTO `footercol2s` (`id`, `title`, `link`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'rgdrghrtg', 'gfhbfbf', 0, 0, NULL, NULL, NULL);
+(1, 'qwerwqrfw', 'efewffew', 1, 1, '2022-12-21 11:28:33', '2022-12-21 11:28:33', '2022-12-21 11:28:33');
 
 -- --------------------------------------------------------
 
@@ -402,7 +401,7 @@ CREATE TABLE `footercol4s` (
 --
 
 INSERT INTO `footercol4s` (`id`, `address`, `email`, `contact`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'wdafdwef', 'wsdwedfe', 'sadxsadfcsa', 0, 0, NULL, NULL, NULL);
+(1, 'Shop #S15, Sultan Mohammad Building Al Soqu Al Kebeer (Computer Market) Bur Dubai, Dubai, UAE', 'blumencomputer@gmail.com', '+971 56664 4965\n', 1, 1, '2022-12-21 11:28:59', '2022-12-21 11:28:59', '2022-12-21 11:28:59');
 
 -- --------------------------------------------------------
 
@@ -427,7 +426,7 @@ CREATE TABLE `gaming_settings` (
 --
 
 INSERT INTO `gaming_settings` (`id`, `mp_add`, `mp_add_link`, `fp_add`, `fp_add_link`, `bs_add`, `bs_add_link`, `created_at`, `updated_at`) VALUES
-(1, 'fsdfersdfer', 'sdfgfsdgedr', 'fdvgfrd', 'fdgbvfdsgfd', 'dfgbvd', 'gffdgd', NULL, NULL);
+(1, 'qewqrfweftr', 'efgwgeg', 'wfwfgewg', 'eggergerg', 'wfrgtrhrt', 'gergertheh', '2022-12-21 11:29:28', '2022-12-21 11:29:28');
 
 -- --------------------------------------------------------
 
@@ -463,7 +462,7 @@ CREATE TABLE `general_settings` (
 --
 
 INSERT INTO `general_settings` (`id`, `company_name`, `max_shipping_time`, `min_shipping_time`, `shipping_charge`, `cod_status`, `cod_name`, `cod_note`, `cia_status`, `cia_name`, `cia_note`, `dot_status`, `dot_name`, `dot_note`, `menu_setting`, `online_pay_status`, `online_pay_name`, `online_pay_note`, `created_at`, `updated_at`) VALUES
-(1, 'wefdaewfer', 'ferfger', 'rgegrgre', 'gfergre', 0, 'fdgfgt', 'ggrtgrt', 0, 'fdggfdfdsdb', 'gbfgbgbfg', 0, 'gdsvdfsg', 'fdfgfbvfgb', 'bffgbnr', 0, 'sadfds', 'fdsfdvsgd', NULL, NULL);
+(1, 'wqfdwqfwef', 'wefewfewrfer', 'ewfgergreg', 'efgwgwegg', 1, 'tr4tg', 'efgergerg', 1, 'wgergergerg', 'gregergre', 0, 'rgehgh', 'errehehr', 'ergrehh', 1, '3r4tgytg5', 'fvgfdgtrg', '2022-12-21 11:30:02', '2022-12-21 11:30:02');
 
 -- --------------------------------------------------------
 
@@ -492,7 +491,7 @@ CREATE TABLE `headerviews` (
 --
 
 INSERT INTO `headerviews` (`id`, `logo_link`, `logo_image`, `whatsapp`, `contact`, `email`, `menu_setting`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`, `favicon`) VALUES
-(1, 'feddsgdg', 'fdvfdgfg', 'fbdbfgbngf', 'gfbfgbgf', 'fdbfgbggf', 'gbfggbfgbf', 1, 1, '2022-12-21 04:19:28', '2022-12-21 04:19:28', '2022-12-21 04:19:28', 'dsvfcdfvd');
+(2, '<a href=\"public/images/logo-mini.svg\">Logo</a>', 'image', '+8801858380039', '01858380039', 'arif@gmail.com', 'About Us\nCategory\nGames\nCorporate\nProducts\nContact\n ', 1, 1, '2022-12-21 21:20:22', '2022-12-21 21:20:22', '2022-12-21 21:20:22', 'favicon');
 
 -- --------------------------------------------------------
 
@@ -527,7 +526,7 @@ CREATE TABLE `homefootersupportviews` (
 --
 
 INSERT INTO `homefootersupportviews` (`id`, `header_1st`, `details_1st`, `image_1st`, `header_2nd`, `details_2nd`, `image_2nd`, `header_3rd`, `details_3rd`, `image_3rd`, `header_4th`, `details_4th`, `image_4th`, `status`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'sadcdsfvcdsv', 'fvfdbvdf', 'vfdfvd', 'fdvdc', 'sdvdfbvf', 'fdbafsdba', 'sdfsdfsfdr', 'dsfvdfdfv', 'fdvdfs', 'svdfv', 'vfddfv', 'zsdfvafdv', 1, 0, 0, NULL, NULL, NULL);
+(1, 'CUSTOMER CARE\n', 'Call : +971 56664 4965', 'thrtrhrth', 'QUOTE FOR CORPORATE\n', 'blumencomputer@gmail.com\n', 'thrth', 'WHOLESALE PRICE FOR CLIENT\n\n', 'blumencomputer@gmail.com', 'thrtrhhr', 'INCLUSIVE VAT\n', 'All Prices Include VAT', 'rthrth', 1, 1, 1, '2022-12-21 11:31:48', '2022-12-21 11:31:48', '2022-12-21 11:31:48');
 
 -- --------------------------------------------------------
 
@@ -565,7 +564,7 @@ CREATE TABLE `homeheadersupportviews` (
 --
 
 INSERT INTO `homeheadersupportviews` (`id`, `header_1st`, `details_1st`, `image_1st`, `header_2nd`, `details_2nd`, `image_2nd`, `header_3rd`, `details_3rd`, `image_3rd`, `header_4th`, `image_4th`, `details_4th`, `header_5th`, `details_5th`, `image_5th`, `status`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'drgrtyt', 'REET', 'T45Y', 'ETREYT', 'GRHG', 'EGRE', 'thyjy', 'hjnyh', 'gfn', 'yjytu', 'rtjhyt', 'jtyj', 'tjht', 'thj', 'ht', 1, 0, 0, NULL, NULL, NULL);
+(1, 'FREE DELIVERY\n', 'For all oders over 200 AED', 'rthhtr', '7 DAYS RETURN\n', 'If goods have problems', 'rthtrhrt', 'SECURE PAYMENT\n', '100% secure payment', 'htrhrh', '24/7 SUPPORT\n', 'rgrehg', 'Dedicated support', 'GIFT SERVICE\n ', 'Support gift service', 'htfrhrttyr', 1, 1, 1, '2022-12-21 11:32:42', '2022-12-21 11:32:42', '2022-12-21 11:32:42');
 
 -- --------------------------------------------------------
 
@@ -588,7 +587,7 @@ CREATE TABLE `homesection1images` (
 --
 
 INSERT INTO `homesection1images` (`id`, `homesection1view_id`, `image`, `details`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'wqedewrarfd', 'sdfcsfder', 'fvcdsvdf', NULL, NULL, NULL);
+(1, 'wgerreg', 'public/images/homes1/KGte6Y861648632096.svg', 'rgegerge', '2022-12-21 11:33:25', '2022-12-21 11:33:25', '2022-12-21 11:33:25');
 
 -- --------------------------------------------------------
 
@@ -615,7 +614,7 @@ CREATE TABLE `homesection1views` (
 --
 
 INSERT INTO `homesection1views` (`id`, `title`, `heading1`, `heading2`, `details`, `feature_image`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'wqdeawfsw', 'esfsdfdfrx', 'dszfxvfd', 'dfxvadfxv', 'dvdfzvdfz', 0, 'fvbdfxvfv', NULL, NULL, NULL);
+(1, 'Mother', 'board\nConnect with the world', 'Get work done faster', '<span style=\"color: rgb(1, 33, 71); font-family: Poppins, sans-serif; font-size: 20px;\">to spread technological happiness by sharing every information essential. Dreaming to make a colorful technological world piece by create an easy supply chain for quality IT products. For that blumen planned to keep maintaining supply world top brands of IT parts &amp; software reach to the end-users</span>', 'hkghukluy', 0, 'efefgeg', '2022-12-20 10:56:16', '2022-12-20 10:56:16', '2022-12-20 10:56:16');
 
 -- --------------------------------------------------------
 
@@ -638,7 +637,7 @@ CREATE TABLE `homesection2images` (
 --
 
 INSERT INTO `homesection2images` (`id`, `homesection2view_id`, `image`, `details`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Dwadweasrdfe', 'sadcsafds', 'fcsdfdsfc', NULL, NULL, NULL);
+(1, 'grgerg', 'rgeherh', 'hrthrthrth', '2022-12-21 11:34:02', '2022-12-21 11:34:02', '2022-12-21 11:34:02');
 
 -- --------------------------------------------------------
 
@@ -665,7 +664,7 @@ CREATE TABLE `homesection2views` (
 --
 
 INSERT INTO `homesection2views` (`id`, `title`, `heading1`, `heading2`, `details`, `feature_image`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'sadsfesf', 'dscsdfcvsd', 'cdcsdafcvsd', 'dscsvcadvc', 'csdsdafcds', 0, 'csdcdsd', NULL, NULL, NULL);
+(1, 'Processor\n\n', 'Changing people,', 'Processes & perceptions', '<span style=\"color: rgb(1, 33, 71); font-family: Poppins, sans-serif; font-size: 20px;\">to spread technological happiness by sharing every information essential. Dreaming to make a colorful technological world piece by create an easy supply chain for quality IT products. For that blumen planned to keep maintaining supply world top brands of IT parts &amp; software reach to the end-users.</span>', 'EGGGgfhfg', 1, 'gfnfgjyjh', '2022-12-20 10:57:28', '2022-12-20 10:57:28', '2022-12-20 10:57:28');
 
 -- --------------------------------------------------------
 
@@ -688,7 +687,7 @@ CREATE TABLE `homesection3images` (
 --
 
 INSERT INTO `homesection3images` (`id`, `homesection3view_id`, `image`, `details`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'aDXSAFCdsfvc', 'vccxzvdfzxv', 'vdfzvdzfv', NULL, NULL, NULL);
+(1, 'rthrthrh', 'rdhgrhtrh', 'thrthrth', '2022-12-21 11:34:31', '2022-12-21 11:34:31', '2022-12-21 11:34:31');
 
 -- --------------------------------------------------------
 
@@ -715,7 +714,7 @@ CREATE TABLE `homesection3views` (
 --
 
 INSERT INTO `homesection3views` (`id`, `title`, `heading1`, `heading2`, `details`, `feature_image`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'dfsaefca', 'aesfwserd', 'dfvfdszxv', 'sdvdsfsd', 'fdsvcdgv', 0, 'fvfdds', NULL, NULL, NULL);
+(1, 'Gaming Computer\n', 'The ultimate\n', 'Gaming experience', '<span style=\"color: rgb(1, 33, 71); font-family: Poppins, sans-serif; font-size: 20px;\">to spread technological happiness by sharing every information essential. Dreaming to make a colorful technological world piece by create an easy supply chain for quality IT products. For that blumen planned to keep maintaining supply world top brands of IT parts &amp; software reach to the end-users.</span>', 'jyjj', 1, 'rhthjtdj', '2022-12-20 10:58:30', '2022-12-20 10:58:30', '2022-12-20 10:58:30');
 
 -- --------------------------------------------------------
 
@@ -738,7 +737,7 @@ CREATE TABLE `homesection4images` (
 --
 
 INSERT INTO `homesection4images` (`id`, `homesection4view_id`, `image`, `details`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'DxASFcsef', 'vfcdsvxcfv', 'vfcdzfxvfsdz', NULL, NULL, NULL);
+(1, 'wefewgeg', 'wefewgerg', 'rgergeg', '2022-12-21 11:34:59', '2022-12-21 11:34:59', '2022-12-21 11:34:59');
 
 -- --------------------------------------------------------
 
@@ -765,7 +764,7 @@ CREATE TABLE `homesection4views` (
 --
 
 INSERT INTO `homesection4views` (`id`, `title`, `heading1`, `heading2`, `details`, `feature_image`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'SFCsdzvfds', 'dzfxvdfxzv', 'vxxfcfdc', 'cxv cbcb', 'vfdxvddv', 0, 'vfddfxvdxv', NULL, NULL, NULL);
+(1, 'Sever & Workstations\n', 'Smart company\n', 'With perfect space', '<span style=\"color: rgb(1, 33, 71); font-family: Poppins, sans-serif; font-size: 20px;\">to spread technological happiness by sharing every information essential. Dreaming to make a colorful technological world piece by create an easy supply chain for quality IT products. For that blumen planned to keep maintaining supply world top brands of IT parts &amp; software reach to the end-users.</span>', 'htrjfjjjkmk', 1, 'hjtjkyk', '2022-12-20 10:59:18', '2022-12-20 10:59:18', '2022-12-20 10:59:18');
 
 -- --------------------------------------------------------
 
@@ -792,10 +791,8 @@ CREATE TABLE `manufacturers` (
 --
 
 INSERT INTO `manufacturers` (`id`, `name`, `image`, `email`, `contact`, `address`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'Lazada LTD', '/public/images/1670224288.jpg', 'lazada@gmail.com', '01858380039', 'dhaka', 'user', 'user', NULL, '2022-12-05 01:11:28', '2022-12-05 01:11:28'),
-(2, 'Kiara Nolan', '/public/images/1670392165.jpg', 'sekedusyne@mailinator.com', 'Cillum consequatur', 'Accusantium fugiat t', 'user', 'user', NULL, '2022-12-06 23:49:25', '2022-12-06 23:49:25'),
-(3, 'Vegetable', '/public/images/1671600905.jpg', 'hmarif.nazir@gmail.com', '01858380039', 'esfterwager', 'user', 'user', NULL, '2022-12-21 05:35:05', '2022-12-21 05:35:05'),
-(4, 'mango', '/public/images/1671601056.jpg', 'admin@gmail.com', '01858380039', 'hdhty', 'user', 'user', NULL, '2022-12-21 05:37:36', '2022-12-21 05:37:36');
+(1, 'Lazada LTD', '/public/images/1671621492.jpg', 'lazada@gmail.com', '01858380039', 'Dhaka', 'user', 'user', NULL, '2022-12-07 07:15:59', '2022-12-21 11:18:12'),
+(2, 'mouse', '/public/images/1671706871.jpg', 'arif@gmail.com', '01858380039', 'dhaka', 'user', 'user', NULL, '2022-12-21 17:08:51', '2022-12-22 11:01:11');
 
 -- --------------------------------------------------------
 
@@ -901,7 +898,11 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `cart`, `total_mrp`, `discount`, `vat`, `subtotal`, `delivery_charge`, `shipping_id`, `shipping_name`, `total`, `pay_method`, `comment`, `full_name`, `email`, `contact`, `contact_ext`, `address`, `zip`, `country_id`, `state_id`, `city_id`, `payment_status`, `updated_by`, `status`, `created_at`, `updated_at`) VALUES
-(1, NULL, 'dWEAFDEAFW', 3254.00, 0.00, 0.00, 41254.00, 0.00, 1, '\r\nSEFGERSGRT', 635.00, 'uilhuilul', 'oji;jo;ojp', 'kl;jk;k', 'rdgsreerdsr', 'gsdrrsgr', 'gdrdg', 'gdsrtgr', 'gsesrgr', 452, 42545, 4524, 1, 0, 0, NULL, NULL);
+(1, 1, 'rghehrthtrh', 12.00, 0.00, 0.00, 12.00, 0.00, 123, 'fhhhj', 12.00, 'rggtrhtrh', 'wfwegfewg', 'gregeg', 'rgegewrg', 'geger', 'regegerg', 'gergreg', 'rgeeg', 123, 12, 244444456, 123, 1, 1, '2022-12-21 11:35:37', '2022-12-21 11:35:37'),
+(2, 2, 'eyJjYXJ0Ijp7IjMiOnsibmFtZSI6ImtleWJvYXJkIiwic2t1IjoiMTIwIiwicXVhbnRpdHkiOiIwMSIsInByaWNlIjoiNTAwLjAwIiwiZGlzX3ByaWNlIjo0NTAsImRpc2NvdW50IjoiMTAuMDAiLCJkaXNjb3VudF9hbW91bnQiOjUwLCJ2YXQiOm51bGwsInZhdF9hbW91bnQiOjAsImltYWdlIjpudWxsfX0sImNhbF9jYXJ0Ijp7InRvdGFsX21ycCI6IjUwMC4wMCIsImRpc2NvdW50IjoiNTAuMDAiLCJ2YXQiOiIwLjAwIiwic3ViX3RvdGFsIjoiNDUwLjAwIiwic2hpcHBpbmciOiIwLjAwIiwic2hpcHBpbmdJRCI6MCwic2hpcHBpbmduYW1lIjoiIiwidG90YWwiOiI0NTAuMDAifX0=', 500.00, 50.00, 0.00, 450.00, 0.00, 0, '', 450.00, 'on', 'hjtyjtyj', 'arif', 'hmatif.nazir@gmail.com', '01858380039', '+880', 'DHA', '5000', 1, 1, 1, 0, 0, 0, '2022-12-22 11:56:20', '2022-12-22 11:56:20'),
+(3, 3, 'eyJjYXJ0Ijp7IjMiOnsibmFtZSI6ImtleWJvYXJkIiwic2t1IjoiMTIwIiwicXVhbnRpdHkiOiIwMSIsInByaWNlIjoiNTAwLjAwIiwiZGlzX3ByaWNlIjo0NTAsImRpc2NvdW50IjoiMTAuMDAiLCJkaXNjb3VudF9hbW91bnQiOjUwLCJ2YXQiOm51bGwsInZhdF9hbW91bnQiOjAsImltYWdlIjpudWxsfX0sImNhbF9jYXJ0Ijp7InRvdGFsX21ycCI6IjUwMC4wMCIsImRpc2NvdW50IjoiNTAuMDAiLCJ2YXQiOiIwLjAwIiwic3ViX3RvdGFsIjoiNDUwLjAwIiwic2hpcHBpbmciOiIwLjAwIiwic2hpcHBpbmdJRCI6MCwic2hpcHBpbmduYW1lIjoiIiwidG90YWwiOiI0NTAuMDAifX0=', 500.00, 50.00, 0.00, 450.00, 0.00, 0, '', 450.00, 'on', 'grghrheh', 'arif', 'akib@gmail.com', '01858380039', '+880', 'DHA', '5000', 3, 3, 3, 0, 0, 0, '2022-12-22 16:14:57', '2022-12-22 16:14:57'),
+(4, 4, 'eyJjYXJ0Ijp7IjMiOnsibmFtZSI6ImtleWJvYXJkMTIiLCJza3UiOiIxMjAiLCJxdWFudGl0eSI6IjAxIiwicHJpY2UiOiI1MDAuMDAiLCJkaXNfcHJpY2UiOjQ1MCwiZGlzY291bnQiOiIxMC4wMCIsImRpc2NvdW50X2Ftb3VudCI6NTAsInZhdCI6bnVsbCwidmF0X2Ftb3VudCI6MCwiaW1hZ2UiOiJ1cGxvYWRzXC9wcm9kdWN0XC81MjMxNjcxODkxMDY1LmpwZyJ9fSwiY2FsX2NhcnQiOnsidG90YWxfbXJwIjoiNTAwLjAwIiwiZGlzY291bnQiOiI1MC4wMCIsInZhdCI6IjAuMDAiLCJzdWJfdG90YWwiOiI0NTAuMDAiLCJzaGlwcGluZyI6IjAuMDAiLCJzaGlwcGluZ0lEIjowLCJzaGlwcGluZ25hbWUiOiIiLCJ0b3RhbCI6IjQ1MC4wMCJ9fQ==', 500.00, 50.00, 0.00, 450.00, 0.00, 0, '', 450.00, 'on', 'ttyt54y54y', 'arif', 'amin@gmail.com', '01858380039', '+880', 'DHA', '5000', 1, 1, 1, 0, 0, 0, '2022-12-24 15:07:51', '2022-12-24 15:07:51'),
+(5, 4, 'eyJjYXJ0Ijp7IjMiOnsibmFtZSI6ImtleWJvYXJkMTIiLCJza3UiOiIxMjAiLCJxdWFudGl0eSI6MiwicHJpY2UiOiI1MDAuMDAiLCJkaXNfcHJpY2UiOjQ1MCwiZGlzY291bnQiOiIxMC4wMCIsImRpc2NvdW50X2Ftb3VudCI6NTAsInZhdCI6bnVsbCwidmF0X2Ftb3VudCI6MCwiaW1hZ2UiOiJ1cGxvYWRzXC9wcm9kdWN0XC81MjMxNjcxODkxMDY1LmpwZyJ9fSwiY2FsX2NhcnQiOnsidG90YWxfbXJwIjoiMSwwMDAuMDAiLCJkaXNjb3VudCI6IjEwMC4wMCIsInZhdCI6IjAuMDAiLCJzdWJfdG90YWwiOiI5MDAuMDAiLCJzaGlwcGluZyI6IjAuMDAiLCJzaGlwcGluZ0lEIjowLCJzaGlwcGluZ25hbWUiOiIiLCJ0b3RhbCI6IjkwMC4wMCJ9fQ==', 1000.00, 100.00, 0.00, 900.00, 0.00, 0, '', 900.00, 'on', 'egterhgrthtr', 'arif', 'amin@gmail.com', '01858380039', '+880', 'DHA', '5000', 2, 2, 2, 0, 0, 0, '2022-12-24 15:12:58', '2022-12-24 15:12:58');
 
 -- --------------------------------------------------------
 
@@ -952,9 +953,9 @@ CREATE TABLE `phone_exts` (
 --
 
 INSERT INTO `phone_exts` (`id`, `ext`, `created_at`, `updated_at`) VALUES
-(1, '+880', '2022-12-05 01:07:41', NULL),
-(2, '+971', '2022-12-05 01:07:41', NULL),
-(3, '+966', '2022-12-05 01:07:41', NULL);
+(1, '+880', '2022-12-07 07:12:28', NULL),
+(2, '+971', '2022-12-07 07:12:28', NULL),
+(3, '+966', '2022-12-07 07:12:28', NULL);
 
 -- --------------------------------------------------------
 
@@ -976,7 +977,7 @@ CREATE TABLE `productimages` (
 --
 
 INSERT INTO `productimages` (`id`, `image`, `product_id`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'EQER3Q', 54242, 'GRRSTGTSR', NULL, NULL);
+(1, 'grgrehgeh', 1, 'fegergreg', '2022-12-21 11:39:12', '2022-12-21 11:39:12');
 
 -- --------------------------------------------------------
 
@@ -1001,7 +1002,7 @@ CREATE TABLE `products` (
   `product_condition` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `vat_status` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
-  `discount` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discount` decimal(10,2) DEFAULT NULL,
   `qty` int(11) DEFAULT 1,
   `max_qty` int(11) DEFAULT 4,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -1014,10 +1015,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `sku`, `name`, `model_no`, `manufacturer_id`, `category_id`, `subcategory_id`, `product_title`, `feature_image`, `short_description`, `long_description`, `specification`, `warranty`, `product_condition`, `vat_status`, `price`, `discount`, `qty`, `max_qty`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, '10', 'Opinion', '01585830', 1, 1, 1, 'cash', NULL, 'ewferwgre', 'rgrgrtghr', '4', '1', 'good', NULL, '500.00', '10', NULL, 10, NULL, '2022-12-05 21:30:39', '2022-12-11 00:41:39'),
-(2, '15', 'orange', '01585830', 1, 1, 1, 'cash', NULL, 'Write your address', NULL, '4', '1', 'good', NULL, '500.00', '10', NULL, 10, NULL, '2022-12-06 00:21:15', '2022-12-10 23:05:55'),
-(7, '15', 'mango', '01585830', NULL, NULL, NULL, 'cash', NULL, 'Write your address', NULL, '4', '1', 'good', NULL, '50000.00', '10', NULL, 10, NULL, '2022-12-10 23:07:49', '2022-12-11 22:28:57'),
-(8, '20', 'Vegetable', '01585830', 1, 1, 1, 'cash', NULL, 'gffhr', 'fgf', '4', '1', 'good', NULL, '50000.00', '10', NULL, 10, NULL, '2022-12-11 00:51:44', '2022-12-11 22:38:09');
+(3, '120', 'keyboard12', '01858380039', 1, 4, 2, 'cash', 'uploads/product/5231671891065.jpg', 'fewgerg', 'rgreghtrh', '4', '1', 'good', NULL, '500.00', '10.00', NULL, 10, NULL, '2022-12-07 07:24:20', '2022-12-24 14:11:05'),
+(4, '120', 'mouse 2', '01858380039', 1, 4, 3, 'cash', 'uploads/product/1181671891107.jpg', 'efewfge', 'egewgg', '4', '1', 'good', NULL, '500.00', '10.00', NULL, 10, NULL, '2022-12-24 13:59:05', '2022-12-24 14:11:47');
 
 -- --------------------------------------------------------
 
@@ -1041,7 +1040,7 @@ CREATE TABLE `product_reviews` (
 --
 
 INSERT INTO `product_reviews` (`id`, `product_id`, `name`, `review`, `rating`, `created_by`, `created_at`, `updated_at`) VALUES
-(1, 'efresrfgersg', 'fdgfsdg', 'rgsrgre', 5, NULL, NULL, NULL);
+(1, 'aswfffewfe', 'egewgwg', 'grerewgewg', 5, 1, '2022-12-21 11:39:42', '2022-12-21 11:39:42');
 
 -- --------------------------------------------------------
 
@@ -1062,9 +1061,9 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `type`, `identity`, `created_at`, `updated_at`) VALUES
-(1, 'Superadmin', 'superadmin', '2022-12-05 01:07:38', NULL),
-(2, 'Admin', 'admin', '2022-12-05 01:07:38', NULL),
-(3, 'User', 'user', '2022-12-05 01:07:38', NULL);
+(1, 'Superadmin', 'superadmin', '2022-12-07 07:12:22', NULL),
+(2, 'Admin', 'admin', '2022-12-07 07:12:22', NULL),
+(3, 'User', 'user', '2022-12-07 07:12:22', NULL);
 
 -- --------------------------------------------------------
 
@@ -1089,7 +1088,7 @@ CREATE TABLE `shippings` (
 --
 
 INSERT INTO `shippings` (`id`, `name`, `amount`, `condition_amount`, `show_in_option`, `status`, `terms`, `created_at`, `updated_at`) VALUES
-(1, 'wfdrewfwe', 0.00, 0.00, 0, 1, 'dwaedfawef', NULL, NULL);
+(1, 'wfrwerwetr', 2000.00, 123.00, 12, 1, '1', '2022-12-21 11:40:12', '2022-12-21 11:40:12');
 
 -- --------------------------------------------------------
 
@@ -1119,7 +1118,8 @@ CREATE TABLE `slides` (
 --
 
 INSERT INTO `slides` (`id`, `type`, `name`, `title`, `link`, `details`, `image`, `order`, `status`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 0, 'wqdrwefwea', 'sferesdafrw', 'ewferfrewa', 'esfaerf', 'efaewfwef', 1, 1, 0, 0, NULL, NULL, NULL);
+(1, 1, 'rgrehyr', 'Intel Core I9 For Gaming Beast', 'https://blumenit.com/shopview', 'For Youtuber, Designer, Gaming &\n Streaming Also Multitasking...', 'trht', 1, 1, 0, 0, '2022-12-20 10:42:33', '2022-12-20 10:42:33', '2022-12-20 10:42:33'),
+(2, 1, 'rgrehyr', 'Intel Core I9 For Gaming Beast', 'https://blumenit.com/shopview', 'Intel Core I9 For Gaming Beast', '/source/public/images/1648620732.jpg', 1, 1, 0, 0, '2022-12-20 10:42:33', '2022-12-20 10:42:33', '2022-12-20 10:42:33');
 
 -- --------------------------------------------------------
 
@@ -1145,7 +1145,7 @@ CREATE TABLE `sociallinks` (
 --
 
 INSERT INTO `sociallinks` (`id`, `facebook`, `twitter`, `whatsapp`, `linkedin`, `created_by`, `updated_by`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, '\r\nrsthty', 'waefeeraf', 'egfesargerg', 'ergersgerg', 1, 1, '2022-12-19 07:46:16', '2022-12-20 07:46:16', '2022-12-20 07:46:16');
+(1, 'eewtgewt', 'etgwtewt', 'ertgretre', 'rhgehehe', 1, 1, '2022-12-21 11:41:42', '2022-12-21 11:41:42', '2022-12-21 11:41:42');
 
 -- --------------------------------------------------------
 
@@ -1156,6 +1156,7 @@ INSERT INTO `sociallinks` (`id`, `facebook`, `twitter`, `whatsapp`, `linkedin`, 
 CREATE TABLE `states` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `state` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country_id` bigint(10) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -1164,10 +1165,10 @@ CREATE TABLE `states` (
 -- Dumping data for table `states`
 --
 
-INSERT INTO `states` (`id`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'Dhaka', '2022-12-05 01:07:42', NULL),
-(2, 'Dubay', '2022-12-05 01:07:42', NULL),
-(3, 'Karachi', '2022-12-05 01:07:42', NULL);
+INSERT INTO `states` (`id`, `state`, `country_id`, `created_at`, `updated_at`) VALUES
+(1, 'Dhaka', 1, '2022-12-07 07:12:29', NULL),
+(2, 'Dubay', 2, '2022-12-07 07:12:29', NULL),
+(3, 'Karachi', 3, '2022-12-07 07:12:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -1189,7 +1190,7 @@ CREATE TABLE `subcategoryimages` (
 --
 
 INSERT INTO `subcategoryimages` (`id`, `subcategory_id`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(1, 1, 'ye5u665u', 'tdhthtyh', '2022-12-19 07:47:08', NULL);
+(1, 1, 'rgrhgrh', 'thtrhh', '2022-12-21 11:42:14', '2022-12-21 11:42:14');
 
 -- --------------------------------------------------------
 
@@ -1212,7 +1213,10 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `cat_icon`, `name`, `category_id`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, '2281670224222.jpg', 'Courier With Condition', NULL, NULL, '2022-12-05 01:10:22', '2022-12-05 01:10:22');
+(1, '2131670418924.jpg', 'lenovo-laptop', 1, NULL, '2022-12-07 07:15:25', '2022-12-07 07:15:25'),
+(2, '3051671881920.jpg', 'asus laptop', 1, NULL, '2022-12-24 11:38:40', '2022-12-24 11:38:40'),
+(3, '8771671882726.jpg', 'asus laptop', 1, NULL, '2022-12-24 11:52:06', '2022-12-24 11:52:06'),
+(4, '1251671883056.jpg', 'lenovo-laptop', 4, NULL, '2022-12-24 11:57:36', '2022-12-24 11:57:36');
 
 -- --------------------------------------------------------
 
@@ -1238,7 +1242,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `contact`, `status`, `role_id`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'arif', 'arif@gmai.com', '018', 1, 1, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', NULL, '2022-12-05 21:23:29', '2022-12-05 21:23:29');
+(1, 'arif', 'arif@gmail.com', '018', 1, 1, '40bd001563085fc35165329ea1ff5c5ecbdbbeef', NULL, '2022-12-07 07:14:09', '2022-12-07 07:14:09');
 
 -- --------------------------------------------------------
 
@@ -1259,7 +1263,7 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `customer_id`, `product_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 54242, NULL, NULL);
+(1, 1, 1, '2022-12-21 11:42:43', '2022-12-21 11:42:43');
 
 --
 -- Indexes for dumped tables
@@ -1564,7 +1568,7 @@ ALTER TABLE `about_us_settings`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categoryimages`
@@ -1612,13 +1616,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `footercol1s`
@@ -1654,7 +1658,7 @@ ALTER TABLE `general_settings`
 -- AUTO_INCREMENT for table `headerviews`
 --
 ALTER TABLE `headerviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `homefootersupportviews`
@@ -1720,7 +1724,7 @@ ALTER TABLE `homesection4views`
 -- AUTO_INCREMENT for table `manufacturers`
 --
 ALTER TABLE `manufacturers`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -1732,7 +1736,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -1756,7 +1760,7 @@ ALTER TABLE `productimages`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `product_reviews`
@@ -1780,7 +1784,7 @@ ALTER TABLE `shippings`
 -- AUTO_INCREMENT for table `slides`
 --
 ALTER TABLE `slides`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sociallinks`
@@ -1804,7 +1808,7 @@ ALTER TABLE `subcategoryimages`
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `users`

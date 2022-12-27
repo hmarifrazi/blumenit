@@ -78,7 +78,7 @@ class ProductController extends Controller
         }
 
         Product::create($data);
-        return redirect('products');
+        return redirect('backend.products');
     }
 
     /**
@@ -148,11 +148,12 @@ class ProductController extends Controller
             if ($p->save()) {
                 return redirect(route('products.index'));
             }
-        } catch (Exception $e) {
-
-            //  dd($e);
-            if ($p->save()) {
-                return redirect(route('products.index'));
+        
+    }catch(Exception $e){
+           
+        //  dd($e);
+         if($p->save()){
+                return redirect(route('backend.products.index'));
             }
         }
     }

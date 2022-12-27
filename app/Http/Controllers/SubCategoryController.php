@@ -54,12 +54,13 @@ class SubCategoryController extends Controller
                 $subcat->cat_icon = $imageName;
             }
 
-
-            if ($subcat->save()) {
-                return redirect('subcategory')->with('success', 'Data saved');
-            }
-        } catch (Exception $e) {
-
+       
+       if($subcat->save()){
+        return redirect('backend.subcategory')->with('success','Data saved');
+       }
+     }
+        catch(Exception $e){
+           
             return back()->withInput();
         }
     }
