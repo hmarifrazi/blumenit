@@ -323,7 +323,7 @@
                 @foreach($similar_products as $item)
                 <div class="cs-slide">
                     <a href="{{route('front.product',$item->id)}}" class="cs-card cs-style1">
-                        <div class="cs-card_img"><img src='{{asset("$item->feature_image")}}' alt="Item"></div>
+                        <div class="cs-card_img"><img src='{{asset("public/$item->feature_image")}}' alt="Item"></div>
                         @if($item->outofstock_product==1)
                         <div class="cs-card_alert cs-out_of_stock">Out Of Stock</div>
                         @elseif($item->refurbished_product==1)
